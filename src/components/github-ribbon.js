@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Svg = styled.svg`
-  fill: #203354;
-  color: #fff;
+const Link = styled.a`
   position: absolute;
   top: 0;
   border: 0;
   right: 0;
 `;
 
+const Svg = styled.svg`
+  fill: #203354;
+  color: #fff;
+`;
+
 export const GitHubRibbon = () => {
   return (
-    <a
+    <Link
       href="https://github.com/manosim/gitify"
       target="_blank"
       rel="noopener noreferrer"
@@ -31,6 +34,6 @@ export const GitHubRibbon = () => {
           fill="currentColor"
         />
       </Svg>
-    </a>
+    </Link>
   );
 };
