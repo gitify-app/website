@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { format, parseISO } from 'date-fns';
 import Octicon, { CloudDownload } from '@primer/octicons-react';
 
+import { Image as GatsbyImage } from './image';
 import { Logo } from './logo';
 
 const Container = styled.div`
@@ -33,7 +34,7 @@ const ReleaseDetails = styled.div`
   font-size: 0.8rem;
 `;
 
-const Image = styled.img`
+const MockUp = styled(GatsbyImage)`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -122,11 +123,10 @@ export const Header = () => {
           </div>
 
           <div className="col-md-6 d-flex flex-column justify-content-center">
-            <Image
+            <MockUp
               className="img-fluid"
               style={{ width: '25rem', display: 'block', margin: '3rem auto' }}
-              id="screenshot"
-              src="/images/mockup.png"
+              name="mockUp"
               alt="Gitify Desktop App"
             />
           </div>

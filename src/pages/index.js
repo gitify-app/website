@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/layout';
 import { Header } from '../components/header';
+import { Image as GatsbyImage } from '../components/image';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const SectionMain = styled.div`
@@ -12,7 +13,7 @@ const SectionMain = styled.div`
   justify-content: center;
 `;
 
-const Screenshot = styled.img`
+const Screenshot = styled(GatsbyImage)`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -103,7 +104,7 @@ const IndexPage = () => (
           <div className="col-md-5 col-md-offset-1 px-3">
             <Screenshot
               className="img-fluid"
-              src="/images/all-read.png"
+              name="screenshotAllRead"
               alt="Screenshot when there are no notifications read"
             />
           </div>
@@ -117,7 +118,7 @@ const IndexPage = () => (
           <div className="col-md-5 px-3">
             <Screenshot
               className="img-fluid"
-              src="/images/settings.png"
+              name="screenshotSettings"
               alt="Your Preferences, Settings"
             />
           </div>
