@@ -15,6 +15,7 @@ const Wrapper = styled(Grid)`
     rgba(242, 244, 248, 1) 0%,
     rgba(213, 220, 235, 1) 100%
   );
+  color: ${props => props.theme.color.primary};
 `;
 
 const SiteTitle = styled.h1`
@@ -79,7 +80,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <Wrapper fluid className="text-primary">
+    <Wrapper fluid>
       <Grid>
         <Row middle="sm">
           <Col xs={12} sm={6}>

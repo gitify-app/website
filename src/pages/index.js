@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 import Layout from '../components/layout';
 import { Header } from '../components/header';
 import SEO from '../components/seo';
 
-const SectionMain = styled.div`
+const SectionMain = styled(Col)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +17,7 @@ const Screenshot = styled.img`
   display: block;
   max-width: 100%;
   height: auto;
+  width: 22rem;
 
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -83,10 +85,10 @@ const IndexPage = () => (
 
     <Header />
 
-    <div className="section container-fluid px-3 py-5">
-      <div className="container">
-        <div className="row">
-          <SectionMain className="col-md-7">
+    <Grid fluid className="section px-3 py-5">
+      <Grid>
+        <Row>
+          <SectionMain md={7}>
             <h3>
               All your GitHub notifications on your desktop. Nice &amp; Easy.
             </h3>
@@ -104,26 +106,27 @@ const IndexPage = () => (
             </p>
           </SectionMain>
 
-          <div className="col-md-5 col-md-offset-1 px-3">
+          <Col md={5} className="px-3">
             <Screenshot
               src="/images/all-read.png"
               alt="Screenshot when there are no notifications read"
             />
-          </div>
-        </div>
-      </div>
-    </div>
+          </Col>
+        </Row>
+      </Grid>
+    </Grid>
 
-    <div className="section container-fluid px-3 py-5 bg-primary text-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-5 px-3">
+    <Grid fluid className="section px-3 py-5 bg-primary text-light">
+      <Grid>
+        <Row>
+          <Col md={5} className="px-3">
             <Screenshot
               src="/images/settings.png"
               alt="Your Preferences, Settings"
             />
-          </div>
-          <SectionMain className="col-md-7 col-md-offset-1">
+          </Col>
+
+          <SectionMain md={7}>
             <h3>It's about your preferences.</h3>
             <p className="lead">
               Gitify will notify you every time you receive a notification by
@@ -133,13 +136,13 @@ const IndexPage = () => (
               you can customize your settings to your preference.
             </p>
           </SectionMain>
-        </div>
-      </div>
-    </div>
+        </Row>
+      </Grid>
+    </Grid>
 
-    <div className="container container px-3 py-5">
-      <div className="row">
-        <SectionMain className="col-md-7">
+    <Grid className="px-3 py-5">
+      <Row>
+        <SectionMain md={7}>
           <h3>Free &amp; Open Source. It's ours.</h3>
           <p className="lead">
             With version 3.0.0 being a complete rewrite of the app, Gitify is
@@ -179,7 +182,7 @@ const IndexPage = () => (
           </p>
         </SectionMain>
 
-        <div className="col-md-4 col-md-offset-1">
+        <Col md={5} className="px-3">
           <LogosList className="list-group list-group-horizontal">
             {openSourceLibs.map((item, index) => (
               <LogosListItem key={index} className="list-group-item">
@@ -189,9 +192,9 @@ const IndexPage = () => (
               </LogosListItem>
             ))}
           </LogosList>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Grid>
   </Layout>
 );
 
