@@ -13,6 +13,10 @@ const SectionMain = styled.div`
 `;
 
 const Screenshot = styled.img`
+  display: block;
+  max-width: 100%;
+  height: auto;
+
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -102,7 +106,6 @@ const IndexPage = () => (
 
           <div className="col-md-5 col-md-offset-1 px-3">
             <Screenshot
-              className="img-fluid"
               src="/images/all-read.png"
               alt="Screenshot when there are no notifications read"
             />
@@ -116,7 +119,6 @@ const IndexPage = () => (
         <div className="row">
           <div className="col-md-5 px-3">
             <Screenshot
-              className="img-fluid"
               src="/images/settings.png"
               alt="Your Preferences, Settings"
             />

@@ -8,6 +8,7 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { Logo } from './logo';
 
 const Wrapper = styled(Grid)`
+  padding: 3rem 0.5rem;
   background: rgb(242, 244, 248);
   background: linear-gradient(
     148deg,
@@ -25,7 +26,7 @@ const SiteTitle = styled.h1`
 const SiteDesc = styled.h4`
   margin-top: 0.75rem;
   font-size: 2.25rem;
-  line-height: 2.85rem;
+  line-height: 2.55rem;
   font-weight: 300;
 `;
 
@@ -35,8 +36,13 @@ const ReleaseDetails = styled.div`
 `;
 
 const Image = styled.img`
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  width: 25rem;
+  margin: 3rem auto;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   @media (min-width: 768px) {
@@ -73,7 +79,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <Wrapper fluid className="py-5 px-2 text-primary">
+    <Wrapper fluid className="text-primary">
       <Grid>
         <Row middle="sm">
           <Col xs={12} sm={6}>
@@ -123,13 +129,7 @@ export const Header = () => {
           </Col>
 
           <Col xs={12} sm={6}>
-            <Image
-              className="img-fluid"
-              style={{ width: '25rem', display: 'block', margin: '3rem auto' }}
-              id="screenshot"
-              src="/images/mockup.png"
-              alt="Gitify Desktop App"
-            />
+            <Image src="/images/mockup.png" alt="Gitify Desktop App" />
           </Col>
         </Row>
       </Grid>
