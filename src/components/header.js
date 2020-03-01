@@ -3,10 +3,11 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { format, parseISO } from 'date-fns';
 import Octicon, { CloudDownload } from '@primer/octicons-react';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 import { Logo } from './logo';
 
-const Container = styled.div`
+const Wrapper = styled(Grid)`
   background: rgb(242, 244, 248);
   background: linear-gradient(
     148deg,
@@ -24,7 +25,7 @@ const SiteTitle = styled.h1`
 const SiteDesc = styled.h4`
   margin-top: 0.75rem;
   font-size: 2.25rem;
-  line-height: 2.85remrem;
+  line-height: 2.85rem;
   font-weight: 300;
 `;
 
@@ -72,10 +73,10 @@ export const Header = () => {
   }, []);
 
   return (
-    <Container className="container-fluid py-5 px-2 text-primary">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 d-flex flex-column justify-content-center">
+    <Wrapper fluid className="py-5 px-2 text-primary">
+      <Grid>
+        <Row middle="sm">
+          <Col xs={12} sm={6}>
             <Logo
               style={{
                 maxWidth: '5rem',
@@ -119,9 +120,9 @@ export const Header = () => {
                 </div>
               </ReleaseDetails>
             )}
-          </div>
+          </Col>
 
-          <div className="col-md-6 d-flex flex-column justify-content-center">
+          <Col xs={12} sm={6}>
             <Image
               className="img-fluid"
               style={{ width: '25rem', display: 'block', margin: '3rem auto' }}
@@ -129,9 +130,9 @@ export const Header = () => {
               src="/images/mockup.png"
               alt="Gitify Desktop App"
             />
-          </div>
-        </div>
-      </div>
-    </Container>
+          </Col>
+        </Row>
+      </Grid>
+    </Wrapper>
   );
 };
