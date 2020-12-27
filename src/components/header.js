@@ -11,7 +11,8 @@ import {
   Image,
 } from 'rebass/styled-components';
 import { format, parseISO } from 'date-fns';
-import Octicon, { CloudDownload } from '@primer/octicons-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { Logo } from './logo';
 
@@ -45,10 +46,6 @@ const SiteDesc = styled(Heading)`
 const ReleaseDetails = styled.div`
   margin-top: 1rem;
   font-size: 0.8rem;
-`;
-
-const DownloadIcon = styled(Octicon)`
-  margin-right: 0.5rem;
 `;
 
 const MockUp = styled(Image)`
@@ -165,7 +162,7 @@ export const Header = () => {
                 px={3}
                 py={2}
               >
-                <DownloadIcon icon={CloudDownload} />{' '}
+                <FontAwesomeIcon icon={faCloudDownloadAlt} />{' '}
                 {downloadLinks.primary.name}
               </Button>
 

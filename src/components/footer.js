@@ -1,5 +1,6 @@
 import React from 'react';
-import Octicon, { MarkGithub } from '@primer/octicons-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Box, Flex, Link } from 'rebass/styled-components';
 
 export const Footer = () => (
@@ -29,7 +30,7 @@ export const Footer = () => (
         href="https://github.com/manosim/gitify/"
         aria-label="GitHub Repository"
       >
-        <Octicon icon={MarkGithub} />
+        <FontAwesomeIcon icon={faGithub} />
       </Link>
     </Flex>
   </Box>
