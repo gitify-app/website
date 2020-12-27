@@ -13,15 +13,16 @@ const openSourceLibs = [
     link: 'https://reactjs.org/',
     image: '/images/logos/react.png',
   },
-  {
-    name: 'Tailwind CSS',
-    link: 'https://tailwindcss.com/',
-    image: '/images/logos/tailwindcss.png',
-  },
+
   {
     name: 'Typescript',
     link: 'https://www.typescriptlang.org/',
     image: '/images/logos/typescript.png',
+  },
+  {
+    name: 'Tailwind CSS',
+    link: 'https://tailwindcss.com/',
+    image: '/images/logos/tailwindcss.png',
   },
   {
     name: 'GitHub',
@@ -36,9 +37,6 @@ const openSourceLibs = [
 ];
 
 const sectionTitleClassName = 'mb-4 text-2xl font-semibold';
-const screenshotWrapperClassName =
-  'max-w-sm inset-0 bg-gradient-to-r from-blue-500 to-blue-300 shadow-lg transform -skew-y-6 sm:skew-y-0 -rotate-6 rounded-xl p-0.5';
-const screenshotClassName = 'transform rotate-6 rounded-xl';
 
 const IndexPage = ({ location }: { location: WindowLocation }) => (
   <Layout location={location}>
@@ -53,7 +51,7 @@ const IndexPage = ({ location }: { location: WindowLocation }) => (
     <Header />
 
     <SectionRow
-      mainSide="left"
+      largeSide="left"
       main={
         <>
           <h3 className={sectionTitleClassName}>
@@ -77,20 +75,13 @@ const IndexPage = ({ location }: { location: WindowLocation }) => (
           </div>
         </>
       }
-      side={
-        <div className={screenshotWrapperClassName}>
-          <img
-            className={screenshotClassName}
-            src="/images/all-read.png"
-            alt="Screenshot when there are no notifications read"
-          />
-        </div>
-      }
+      screenshotPath="/images/all-read.png"
+      screenshotAlt="Screenshot when there are no notifications read"
     />
 
     <SectionRow
       isDark
-      mainSide="right"
+      largeSide="right"
       main={
         <>
           <h3 className={sectionTitleClassName}>
@@ -105,19 +96,12 @@ const IndexPage = ({ location }: { location: WindowLocation }) => (
           </div>
         </>
       }
-      side={
-        <div className={screenshotWrapperClassName}>
-          <img
-            className={screenshotClassName}
-            src="/images/settings.png"
-            alt="Your Preferences, Settings"
-          />
-        </div>
-      }
+      screenshotPath="/images/settings.png"
+      screenshotAlt="Your Preferences, Settings"
     />
 
     <SectionRow
-      mainSide="left"
+      largeSide="left"
       main={
         <>
           <h3 className={sectionTitleClassName}>
@@ -160,13 +144,10 @@ const IndexPage = ({ location }: { location: WindowLocation }) => (
           </div>
         </>
       }
-      side={
-        <div className="flex flex-wrap justify-center max-w-md">
+      extras={
+        <div className="flex flex-wrap justify-center md:max-w-lg">
           {openSourceLibs.map((item, index) => (
-            <div
-              className="bg-gray-200 hover:bg-gray-300 px-4 py-2 m-4"
-              key={index}
-            >
+            <div className="hover:bg-gray-200 px-2 py-2 m-4" key={index}>
               <a href={item.link} target="_blank" rel="noopener noreferrer">
                 <img className="w-16" src={item.image} alt={item.name} />
               </a>

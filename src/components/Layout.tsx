@@ -14,10 +14,10 @@ export const Layout = ({
   hideFooter?: boolean;
 }) => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar location={location} />
       {children}
       {!hideFooter && <Footer location={location} />}
-    </>
+    </div>
   );
 };

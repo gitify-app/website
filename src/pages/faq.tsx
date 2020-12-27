@@ -22,7 +22,7 @@ const FAQPage = ({ location }: { location: WindowLocation }) => (
   <Layout location={location}>
     <SEO title="Frequently Asked Questions" />
 
-    <div className="container max-w-4xl mx-auto px-12">
+    <div className="container max-w-4xl mx-auto px-12 flex-1">
       <div className="text-3xl text-center mt-12 mb-8">
         Frequently Asked Questions
       </div>
