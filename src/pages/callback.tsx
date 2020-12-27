@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { WindowLocation } from '@reach/router';
 
 import { Layout } from '../components/layout';
-import { Logo } from '../components/logo';
+import { Logo } from '../components/Logo';
 import { SEO } from '../components/seo';
 
 const CallbackPage = ({ location }: { location: WindowLocation }) => (

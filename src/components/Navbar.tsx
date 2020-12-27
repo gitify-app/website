@@ -3,7 +3,7 @@ import { useStaticQuery, Link, graphql } from 'gatsby';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Logo } from './logo';
+import { Logo } from './Logo';
 import { WindowLocation } from '@reach/router';
 
 export const Navbar = ({ location }: { location: WindowLocation }) => {

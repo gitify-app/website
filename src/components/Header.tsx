@@ -5,7 +5,7 @@ import { format, parseISO } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { Logo } from './logo';
+import { Logo } from './Logo';
 
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
