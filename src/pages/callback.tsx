@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { WindowLocation } from '@reach/router';
 
-import { Layout } from '../components/layout';
+import { Layout } from '../components/Layout';
 import { Logo } from '../components/Logo';
 import { SEO } from '../components/seo';
 
