@@ -22,7 +22,7 @@ export const Navbar = ({ location }: { location: WindowLocation }) => {
 
   return (
     <nav className="bg-gray-navbar">
-      <div className="container max-w-4xl	mx-auto flex items-center justify-between py-6">
+      <div className="container max-w-5xl mx-auto flex items-center justify-between px-12 py-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <a href="/">
             <Logo className="w-8" />

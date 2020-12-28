@@ -149,7 +149,7 @@ const IndexPage = ({ location }: { location: WindowLocation }) => (
           {openSourceLibs.map((item, index) => (
             <div className="hover:bg-gray-200 px-2 py-2 m-4" key={index}>
               <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <img className="w-16" src={item.image} alt={item.name} />
+                <img className="w-12" src={item.image} alt={item.name} />
               </a>
             </div>
           ))}
