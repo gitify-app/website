@@ -77,7 +77,7 @@ export const Header = () => {
 
   return (
     <div className="bg-gradient-to-tr from-gray-200 to-gray-100">
-      <div className="container flex flex-col md:flex-row items-center max-w-5xl mx-auto px-12 py-8">
+      <div className="container flex flex-col md:flex-row items-center max-w-5xl mx-auto px-12 py-16">
         <div className="flex-grow">
           <Logo className="w-24 mb-4" isDark />
 
@@ -133,9 +133,9 @@ export const Header = () => {
           )}
         </div>
 
-        <div className="my-12 md:my-8">
+        <div className="">
           <img
-            className="block w-full max-w-sm mx-auto h-auto mt-2 shadow-2xl rounded-xl transform rotate-6"
+            className="block w-full max-w-sm mx-auto h-auto shadow-2xl rounded-xl transform rotate-6 mt-16 mb-8 md:ml-16 md:my-16"
             src="/images/mockup.png"
             alt="Gitify - Mock up/Screenshot"
           />
