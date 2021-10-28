@@ -77,11 +77,7 @@ export const Hero = () => {
       setFailed(false);
 
       try {
-        const response = await axios(REPO_URL, {
-          headers: {
-            authorization: 'token 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',
-          },
-        });
+        const response = await axios(REPO_URL);
         const data: LatestRelease = response.data;
         const parsedDate = parseISO(data.published_at.slice(0, -1));
         const downloadLinks = getDownloadLinks(data.assets);
