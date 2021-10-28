@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
           aria-label="GitHub"
           className="mt-1 mb-4 mx-2 p-1 text-white hover:text-gray-400"
         >
-          <FontAwesomeIcon icon={faGithub} fixedWidth className="text-2xl" />
+          <FontAwesomeIcon icon={faGithub} fixedWidth className="w-6" />
         </a>
 
         <div className="my-3">
