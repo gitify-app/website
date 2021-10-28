@@ -6,6 +6,7 @@ import styles from '../../styles/Home.module.css';
 import { Hero } from '../components/Hero';
 import { Layout } from '../components/Layout';
 import { SectionRow } from '../components/SectionRow';
+import { SITE_URL } from '../constants';
 
 const openSourceLibs = [
   {
@@ -47,9 +48,7 @@ const Home: NextPage = () => {
         largeSide="left"
         main={
           <>
-            <h3 className={sectionTitleClassName}>
-              All your GitHub notifications on your desktop. Nice &amp; Easy.
-            </h3>
+            <h3 className={sectionTitleClassName}>{SITE_URL}</h3>
 
             <div className="text-xl font-light">
               Ever got lost with GitHub notifications? Too many emails? Gitify
