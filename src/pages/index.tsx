@@ -48,7 +48,9 @@ const Home: NextPage = () => {
         largeSide="left"
         main={
           <>
-            <h3 className={sectionTitleClassName}>{SITE_URL}</h3>
+            <h3 className={sectionTitleClassName}>
+              All your GitHub notifications on your desktop. Nice &amp; Easy.
+            </h3>
 
             <div className="text-xl font-light">
               Ever got lost with GitHub notifications? Too many emails? Gitify
