@@ -3,7 +3,7 @@ import * as React from 'react';
 interface IProps {
   className?: string;
 }
-export const GitHubIcon: React.FC<IProps> = ({ className = '' }) => {
+export const GithubIcon: React.FC<IProps> = ({ className = '' }) => {
   return (
     <svg
       className={className}

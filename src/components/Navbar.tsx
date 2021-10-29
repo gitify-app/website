@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { Logo } from './Logo';
 
 import { siteMetadata } from '../constants';
-import { GitHubIcon } from '../icons/GitHub';
+import { GithubIcon } from '../icons/Github';
 
 export const Navbar: React.FC = () => {
   const router = useRouter();
@@ -45,7 +45,7 @@ export const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 href="https://github.com/manosim/gitify/"
               >
-                <GitHubIcon className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
               </a>
             </li>
           </ul>
