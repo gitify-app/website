@@ -1,0 +1,50 @@
+---
+import Logo from './Logo.astro';
+import GithubIcon from '../icons/Github.astro';
+import { siteMetadata } from '../constants';
+
+const { currentPathname } = Astro.props;
+---
+
+<nav class="bg-gray-navbar">
+  <div
+    class="container max-w-5xl mx-auto flex items-center justify-between px-12 py-6"
+  >
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <a href="/">
+        <Logo className="w-8" />
+      </a>
+    </div>
+
+    <div class="flex justify-end">
+      <ul class="flex flex-row items-center list-none space-x-4">
+        {
+          siteMetadata.menuLinks.map((item) => (
+            <li>
+              <a
+                href={item.path}
+                class={`py-2 px-2 font-light ${
+                  currentPathname === item.path
+                    ? 'border-b-2 border-white text-white'
+                    : 'text-gray-200'
+                } hover:text-gray-300`}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+
+        <li>
+          <a
+            class="flex flex-1 py-2 px-2 text-white hover:text-gray-300"
+            rel="noopener noreferrer"
+            href="https://github.com/manosim/gitify/"
+          >
+            <GithubIcon className="w-4 h-4" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

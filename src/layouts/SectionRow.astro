@@ -1,0 +1,62 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  screenshotPath?: string;
+  screenshotAlt?: string;
+  className?: string;
+  isDark?: boolean;
+}
+
+const {
+  title,
+  description,
+  screenshotPath,
+  screenshotAlt,
+  className,
+  isDark = false,
+} = Astro.props;
+
+const mainClassName = 'flex-1';
+const sectionTitleClassName = 'mb-4 text-2xl font-semibold';
+---
+
+<div
+  class={`flex px-12 py-16 ${
+    isDark ? 'bg-gray-800 text-white' : 'bg-gray-100'
+  }`}
+>
+  <div
+    class={`container max-w-5xl mx-auto flex flex-col md:flex-row items-center ${className}`}
+  >
+    <div class={`${mainClassName} md:mr-12`}>
+      <h3 class={sectionTitleClassName}>
+        {title}
+      </h3>
+
+      <div class="text-xl font-light">{description}</div>
+    </div>
+
+    <div class="w-2 mx-12"></div>
+
+    {
+      screenshotPath && screenshotAlt && (
+        <div class="px-2">
+          <img
+            class="block w-full max-w-sm mx-auto h-auto shadow-lg transform -rotate-6 rounded-xl md:my-16"
+            src={screenshotPath}
+            alt={screenshotAlt}
+          />
+        </div>
+      )
+    }
+
+    {
+      <slot /> && (
+        <div class="px-2">
+          <slot />
+        </div>
+      )
+    }
+  </div>
+</div>
