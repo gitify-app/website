@@ -1,11 +1,15 @@
 ---
+import { marked } from 'marked';
+
+marked.use({ headerIds: false, mangle: false });
+
 export interface Props {
   title: string;
   description: string;
   screenshotPath?: string;
   screenshotAlt?: string;
-  className?: string;
   isDark?: boolean;
+  isReversed?: boolean;
 }
 
 const {
@@ -13,50 +17,44 @@ const {
   description,
   screenshotPath,
   screenshotAlt,
-  className,
   isDark = false,
+  isReversed = false,
 } = Astro.props;
-
-const mainClassName = 'flex-1';
-const sectionTitleClassName = 'mb-4 text-2xl font-semibold';
 ---
 
 <div
-  class={`flex px-12 py-16 ${
-    isDark ? 'bg-gray-800 text-white' : 'bg-gray-100'
-  }`}
+  class:list={[
+    'flex px-12 py-16 lg:py-24',
+    isDark ? 'bg-gray-800 text-white' : 'bg-gray-50',
+  ]}
 >
   <div
-    class={`container max-w-5xl mx-auto flex flex-col md:flex-row items-center ${className}`}
+    class:list={[
+      'container max-w-5xl mx-auto flex flex-col items-center lg:space-x-36',
+      !isReversed ? 'lg:flex-row' : 'lg:flex-row-reverse',
+      isReversed && 'lg:space-x-reverse',
+    ]}
   >
-    <div class={`${mainClassName} md:mr-12`}>
-      <h3 class={sectionTitleClassName}>
-        {title}
-      </h3>
-
-      <div class="text-xl font-light">{description}</div>
+    <div class="flex-1">
+      <h3 class="mb-4 text-xl lg:text-2xl font-semibold">{title}</h3>
+      <div
+        class="text-lg lg:text-xl font-light"
+        set:html={marked(description)}
+      />
     </div>
 
-    <div class="w-2 mx-12"></div>
-
     {
-      screenshotPath && screenshotAlt && (
-        <div class="px-2">
-          <img
-            class="block w-full max-w-sm mx-auto h-auto shadow-lg transform -rotate-6 rounded-xl md:my-16"
-            src={screenshotPath}
-            alt={screenshotAlt}
-          />
-        </div>
+      screenshotPath && (
+        <img
+          class="w-full lg:w-96 max-w-md rounded-lg shadow-lg transform -rotate-6 mt-16 lg:mt-0 mb-8 lg:mb-0"
+          width="500"
+          height="400"
+          src={screenshotPath}
+          alt={screenshotAlt}
+        />
       )
     }
 
-    {
-      <slot /> && (
-        <div class="px-2">
-          <slot />
-        </div>
-      )
-    }
+    <slot />
   </div>
 </div>

@@ -100,18 +100,18 @@ const { downloadLinks, version, releaseDate, failed } = await loadInitialData();
 const releaseDetailsClassName = 'text-sm mt-4';
 ---
 
-<div class="bg-gradient-to-tr from-gray-200 to-gray-100">
+<div class="bg-gray-100">
   <div
-    class="container flex flex-col md:flex-row items-center max-w-5xl mx-auto px-12 py-16"
+    class="container flex flex-col md:flex-row lg:items-center max-w-5xl mx-auto px-12 py-8 lg:py-16"
   >
-    <div class="flex-grow">
-      <Logo className="w-24 mb-4" isDark />
+    <div class="flex flex-col justify-center flex-grow">
+      <Logo className="w-16 lg:w-24 mb-4" isDark />
 
-      <h1 class="text-4xl font-semibold">Gitify</h1>
+      <h1 class="text-2xl lg:text-4xl font-semibold">Gitify</h1>
 
-      <h4 class="mt-2 text-3xl font-light">
+      <h2 class="mt-2 text-xl lg:text-2xl font-light">
         Your GitHub notifications <br /> on your menu bar.
-      </h4>
+      </h2>
 
       {
         !failed && version && (
@@ -121,7 +121,7 @@ const releaseDetailsClassName = 'text-sm mt-4';
                 return item.url ? (
                   <a
                     href={item.url}
-                    class={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-600 hover:bg-green-700 ${
+                    class={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800 ${
                       downloadLinks.primary.length > 1 &&
                       downloadLinks.primary.length - 1 === index
                         ? 'md:ml-4'
@@ -157,14 +157,17 @@ const releaseDetailsClassName = 'text-sm mt-4';
       {
         failed && (
           <div class={releaseDetailsClassName}>
-            <div>
+            <div class="flex">
               <a
-                class="inline-block mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-600 hover:bg-green-700"
+                class="flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800"
                 href={REPO_RELEASES_URL}
               >
-                View GitHub Releases
+                <DownloadIcon className="w-4 h-4 mr-2" />{' '}
+                <span>View GitHub Releases</span>
               </a>
+            </div>
 
+            <div>
               <div>Couldn&apos;t get latest version.</div>
             </div>
           </div>
@@ -177,6 +180,8 @@ const releaseDetailsClassName = 'text-sm mt-4';
         class="block w-full max-w-sm mx-auto h-auto shadow-2xl rounded-xl transform rotate-6 mt-16 mb-8 md:ml-16 md:my-16"
         src="/images/mockup.png"
         alt="Gitify - Mock up/Screenshot"
+        width="500"
+        height="400"
       />
     </div>
   </div>

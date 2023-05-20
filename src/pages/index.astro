@@ -39,7 +39,7 @@ const openSourceLibs = [
 
     <SectionRow
       title="All your GitHub notifications on your desktop. Nice & Easy."
-      description="Ever got lost with GitHub notifications? Too many emails? Gitify is all about making your life easier. Sitting on your menu bar, it informs you for any GitHub notifications without being annoying and of course without adverts. It just gets the job done. Works with GitHub and GitHub Enterprise. You can even connect <strong>multiple</strong> accounts."
+      description="Ever got lost with GitHub notifications? Too many emails? Gitify is all about making your life easier. Sitting on your menu bar, it informs you for any GitHub notifications without being annoying and of course without adverts. It just gets the job done. Works with GitHub and GitHub Enterprise. You can even connect **multiple** accounts."
       screenshotPath="/images/all-read.png"
       screenshotAlt="Screenshot when there are no notifications read"
     />
@@ -49,20 +49,26 @@ const openSourceLibs = [
       description="Gitify will notify you every time you receive a notification by playing a sound (not an annoying one - it's a promise), showing native mac OS notifications or by just turning its tray icon to green. It is not there to interupt your workflow or distract you, you can customize your settings to your preference."
       screenshotPath="/images/settings.png"
       screenshotAlt="Your Preferences, Settings"
-      className="md:flex-row-reverse"
       isDark
+      isReversed
     />
 
     <SectionRow
       title="Free & Open Source. It's ours."
       description="Gitify is based on Electron, React, Tailwind CSS and more awesome open source libraries. Written in Typescript."
     >
-      <div class="flex flex-wrap justify-center md:max-w-lg">
+      <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
         {
           openSourceLibs.map((item) => (
             <div class="hover:bg-gray-200 px-2 py-2 m-4">
               <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <img class="w-12" src={item.image} alt={item.name} />
+                <img
+                  width="50"
+                  height="50"
+                  class="w-12"
+                  src={item.image}
+                  alt={item.name}
+                />
               </a>
             </div>
           ))
