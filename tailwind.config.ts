@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
-import TailwindCSSAnimate from 'tailwindcss-animate';
+
 import TailwindCSSTypography from '@tailwindcss/typography';
+import TailwindCSSAnimate from 'tailwindcss-animate';
 
 const config: Config = {
   darkMode: ['class', '[data-kb-theme="dark"]'],
