@@ -17,19 +17,9 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
   const supportedOSs: DownloadLink[] = [
     {
       os: 'macOS',
-      name: 'macOS (Apple Silicon)',
-      url: getAssetLink(/Gitify-\d+.\d+.\d+-arm64.dmg/g),
-      isPrimary: true,
-    },
-    {
-      os: 'macOS',
-      name: 'macOS (Intel)',
-      url: getAssetLink(/Gitify-\d+.\d+.\d+.dmg/g),
-    },
-    {
-      os: 'macOS',
       name: 'macOS (Universal)',
       url: getAssetLink(/Gitify-\d+.\d+.\d+-universal.dmg/g),
+      isPrimary: true,
     },
     {
       os: 'Windows',
