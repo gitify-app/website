@@ -5,14 +5,18 @@
     ":separateMultipleMajorReleases",
     ":enableVulnerabilityAlerts",
     "schedule:weekly",
-    "regexManagers:biomeVersions"
+    "customManagers:biomeVersions"
   ],
-  "labels": ["dependency"],
+  "labels": [
+    "dependency"
+  ],
   "prConcurrentLimit": 5,
   "rangeStrategy": "pin",
   "packageRules": [
     {
-      "matchDepTypes": ["engines"],
+      "matchDepTypes": [
+        "engines"
+      ],
       "rangeStrategy": "auto"
     }
   ]
