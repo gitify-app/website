@@ -128,7 +128,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
               Also available on:
               <ul class="list-disc list-inside ml-4">
                 {downloadLinks.alt.map((platform) => (
-                  <li class="py-0.5">
+                  <li class="mt-1">
                     <a href={platform.url || URLs.GITHUB.LATEST_RELEASE}>
                       {platform.name}
                     </a>
