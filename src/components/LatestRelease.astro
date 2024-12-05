@@ -51,11 +51,11 @@ const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
   ];
 
   const primaryDownloadLinks = supportedOSs.filter(
-    ({ isPrimary, url }) => url && isPrimary,
+    ({ isPrimary, url }) => url && isPrimary
   );
 
   const altDownloadLinks = supportedOSs.filter(
-    ({ isPrimary, url }) => url && !isPrimary,
+    ({ isPrimary, url }) => url && !isPrimary
   );
 
   return {
@@ -128,7 +128,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
               Also available on:
               <ul class="list-disc list-inside ml-4">
                 {downloadLinks.alt.map((platform) => (
-                  <li>
+                  <li class="py-0.5">
                     <a href={platform.url || URLs.GITHUB.LATEST_RELEASE}>
                       {platform.name}
                     </a>
