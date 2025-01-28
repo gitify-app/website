@@ -18,7 +18,7 @@ const content = [
     id: '2',
     question: 'How to configure OAuth App authentication?',
     answer:
-      'To authenticate via an **OAuth App**:\n- create a new application within _GitHub → Settings → Developer settings → OAuth Apps_.\n- Set _Authorization callback URL_ as `https://www.gitify.io/callback`\n- Complete all remaining mandatory fields\n-  Click _Register application_\n- Now click on _Generate a new client secret_\n- Use this client/secret pair within Gitify to authenticate.',
+      'To authenticate via an **OAuth App**:\n- create a new application within _GitHub → Settings → Developer settings → OAuth Apps_.\n- Set _Authorization callback URL_ as `gitify://oauth`\n- Complete all remaining mandatory fields\n-  Click _Register application_\n- Now click on _Generate a new client secret_\n- Use this client/secret pair within Gitify to authenticate.',
   },
   {
     id: '3',
