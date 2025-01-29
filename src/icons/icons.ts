@@ -29,7 +29,7 @@ export const openSourceLibs: IconDetails[] = [
   {
     name: 'GitHub - Primer Style',
     link: 'https://primer.style/',
-    color: 'text-blue-400',
     svg: 'github',
+    color: 'text-blue-400',
   },
 ];

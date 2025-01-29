@@ -27,8 +27,8 @@ export interface RepoStats {
 export interface IconDetails {
   name: string;
   link: string;
-  color?: string;
   svg: string;
+  color?: string;
 }
 
 // GitHub API types
