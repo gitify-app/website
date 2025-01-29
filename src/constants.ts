@@ -9,7 +9,7 @@ export const siteMetadata = {
   },
   author: {
     name: 'Gitify Team',
-    site: 'https://github.com/gitify-app',
+    site: 'https://github.com/orgs/gitify-app/teams/gitify-core',
   },
   keywords:
     'gitify,desktop,application,github,notifications,unread,menu bar,electron,open source,mac,windows,linux',
