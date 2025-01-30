@@ -24,7 +24,7 @@ interface FAQFrontmatter {
       {
         faqs.map((faq) => (
           <AccordionItem title={faq.frontmatter.title}>
-            <div class="markdown" set:html={faq.compiledContent()} />
+            <div class="faq" set:html={faq.compiledContent()} />
           </AccordionItem>
         ))
       }

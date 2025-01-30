@@ -9,11 +9,11 @@ a:not(.gitify-repo) {
   @apply hover:underline;
 }
 
-ul {
+.faq ul {
   @apply list-disc m-4;
 }
 
-ul > li {
+.faq ul > li {
   @apply m-2;
 }
 
