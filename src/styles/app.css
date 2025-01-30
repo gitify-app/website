@@ -1,9 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
-a {
-  @apply text-gitify-link font-semibold hover:underline;
+a:not(.gitify-navbar) {
+  @apply font-semibold;
+}
+
+a:not(.gitify-repo) {
+  @apply hover:underline;
+}
+
+a:not(.icon, .gitify-download-link) {
+  @apply text-gitify-link;
 }
 
 .markdown ul {
