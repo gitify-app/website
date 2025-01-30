@@ -10,7 +10,7 @@ const isHomepage = currentPathname === "/";
 <nav class:list={["py-8 px-8", isHomepage && "bg-gitify-hero"]}>
   <div class="container max-w-5xl lg:mx-auto">
     <div
-      class="bg-gitify-navbar rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
+      class="bg-gitify-navbar text-gitify-link rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
     >
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="/" aria-label={siteMetadata.title}>
@@ -40,7 +40,7 @@ const isHomepage = currentPathname === "/";
           }
 
           <li>
-            <GitHubRepo />
+            <!-- <GitHubRepo /> -->
           </li>
         </ul>
       </div>
