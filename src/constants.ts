@@ -31,7 +31,6 @@ export const siteMetadata = {
 export const URLs = {
   GITHUB: {
     REPO: `https://github.com/${siteMetadata.repo.fullName}`,
-    ISSUES: `https://github.com/${siteMetadata.repo.fullName}/issues`,
     LATEST_RELEASE: `https://github.com/${siteMetadata.repo.fullName}/releases/latest`,
   },
 };

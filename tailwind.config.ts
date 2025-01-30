@@ -15,9 +15,6 @@ const config: Config = {
             dark: colors.gray[800],
           },
           hero: colors.gray[100],
-          icon: {
-            hover: colors.gray[200],
-          },
           repo: {
             hover: colors.gray[300],
           },

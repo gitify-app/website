@@ -26,14 +26,3 @@ a:not(.gitify-repo) {
 .accordion__content {
   @apply text-sm;
 }
-
-@keyframes accordionOpen {
-  from {
-    height: 0;
-    transform: translateY(-10px) scale(0.95);
-  }
-  to {
-    height: 1;
-    transform: translateY(0) scale(1);
-  }
-}
