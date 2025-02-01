@@ -28,10 +28,9 @@ const isHomepage = currentPathname === "/";
                   class:list={[
                     "py-1.5 lg:py-2 px-2 lg:px-3",
                     "gitify-navbar font-light",
-                    "border rounded-lg",
                     currentPathname === item.path
-                      ? "border-white"
-                      : "border-gitify-navbar",
+                      ? "border-white border rounded-lg"
+                      : "",
                   ]}
                 >
                   {item.name}
