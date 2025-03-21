@@ -46,7 +46,7 @@
   "bugs": {
     "url": "https://github.com/gitify-app/website/issues"
   },
-  "homepage": "https://gitify.io/",
+  "homepage": "https://gitify.io",
   "dependencies": {
     "@iconify-json/line-md": "1.2.5",
     "@iconify-json/mdi": "1.2.3",
