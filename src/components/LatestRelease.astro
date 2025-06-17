@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { format } from "date-fns";
 import { Octokit } from "octokit";
-
+import DownloadButton from "~/components/DownloadButton.astro";
 import { siteMetadata, URLs } from "~/constants";
 import type {
   DownloadLink,
@@ -10,7 +10,6 @@ import type {
   HeroData,
   ReleaseAsset,
 } from "~/types";
-import DownloadButton from "./DownloadButton.astro";
 
 const octokit = new Octokit();
 

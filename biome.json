@@ -6,7 +6,11 @@
         "organizeImports": {
           "level": "on",
           "options": {
-            "groups": [":PACKAGE:", ":BLANK_LINE:", "**"]
+            "groups": [
+              ["astro:*", "astro*", "astro*/*"],
+              ":PACKAGE:",
+              ":ALIAS:"
+            ]
           }
         }
       }
@@ -56,6 +60,19 @@
       "javascript": {
         "formatter": {
           "quoteStyle": "double"
+        }
+      },
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
         }
       }
     }
