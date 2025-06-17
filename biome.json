@@ -7,7 +7,7 @@
           "level": "on",
           "options": {
             "groups": [
-              ["astro:*", "astro*", "astro*/*"],
+              ["astro:*", "*astro-*", "astro*/*"],
               ":PACKAGE:",
               ":ALIAS:"
             ]
