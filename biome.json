@@ -42,17 +42,8 @@
   "overrides": [
     {
       "includes": ["**/*.astro"],
-      "javascript": {
-        "formatter": {
-          "quoteStyle": "double"
-        }
-      },
       "linter": {
         "rules": {
-          "style": {
-            "useConst": "off",
-            "useImportType": "off"
-          },
           "correctness": {
             "noUnusedImports": "off",
             "noUnusedVariables": "off"
@@ -62,6 +53,9 @@
     }
   ],
   "css": {
+    "formatter": {
+      "enabled": true
+    },
     "parser": {
       "tailwindDirectives": true
     }
