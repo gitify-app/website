@@ -7,11 +7,7 @@
           "level": "on",
           "options": {
             "groups": [
-              [
-                "astro:*",
-                "*astro-*",
-                "astro*/*"
-              ],
+              ["astro:*", "*astro-*", "astro*/*"],
               ":PACKAGE:",
               ":ALIAS:"
             ]
@@ -45,9 +41,7 @@
   },
   "overrides": [
     {
-      "includes": [
-        "**/*.astro"
-      ],
+      "includes": ["**/*.astro"],
       "javascript": {
         "formatter": {
           "quoteStyle": "double"
