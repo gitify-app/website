@@ -12,7 +12,6 @@ const DARK_GRADIENT_END = '#555B6E';
 
 const { isDark = false, className = '' } = Astro.props;
 ---
-
 <svg
   class={className}
   xmlns="http://www.w3.org/2000/svg"
@@ -30,17 +29,20 @@ const { isDark = false, className = '' } = Astro.props;
     >
       <stop
         stop-color={isDark ? DARK_GRADIENT_START : LIGHT_GRADIENT_START}
-        offset="0%"></stop>
+        offset="0%"
+      ></stop>
       <stop
         stop-color={isDark ? DARK_GRADIENT_END : LIGHT_GRADIENT_END}
-        offset="100%"></stop>
+        offset="100%"
+      ></stop>
     </linearGradient>
   </defs>
   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g
       id="Logo"
       transform="translate(6.000000, 6.000000)"
-      fill={`url(${isDark ? '#linearGradient-dark' : '#linearGradient-light'})`}
+      fill={`url(${isDark ? '#linearGradient-dark' : '#linearGradient-light'}
+      )`}
       fill-rule="nonzero"
     >
       <path

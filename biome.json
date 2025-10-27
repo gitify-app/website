@@ -39,19 +39,6 @@
     "indentStyle": "space",
     "indentWidth": 2
   },
-  "overrides": [
-    {
-      "includes": ["**/*.astro"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noUnusedImports": "off",
-            "noUnusedVariables": "off"
-          }
-        }
-      }
-    }
-  ],
   "css": {
     "formatter": {
       "enabled": true
@@ -59,6 +46,12 @@
     "parser": {
       "tailwindDirectives": true
     }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true
+    },
+    "experimentalFullSupportEnabled": true
   },
   "javascript": {
     "formatter": {
