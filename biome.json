@@ -7,7 +7,11 @@
           "level": "on",
           "options": {
             "groups": [
-              ["astro:*", "*astro-*", "astro*/*"],
+              [
+                "astro:*",
+                "*astro-*",
+                "astro*/*"
+              ],
               ":PACKAGE:",
               ":ALIAS:"
             ]
@@ -34,24 +38,16 @@
       }
     }
   },
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2
   },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single"
-    }
-  },
   "overrides": [
     {
-      "includes": ["**/*.astro"],
+      "includes": [
+        "**/*.astro"
+      ],
       "javascript": {
         "formatter": {
           "quoteStyle": "double"
@@ -71,14 +67,24 @@
       }
     }
   ],
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
   "json": {
     "parser": {
       "allowComments": true
     }
   },
-  "css": {
-    "parser": {
-      "tailwindDirectives": true
-    }
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   }
 }
