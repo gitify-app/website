@@ -1,14 +1,14 @@
 ---
-  import { Icon } from 'astro-icon/components';
+import { Icon } from 'astro-icon/components';
 
-  export interface Props {
-    item: {
-      url: string;
-      name: string;
-    };
-  }
+export interface Props {
+  item: {
+    url: string;
+    name: string;
+  };
+}
 
-  const { item } = Astro.props;
+const { item } = Astro.props;
 ---
 <a
   href={item.url}
