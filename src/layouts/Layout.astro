@@ -1,7 +1,7 @@
 ---
 import '~/styles/app.css';
 
-import Footer from '~/components/Footer.astro';
+import SiteFooter from '~/components/Footer.astro';
 import GoogleAnalytics from '~/components/GoogleAnalytics.astro';
 import Navbar from '~/components/Navbar.astro';
 import { siteMetadata } from '~/constants';
@@ -60,6 +60,6 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
   <body class="flex flex-col min-h-screen">
     <Navbar currentPathname={Astro.url.pathname}/>
     <slot/>
-    <footer currentPathname={Astro.url.pathname}/>
+    <SiteFooter currentPathname={Astro.url.pathname}/>
   </body>
 </html>
