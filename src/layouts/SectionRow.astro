@@ -21,7 +21,6 @@ const {
   isReversed = false,
 } = Astro.props;
 ---
-
 <div
   class:list={[
     "flex px-12 py-16 lg:py-24",
@@ -47,14 +46,10 @@ const {
       screenshot && (
         <Image
           class:list={["w-full lg:w-96 max-w-md rounded-lg shadow-lg transform", "mt-16 lg:mt-0 mb-8 lg:mb-0", isReversed ? "-rotate-6" : "rotate-6"]}
-          width="500"
-          height="400"
-          src={import(`../assets/${screenshot.path}.png`)}
-          alt={screenshot.alt}
-        />
-      )
-    }
+    width="500" height="400" src={import(`../assets/${screenshot.path}.png`)}
+    alt={screenshot.alt}
+    /> ) }
 
-    <slot />
+    <slot/>
   </div>
 </div>

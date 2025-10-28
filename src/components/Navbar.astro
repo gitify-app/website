@@ -6,7 +6,6 @@ import { siteMetadata } from '~/constants';
 const { currentPathname } = Astro.props;
 const isHomepage = currentPathname === '/';
 ---
-
 <nav class:list={["py-10 px-8", isHomepage && "bg-gitify-hero"]}>
   <div class="container max-w-5xl lg:mx-auto">
     <div
@@ -14,7 +13,7 @@ const isHomepage = currentPathname === '/';
     >
       <div class="flex items-center shrink-0 text-white mr-6">
         <a href="/" aria-label={siteMetadata.title}>
-          <Logo className="w-8" />
+          <Logo className="w-8"/>
         </a>
       </div>
 
@@ -40,7 +39,7 @@ const isHomepage = currentPathname === '/';
           }
 
           <li>
-            <GitHubRepo />
+            <GitHubRepo/>
           </li>
         </ul>
       </div>
