@@ -9,7 +9,9 @@
             "groups": [
               ["astro:*", "*astro-*", "astro*/*"],
               ":PACKAGE:",
-              ":ALIAS:"
+              ["~/constants"],
+              ":ALIAS:",
+              "**"
             ]
           }
         }
