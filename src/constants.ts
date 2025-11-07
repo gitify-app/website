@@ -14,6 +14,7 @@ export const siteMetadata = {
   keywords:
     'gitify,desktop,application,github,notifications,unread,menu bar,electron,open source,mac,windows,linux',
   google: {
+    gtag: 'G-QXML81DEDV',
     siteVerification: 'jJNnPZ2wu7F1tlSab57og1N3RNrMqhzTCzRrbztY8WU',
   },
   menuLinks: [
