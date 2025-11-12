@@ -1,10 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-
 import { Octokit } from 'octokit';
-
 import { siteMetadata, URLs } from '~/constants';
-
 import type { RepoStats } from '~/types';
 
 const octokit = new Octokit();
@@ -45,6 +42,7 @@ const loadRepoStats = async (): Promise<RepoStats> => {
 
 const { forks, stars, latestReleaseName } = await loadRepoStats();
 ---
+
 <a
   href={URLs.GITHUB.REPO}
   target="_blank"
