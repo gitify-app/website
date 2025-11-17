@@ -14,7 +14,7 @@
     "lint": "biome check --fix"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "repository": {
     "type": "git",
