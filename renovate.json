@@ -5,7 +5,6 @@
     ":enableVulnerabilityAlerts",
     ":separateMultipleMajorReleases",
     "customManagers:biomeVersions",
-    "helpers:pinGitHubActionDigests",
     "schedule:weekly"
   ],
   "labels": ["dependency"],
