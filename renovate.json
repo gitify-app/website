@@ -2,6 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
+    ":automergeMinor",
+    ":automergePatch",
+    ":automergeDigest",
     ":enableVulnerabilityAlerts",
     "customManagers:biomeVersions",
     "schedule:monthly"
@@ -36,11 +39,6 @@
       "description": "Group all GitHub Actions updates",
       "matchManagers": ["github-actions"],
       "groupName": "github-actions"
-    },
-    {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "automerge": true
     }
   ]
 }
