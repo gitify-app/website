@@ -1,6 +1,7 @@
 {
   "name": "gitify-website",
   "version": "latest",
+  "private": true,
   "description": "The source code of gitify.io",
   "type": "module",
   "scripts": {
