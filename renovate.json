@@ -9,10 +9,10 @@
     "customManagers:biomeVersions",
     "schedule:monthly"
   ],
+  "assignees": ["setchy"],
+  "reviewers": ["setchy"],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
-  "prConcurrentLimit": 5,
-  "minimumReleaseAge": "7 days",
   "packageRules": [
     {
       "matchDepTypes": ["engines"],
