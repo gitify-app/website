@@ -50,5 +50,5 @@ All commands are run from the root of the project, from a terminal:
 [netlify-deploys]: https://app.netlify.com/sites/gitify/deploys
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/gitify-app/gitify?logo=github
-[renovate]: https://renovatebot.com
+[renovate]: https://github.com/gitify-app/website/issues/15
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate
