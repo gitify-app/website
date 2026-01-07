@@ -18,11 +18,6 @@
       "rangeStrategy": "auto"
     },
     {
-      "description": "Remove word `dependency` from commit messages and PR titles",
-      "matchDatasources": ["npm"],
-      "commitMessageTopic": "{{depName}}"
-    },
-    {
       "description": "Group all non-major npm updates",
       "matchDatasources": ["npm"],
       "matchUpdateTypes": ["minor", "patch"],
