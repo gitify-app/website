@@ -10,7 +10,6 @@
     "schedule:monthly"
   ],
   "assignees": ["setchy"],
-  "reviewers": ["setchy"],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
   "packageRules": [
