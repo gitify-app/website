@@ -47,7 +47,7 @@ All commands are run from the root of the project, from a terminal:
 [github]: https://github.com/gitify-app/website
 [contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website?logo=github
 [netlify-badge]: https://api.netlify.com/api/v1/badges/a060080d-e0bd-46bf-a2b5-0290a18ead9d/deploy-status
-[netlify-deploys]: https://app.netlify.com/sites/gitify/deploys
+[netlify-deploys]: https://app.netlify.com/projects/gitify/deploys
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/gitify-app/gitify?logo=github
 [renovate]: https://github.com/gitify-app/website/issues/15
