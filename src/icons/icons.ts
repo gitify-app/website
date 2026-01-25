@@ -22,8 +22,8 @@ export const openSourceLibs: IconDetails[] = [
     svg: 'tailwindcss',
   },
   {
-    name: 'GitHub',
-    link: 'https://github.com/',
+    name: 'GitHub - Octokit',
+    link: 'https://github.com/octokit/',
     svg: 'github',
   },
   {
