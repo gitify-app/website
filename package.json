@@ -49,12 +49,12 @@
   },
   "homepage": "https://gitify.io",
   "dependencies": {
-    "@iconify-json/line-md": "1.2.13",
+    "@iconify-json/line-md": "1.2.14",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "27.0.0",
     "@tailwindcss/vite": "4.1.18",
-    "accessible-astro-components": "5.1.1",
-    "astro": "5.16.11",
+    "accessible-astro-components": "5.1.2",
+    "astro": "5.16.15",
     "astro-icon": "1.1.5",
     "date-fns": "4.1.0",
     "marked": "17.0.1",
@@ -65,10 +65,10 @@
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.11",
+    "@biomejs/biome": "2.3.13",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@10.28.1",
+  "packageManager": "pnpm@10.28.2",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@biomejs/biome",
