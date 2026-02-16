@@ -19,6 +19,7 @@ const { isDark = false, className = '' } = Astro.props;
   xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 500 500"
   role="img"
+  aria-label="Logo"
 >
   <defs>
     <linearGradient
@@ -26,7 +27,7 @@ const { isDark = false, className = '' } = Astro.props;
       y1="80.0676288%"
       x2="-1.30249747%"
       y2="32.7108237%"
-      id={isDark ? 'linearGradient-dark' : 'linearGradient-light'}
+      id={isDark ? "linearGradient-dark" : "linearGradient-light"}
     >
       <stop
         stop-color={isDark ? DARK_GRADIENT_START : LIGHT_GRADIENT_START}
@@ -42,7 +43,7 @@ const { isDark = false, className = '' } = Astro.props;
     <g
       id="Logo"
       transform="translate(6.000000, 6.000000)"
-      fill={`url(${isDark ? '#linearGradient-dark' : '#linearGradient-light'}
+      fill={`url(${isDark ? "#linearGradient-dark" : "#linearGradient-light"}
       )`}
       fill-rule="nonzero"
     >
