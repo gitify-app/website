@@ -7,9 +7,15 @@
           "level": "on",
           "options": {
             "groups": [
-              ["astro:*", "*astro-*", "astro*/*"],
+              [
+                "astro:*",
+                "*astro-*",
+                "astro*/*"
+              ],
               ":PACKAGE:",
-              ["~/constants"],
+              [
+                "~/constants"
+              ],
               ":ALIAS:",
               "**"
             ]
@@ -43,7 +49,9 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.astro"],
+      "includes": [
+        "**/*.astro"
+      ],
       "linter": {
         "rules": {
           "correctness": {
