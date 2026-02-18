@@ -57,15 +57,15 @@
     "astro": "5.17.2",
     "astro-icon": "1.1.5",
     "date-fns": "4.1.0",
-    "marked": "17.0.2",
+    "marked": "17.0.3",
     "octokit": "5.0.5",
     "sharp": "0.34.5",
-    "tailwind-merge": "3.4.0",
+    "tailwind-merge": "3.4.1",
     "tailwindcss": "4.1.18",
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.1",
+    "@biomejs/biome": "2.4.2",
     "husky": "9.1.7"
   },
   "packageManager": "pnpm@10.29.3",
