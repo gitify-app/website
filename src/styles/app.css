@@ -12,12 +12,28 @@ a:not(.gitify-repo) {
   @apply hover:underline;
 }
 
+.faq p {
+  @apply mb-3;
+}
+
+.faq p:last-child {
+  @apply mb-0;
+}
+
 .faq ul {
-  @apply list-disc ml-4;
+  @apply list-disc ml-4 mb-3;
 }
 
 .faq ul > li {
   @apply ml-2;
+}
+
+.faq blockquote {
+  @apply border-l-4 border-gray-300 pl-3 my-3 text-gray-600 italic;
+}
+
+.faq pre {
+  @apply my-3;
 }
 
 .accordion__title {
