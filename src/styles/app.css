@@ -12,12 +12,52 @@ a:not(.gitify-repo) {
   @apply hover:underline;
 }
 
+.faq p {
+  @apply mb-3;
+}
+
+.faq p:last-child {
+  @apply mb-0;
+}
+
 .faq ul {
-  @apply list-disc ml-4;
+  @apply list-disc ml-4 mb-3;
 }
 
 .faq ul > li {
   @apply ml-2;
+}
+
+.faq code {
+  @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded px-1.5 py-0.5 text-sm font-mono;
+}
+
+.faq pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.faq blockquote {
+  @apply border-l-4 border-blue-400 bg-blue-50 dark:bg-blue-950 dark:border-blue-500 pl-4 pr-3 py-2 my-3 rounded-r-sm not-italic text-gray-700 dark:text-gray-300;
+}
+
+.faq pre {
+  @apply my-3;
+}
+
+.faq table {
+  @apply w-full text-sm border-collapse my-3;
+}
+
+.faq th {
+  @apply text-left font-semibold border-b border-gray-200 dark:border-gray-700 pb-2;
+}
+
+.faq td {
+  @apply py-1.5 border-b border-gray-100 dark:border-gray-800 align-top;
+}
+
+.faq tr:last-child td {
+  @apply border-b-0;
 }
 
 .accordion__title {
@@ -28,4 +68,21 @@ a:not(.gitify-repo) {
 
 .accordion__content {
   @apply text-base;
+}
+
+.faq-item summary {
+  @apply relative;
+}
+
+.faq-copy-link {
+  @apply absolute right-8 top-1/2 -translate-y-1/2 p-1 rounded opacity-0 text-gray-400 hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all;
+}
+
+.faq-item summary:hover .faq-copy-link,
+.faq-copy-link:focus-visible {
+  @apply opacity-100;
+}
+
+.faq-copy-link--copied {
+  @apply opacity-100 text-green-500;
 }
