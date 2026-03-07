@@ -44,6 +44,22 @@ a:not(.gitify-repo) {
   @apply my-3;
 }
 
+.faq table {
+  @apply w-full text-sm border-collapse my-3;
+}
+
+.faq th {
+  @apply text-left font-semibold border-b border-gray-200 dark:border-gray-700 pb-2;
+}
+
+.faq td {
+  @apply py-1.5 border-b border-gray-100 dark:border-gray-800 align-top;
+}
+
+.faq tr:last-child td {
+  @apply border-b-0;
+}
+
 .accordion__title {
   h3 {
     @apply text-base font-medium;

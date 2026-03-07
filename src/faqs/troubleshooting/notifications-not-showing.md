@@ -14,5 +14,12 @@ When authenticating via **Gitify GitHub App**:
 - To check if Gitify is approved by your organization:
   - Open [GitHub → Settings → Applications → Authorized GitHub Apps](https://github.com/settings/applications)
   - Click on the _Gitify_ application
-  - Under _Organization access_, verify that access has been granted for your organization
-  - If it hasn't, from here you can request your Organization Administrators to approve
+  - Under _Organization access_, you will see one of three states for each organization:
+
+| State | Meaning |
+|---|---|
+| ✅ Green check | Access granted — notifications from this org will appear |
+| **Request** button | Access not yet granted — click to ask your org admins to approve |
+| _Disallowed by org owner_ | The organization has blocked third-party GitHub App access entirely — contact your org admin |
+
+> **Note:** If an organization shows **Request** or **Disallowed by org owner**, you will not receive notifications from that organization until access is approved.
