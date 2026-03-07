@@ -6,7 +6,8 @@ order: 1
 When authenticating via **Personal Access Token (PAT)**:
 - Open [GitHub → Settings → Developer settings → Personal access tokens](https://github.com/settings/tokens)
 - Confirm that your PAT has the following recommended permissions: `notifications`, `read:user` and `repo`
-- Note: if you only want Gitify to access public repositories, you can use permissions: `notifications`, `read:user` and `public_repo`
+
+> **Note:** If you only want Gitify to access public repositories, you can use `notifications`, `read:user` and `public_repo` instead.
 
 When authenticating via **Gitify GitHub App**:
 - Some organizations require GitHub Apps to request access prior to allowing access to organization data (including notifications)

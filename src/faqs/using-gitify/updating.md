@@ -8,5 +8,3 @@ Gitify checks for updates automatically on launch and every 24 hours.
 When an update is available, it downloads in the background. Once downloaded, a dialog will prompt you to **Restart** to apply the update or choose **Later** to apply it the next time Gitify restarts.
 
 You can also trigger a manual check by right-clicking the tray icon and selecting **Check for Updates**.
-
-> **Note:** If you installed Gitify via **Homebrew**, updates are managed by Homebrew rather than the in-app updater. Run `brew upgrade gitify` to update manually.
