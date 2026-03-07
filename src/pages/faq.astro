@@ -1,6 +1,6 @@
 ---
-import { Accordion, AccordionItem } from "accessible-astro-components";
-import Layout from "~/layouts/Layout.astro";
+import { Accordion, AccordionItem } from 'accessible-astro-components';
+import Layout from '~/layouts/Layout.astro';
 
 interface FAQFrontmatter {
   frontmatter: {
@@ -16,17 +16,17 @@ interface FAQ extends FAQFrontmatter {
 }
 
 const CATEGORY_ORDER = [
-  "Getting Started",
-  "Using Gitify",
-  "Troubleshooting",
-  "Contributing",
+  'Getting Started',
+  'Using Gitify',
+  'Troubleshooting',
+  'Contributing',
 ];
 
 const allFaqs: FAQ[] = Object.entries(
-  import.meta.glob("~/faqs/**/*.md", { eager: true }),
+  import.meta.glob('~/faqs/**/*.md', { eager: true }),
 ).map(([path, mod]) => ({
   ...(mod as FAQFrontmatter),
-  slug: (path.split("/").pop() ?? "").replace(/\.md$/, ""),
+  slug: (path.split('/').pop() ?? '').replace(/\.md$/, ''),
 }));
 
 const grouped = CATEGORY_ORDER.map((category) => ({
@@ -42,8 +42,7 @@ const grouped = CATEGORY_ORDER.map((category) => ({
     <div class="text-3xl text-center mt-12 mb-8">
       Frequently Asked Questions
     </div>
-    {
-      grouped.map(({ category, faqs }) => (
+    {grouped.map(({ category, faqs }) => (
         <div class="mb-10">
           <h2 class="text-xl font-semibold mb-4">{category}</h2>
           <Accordion>
@@ -56,65 +55,64 @@ const grouped = CATEGORY_ORDER.map((category) => ({
             ))}
           </Accordion>
         </div>
-      ))
-    }
+      ))}
   </div>
 </Layout>
 
 <script>
-  // Inject a copy-link button into each accordion <summary>
-  document.querySelectorAll<HTMLElement>(".faq-item").forEach((item) => {
-    const slug = item.id;
-    const summary = item.querySelector<HTMLElement>("summary");
-    if (!summary || !slug) {
-      return;
-    }
-
-    summary.style.position = "relative";
-
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.title = "Copy link";
-    btn.setAttribute("aria-label", "Copy link to this question");
-    btn.className = "faq-copy-link";
-    btn.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
-
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const url = `${window.location.origin}${window.location.pathname}#${slug}`;
-      navigator.clipboard.writeText(url).then(() => {
-        btn.classList.add("faq-copy-link--copied");
-        btn.title = "Copied!";
-        setTimeout(() => {
-          btn.classList.remove("faq-copy-link--copied");
-          btn.title = "Copy link";
-        }, 2000);
-      });
-    });
-
-    summary.appendChild(btn);
-  });
-
-  // Open + scroll to item matching the URL hash
-  function openFromHash() {
-    const hash = window.location.hash.slice(1);
-    if (!hash) {
-      return;
-    }
-
-    const wrapper = document.getElementById(hash);
-    if (!wrapper) {
-      return;
-    }
-
-    const details = wrapper.querySelector<HTMLDetailsElement>("details");
-    if (details) {
-      details.open = true;
-      wrapper.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+// Inject a copy-link button into each accordion <summary>
+document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+  const slug = item.id;
+  const summary = item.querySelector<HTMLElement>('summary');
+  if (!summary || !slug) {
+    return;
   }
 
-  openFromHash();
-  window.addEventListener("hashchange", openFromHash);
+  summary.style.position = 'relative';
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.title = 'Copy link';
+  btn.setAttribute('aria-label', 'Copy link to this question');
+  btn.className = 'faq-copy-link';
+  btn.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const url = `${window.location.origin}${window.location.pathname}#${slug}`;
+    navigator.clipboard.writeText(url).then(() => {
+      btn.classList.add('faq-copy-link--copied');
+      btn.title = 'Copied!';
+      setTimeout(() => {
+        btn.classList.remove('faq-copy-link--copied');
+        btn.title = 'Copy link';
+      }, 2000);
+    });
+  });
+
+  summary.appendChild(btn);
+});
+
+// Open + scroll to item matching the URL hash
+function openFromHash() {
+  const hash = window.location.hash.slice(1);
+  if (!hash) {
+    return;
+  }
+
+  const wrapper = document.getElementById(hash);
+  if (!wrapper) {
+    return;
+  }
+
+  const details = wrapper.querySelector<HTMLDetailsElement>('details');
+  if (details) {
+    details.open = true;
+    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+openFromHash();
+window.addEventListener('hashchange', openFromHash);
 </script>
