@@ -1,7 +1,7 @@
 export const siteMetadata = {
   title: 'Gitify',
   url: 'https://gitify.io',
-  description: 'GitHub notifications on your menu bar',
+  description: 'Git notifications on your menu bar',
   repo: {
     fullName: 'gitify-app/gitify',
     owner: 'gitify-app',
