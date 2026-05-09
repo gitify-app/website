@@ -9,7 +9,6 @@
     "customManagers:biomeVersions",
     "schedule:monthly"
   ],
-  "assignees": ["setchy"],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
   "packageRules": [
