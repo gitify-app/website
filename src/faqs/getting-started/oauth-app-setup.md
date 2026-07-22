@@ -3,7 +3,9 @@ title: "How do I configure OAuth App authentication?"
 category: "Getting Started"
 order: 2
 ---
-To authenticate via an **OAuth App**:
+> **Note:** OAuth App authentication is available for **GitHub Cloud and GitHub Enterprise Server only**. For Gitea, Forgejo, Codeberg, and Bitbucket Cloud, use a [Personal Access Token](/faq/#authentication-methods).
+
+To authenticate via an **OAuth App** with GitHub:
 - Open [GitHub → Settings → Developer settings → OAuth Apps](https://github.com/settings/developers)
 - Click _New OAuth App_
 - Set _Authorization callback URL_ to `gitify://oauth`
