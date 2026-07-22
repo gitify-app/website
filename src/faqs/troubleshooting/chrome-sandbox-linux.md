@@ -1,5 +1,5 @@
 ---
-title: "How do I fix 'Chrome Sandbox' permissions on Linux?"
+title: "How do I fix Chrome Sandbox permissions on Linux?"
 category: "Troubleshooting"
 order: 3
 ---
