@@ -5,14 +5,14 @@ import { siteMetadata, URLs } from '~/constants';
 
 import DownloadButton from '~/components/DownloadButton.astro';
 import { octokit } from '~/octokit';
-import type {
-  DownloadLink,
-  DownloadLinks,
-  HeroData,
-  ReleaseAsset,
-} from '~/types';
+import type { DownloadLink, DownloadLinks, HeroData } from '~/types';
 
-const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
+interface AssetInfo {
+  name: string;
+  browser_download_url: string;
+}
+
+const getDownloadLinks = (assets: AssetInfo[]): DownloadLinks => {
   const getAssetLink = (filenameRegex: RegExp): string => {
     const asset = assets.find((item) => item.name.match(filenameRegex));
     return asset ? asset.browser_download_url : URLs.GITHUB.LATEST_RELEASE;
@@ -71,6 +71,65 @@ const osIcons: Record<string, string> = {
   Linux: 'mdi:linux',
 };
 
+/**
+ * electron-builder publishes `latest-*.yml` manifests alongside every
+ * release. They are static assets served from `releases/latest/download/`,
+ * so unlike the GitHub API they are not rate-limited, and they contain the
+ * exact versioned asset names we need for direct download links.
+ */
+const LATEST_DOWNLOAD_BASE = `${URLs.GITHUB.REPO}/releases/latest/download`;
+
+const parseElectronBuilderManifest = (manifest: string) => {
+  const version = manifest.match(/^version:\s*(\S+)/m)?.[1] ?? '';
+  const releaseDate =
+    manifest.match(/^releaseDate:\s*'?([^'\n]+)'?/m)?.[1] ?? '';
+  const files = [...manifest.matchAll(/^\s+-\s+url:\s*(\S+)$/gm)].map(
+    (match) => match[1],
+  );
+  return { version, releaseDate, files };
+};
+
+const loadFromElectronBuilderManifests = async (): Promise<HeroData> => {
+  try {
+    const manifests = await Promise.all(
+      ['latest-mac.yml', 'latest.yml', 'latest-linux.yml'].map(async (file) => {
+        const response = await fetch(`${LATEST_DOWNLOAD_BASE}/${file}`, {
+          signal: AbortSignal.timeout(8000),
+        });
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${file}: ${response.status}`);
+        }
+        return parseElectronBuilderManifest(await response.text());
+      }),
+    );
+
+    const assets: AssetInfo[] = manifests
+      .flatMap((manifest) => manifest.files)
+      .map((name) => ({
+        name,
+        browser_download_url: `${LATEST_DOWNLOAD_BASE}/${name}`,
+      }));
+
+    const { version, releaseDate } = manifests[0];
+
+    return {
+      downloadLinks: getDownloadLinks(assets),
+      version: version ? `v${version}` : '',
+      releaseDate: releaseDate ? format(releaseDate, 'dd/MM/yyyy') : '',
+    };
+  } catch (error) {
+    console.error('Failed to load release manifests', error);
+    return {
+      downloadLinks: {
+        alt: [],
+        primary: [],
+      },
+      version: '',
+      releaseDate: '',
+    };
+  }
+};
+
 const loadInitialData = async (): Promise<HeroData> => {
   try {
     const latestRelease = await octokit.rest.repos.getLatestRelease({
@@ -88,14 +147,11 @@ const loadInitialData = async (): Promise<HeroData> => {
         : '',
     };
   } catch (error) {
-    return {
-      downloadLinks: {
-        alt: [],
-        primary: [],
-      },
-      version: '',
-      releaseDate: '',
-    };
+    console.warn(
+      'GitHub API unavailable, falling back to release manifests',
+      error,
+    );
+    return loadFromElectronBuilderManifests();
   }
 };
 
