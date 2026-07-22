@@ -52,6 +52,14 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
     <meta property="og:url" content={siteMetadata.url}>
     <meta property="og:image" content={ogImage}>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400..700&display=swap"
+      rel="stylesheet"
+    >
+
     <!-- Google Analytics and Site Verification -->
     <GoogleAnalytics />
     <meta
@@ -59,7 +67,9 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
       content={siteMetadata.google.siteVerification}
     >
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body
+    class="flex flex-col min-h-screen bg-gitify-ink text-gitify-text font-sans antialiased"
+  >
     <Navbar currentPathname={Astro.url.pathname} />
     <slot />
     <Footer currentPathname={Astro.url.pathname} />

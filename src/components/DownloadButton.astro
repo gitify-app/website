@@ -5,23 +5,23 @@ export interface Props {
   item: {
     url: string;
     name: string;
+    icon?: string;
   };
+  variant?: 'primary' | 'ghost';
 }
 
-const { item } = Astro.props;
+const { item, variant = 'ghost' } = Astro.props;
 ---
 
 <a
   href={item.url}
   class:list={[
-    "flex items-center",
-    "mb-3 px-4 py-3 mr-4",
-    "font-semibold rounded-md",
-    "text-gitify-link bg-gitify-download-rest hover:bg-gitify-download-hover",
+    "flex items-center gap-2.5 px-5 py-3 rounded-xl font-semibold text-sm transition-all",
+    variant === "primary"
+      ? "bg-gitify-accent text-gitify-ink shadow-lg shadow-gitify-accent/20 hover:bg-gitify-accent-bright hover:shadow-gitify-accent/30 hover:-translate-y-0.5"
+      : "border border-gitify-line bg-gitify-surface/60 text-gitify-text hover:border-gitify-accent/50 hover:bg-gitify-raised hover:-translate-y-0.5",
   ]}
 >
-  <div class="flex flex-row gap-2 items-center">
-    <Icon name="line-md:cloud-alt-download-filled" size={24} />
-    <span>{item.name}</span>
-  </div>
+  <Icon name={item.icon ?? "line-md:cloud-alt-download-filled"} size={20} />
+  <span>{item.name}</span>
 </a>

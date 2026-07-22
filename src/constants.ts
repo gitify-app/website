@@ -33,5 +33,16 @@ export const URLs = {
   GITHUB: {
     REPO: `https://github.com/${siteMetadata.repo.fullName}`,
     LATEST_RELEASE: `https://github.com/${siteMetadata.repo.fullName}/releases/latest`,
+    ISSUES: `https://github.com/${siteMetadata.repo.fullName}/issues`,
   },
+  HOMEBREW: 'https://formulae.brew.sh/cask/gitify',
 };
+
+export const forges = [
+  'GitHub Cloud',
+  'GitHub Enterprise',
+  'Gitea',
+  'Forgejo',
+  'Codeberg',
+  'Bitbucket Cloud',
+];

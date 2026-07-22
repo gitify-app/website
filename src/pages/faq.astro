@@ -39,13 +39,24 @@ const grouped = CATEGORY_ORDER.map((category) => ({
 ---
 
 <Layout title="Frequently Asked Questions">
-  <div class="container max-w-4xl mx-auto px-12 flex-1">
-    <div class="text-3xl text-center mt-12 mb-8">
-      Frequently Asked Questions
+  <div class="container max-w-4xl mx-auto px-6 flex-1">
+    <div class="mt-16 mb-12 text-center">
+      <p class="font-mono text-sm text-gitify-accent-bright">Support</p>
+      <h1
+        class="mt-3 font-display text-3xl lg:text-5xl font-bold tracking-tight"
+      >
+        Frequently Asked Questions
+      </h1>
+      <p class="mt-4 text-lg text-gitify-muted">
+        Everything you need to know about installing, using and contributing to
+        Gitify.
+      </p>
     </div>
     {grouped.map(({ category, faqs }) => (
-        <div class="mb-10">
-          <h2 class="text-xl font-semibold mb-4">{category}</h2>
+        <div class="mb-12">
+          <h2 class="font-mono text-sm uppercase tracking-widest text-gitify-muted mb-4">
+            {category}
+          </h2>
           <Accordion>
             {faqs.map((faq) => (
               <div id={faq.slug} class="faq-item">

@@ -1,70 +1,236 @@
 ---
 import { Icon } from 'astro-icon/components';
 
+import { forges, URLs } from '~/constants';
+
 import Hero from '~/components/Hero.astro';
 import { openSourceLibs } from '~/icons/icons';
 import Layout from '~/layouts/Layout.astro';
 import SectionRow from '~/layouts/SectionRow.astro';
+
+const features = [
+  {
+    icon: 'mdi:bell-badge-outline',
+    title: 'Your menu bar is the inbox',
+    description:
+      'A unified, real-time stream of mentions, review requests, assignments and CI results, always one click away. Badge counts keep you honest, and "mark all read" is your escape hatch.',
+    span: true,
+  },
+  {
+    icon: 'mdi:filter-outline',
+    title: 'Cut through the noise',
+    description:
+      'Filter by reason, repository, organization, subject type or state, and zero in on what actually needs you.',
+  },
+  {
+    icon: 'mdi:account-multiple-outline',
+    title: 'Every account, side by side',
+    description:
+      'Personal, work and enterprise accounts in a single tray, grouped and clearly labeled.',
+  },
+  {
+    icon: 'mdi:tune-variant',
+    title: 'Native and unobtrusive',
+    description:
+      'OS-native notifications with an optional sound, grouped by product or account. Unsubscribe from noisy threads right from the tray.',
+    span: true,
+  },
+  {
+    icon: 'mdi:laptop',
+    title: 'Truly cross-platform',
+    description:
+      'One app for macOS, Windows and Linux, with builds for every package format that matters.',
+  },
+  {
+    icon: 'mdi:palette-outline',
+    title: 'Make it yours',
+    description:
+      'Light, dark or system themes, appearance tweaks and launch at login. Gitify adapts to your workflow, not the other way around.',
+  },
+];
 ---
 
 <Layout title="Git notifications on your menu bar">
   <main>
     <Hero />
 
-    <SectionRow
-      title="All your Git notifications, right on your desktop."
-      description="<p>Gitify is all about making your life easier.</p><br /><p>Always visible on your menu bar, Gitify delivers real-time notifications across all your GitHub Cloud, GitHub Enterprise, Gitea (incl. Forgejo, Codeberg) and Bitbucket Cloud accounts.</p><br /><p>Stay on top of your work, effortlessly.</p>"
-      screenshot={{
-        path: "all-read",
-        alt: "Screenshot when there are no notifications read",
-      }}
-      isReversed
-      isDark
-    />
+    <!-- Forge strip -->
+    <section class="border-y border-gitify-line bg-gitify-surface/40">
+      <div
+        class="container max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-10"
+      >
+        <p
+          class="font-mono text-xs uppercase tracking-widest text-gitify-muted shrink-0"
+        >
+          One tray · every forge
+        </p>
+        <ul class="flex flex-wrap items-center gap-x-6 gap-y-3">
+          {forges.map((forge) => (
+              <li
+                class="font-display text-sm font-medium text-gitify-muted transition-colors hover:text-gitify-text"
+              >
+                {forge}
+              </li>
+            ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Bento features -->
+    <section class="container max-w-6xl mx-auto px-6 py-20 lg:py-28">
+      <p class="font-mono text-sm text-gitify-accent-bright">Why Gitify</p>
+      <h2
+        class="mt-3 font-display text-3xl lg:text-4xl font-semibold tracking-tight"
+      >
+        Built for developers who live in Git.
+      </h2>
+      <p class="mt-4 max-w-2xl text-lg text-gitify-muted">
+        Gitify is all about making your life easier. It sits quietly in your
+        menu bar and delivers real-time notifications across all your GitHub
+        Cloud, GitHub Enterprise and Gitea accounts, so you can stay on top of
+        your work, effortlessly.
+      </p>
+
+      <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature) => (
+            <div
+              class:list={[
+                "group rounded-2xl border border-gitify-line bg-gitify-surface/60 p-6 transition-colors hover:border-gitify-accent/40 hover:bg-gitify-surface",
+                feature.span && "lg:col-span-2",
+              ]}
+            >
+              <div class="flex size-10 items-center justify-center rounded-lg border border-gitify-line bg-gitify-raised text-gitify-accent-bright transition-colors group-hover:border-gitify-accent/40">
+                <Icon name={feature.icon} size={22} />
+              </div>
+              <h3 class="mt-5 font-display text-lg font-semibold">
+                {feature.title}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-gitify-muted">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+      </div>
+    </section>
 
     <SectionRow
-      title="Cut through the noise, focus on what matters."
-      description="<p>Inbox overflowing?</p><br /><p>Gitify helps you filter notifications so you can quickly zero in on what’s important.</p>"
+      eyebrow="Filters"
+      title="Inbox overflowing? Focus on what matters."
+      description="<p>Gitify helps you slice through the noise with powerful filters, so you can quickly zero in on the notifications that are important to you and quietly ignore the rest.</p>"
       screenshot={{
         path: "filters",
         alt: "Screenshot for notification filters",
       }}
+      isReversed
     />
 
     <SectionRow
+      eyebrow="Preferences"
       title="Your notifications, your way."
-      description="<p>Gitify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change it's appearance.</p><br /><p>It’s designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>"
+      description="<p>Gitify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change its appearance.</p><p>It's designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>"
       screenshot={{
         path: "settings",
         alt: "Screenshot for user preferences, settings",
       }}
-      isReversed
-      isDark
     />
 
-    <SectionRow
-      title="Free & Open Source."
-      description="Gitify is built with TypeScript, Electron, React, Tailwind CSS, and other open-source libraries.</p>"
-    >
-      <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
-        {openSourceLibs.map((item) => (
-            <div class="p-2 m-2 rounded-lg hover:motion-preset-pulse hover:motion-duration-1000">
+    <!-- Open source -->
+    <section class="border-t border-gitify-line bg-gitify-surface/40">
+      <div
+        class="container max-w-6xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-2 gap-16 items-center"
+      >
+        <div>
+          <p class="font-mono text-sm text-gitify-accent-bright">
+            Free &amp; open source
+          </p>
+          <h2
+            class="mt-3 font-display text-3xl lg:text-4xl font-semibold tracking-tight"
+          >
+            Open by default, free forever.
+          </h2>
+          <p class="mt-5 text-lg leading-relaxed text-gitify-muted">
+            Gitify is MIT-licensed and built in the open with TypeScript,
+            Electron, React, Tailwind CSS and other open-source libraries. Read
+            the code, report a bug or ship a feature with us.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href={URLs.GITHUB.REPO}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2.5 rounded-xl bg-gitify-accent px-5 py-3 text-sm font-semibold text-gitify-ink shadow-lg shadow-gitify-accent/20 transition-all hover:bg-gitify-accent-bright hover:-translate-y-0.5"
+            >
+              <Icon name="mdi:github" size={20} />
+              Star on GitHub
+            </a>
+            <a
+              href="/faq/"
+              class="flex items-center gap-2.5 rounded-xl border border-gitify-line bg-gitify-surface/60 px-5 py-3 text-sm font-semibold transition-all hover:border-gitify-accent/50 hover:bg-gitify-raised hover:-translate-y-0.5"
+            >
+              Read the FAQ
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-3 gap-4 rounded-2xl border border-gitify-line bg-gitify-surface/60 p-8"
+        >
+          {openSourceLibs.map((item) => (
               <a
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                class:list={["icon", item.color ?? "text-black"]}
+                title={item.name}
+                aria-label={item.name}
+                class="flex items-center justify-center rounded-xl border border-gitify-line bg-gitify-raised/60 p-4 text-gitify-muted transition-all hover:border-gitify-accent/40 hover:text-gitify-text hover:motion-preset-pulse hover:motion-duration-1000"
               >
-                <Icon
-                  name={item.svg}
-                  title={item.name}
-                  size={32}
-                  class="w-8 sm:w-12"
-                />
+                <Icon name={item.svg} size={36} />
               </a>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
-    </SectionRow>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative overflow-hidden">
+      <div
+        class="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_60%_80%_at_50%_100%,black,transparent)]"
+      ></div>
+      <div
+        class="pointer-events-none absolute -bottom-48 left-1/2 h-96 w-[64rem] -translate-x-1/2 rounded-full bg-gitify-accent/10 blur-[140px]"
+      ></div>
+      <div
+        class="relative container max-w-3xl mx-auto px-6 py-24 lg:py-32 text-center"
+      >
+        <h2
+          class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+        >
+          Ready to reach
+          <span class="text-gitify-accent-bright">inbox zero</span>?
+        </h2>
+        <p class="mt-5 text-lg text-gitify-muted">
+          Download Gitify for free and put your Git notifications where they
+          belong, on your menu bar.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <a
+            href={URLs.GITHUB.LATEST_RELEASE}
+            class="flex items-center gap-2.5 rounded-xl bg-gitify-accent px-6 py-3.5 font-semibold text-gitify-ink shadow-lg shadow-gitify-accent/20 transition-all hover:bg-gitify-accent-bright hover:-translate-y-0.5"
+          >
+            <Icon name="line-md:cloud-alt-download-filled" size={20} />
+            Download Gitify
+          </a>
+          <a
+            href={URLs.GITHUB.REPO}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2.5 rounded-xl border border-gitify-line bg-gitify-surface/60 px-6 py-3.5 font-semibold transition-all hover:border-gitify-accent/50 hover:bg-gitify-raised hover:-translate-y-0.5"
+          >
+            <Icon name="mdi:github" size={20} />
+            gitify-app/gitify
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
