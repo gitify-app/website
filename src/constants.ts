@@ -38,11 +38,26 @@ export const URLs = {
   HOMEBREW: 'https://formulae.brew.sh/cask/gitify',
 };
 
-export const forges = [
-  'GitHub Cloud',
-  'GitHub Enterprise',
-  'Gitea',
-  'Forgejo',
-  'Codeberg',
-  'Bitbucket Cloud',
+export const gitProviders = [
+  {
+    name: 'GitHub',
+    note: 'Cloud & Enterprise',
+    icon: 'simple-icons:github',
+  },
+  {
+    name: 'Gitea',
+    icon: 'simple-icons:gitea',
+  },
+  {
+    name: 'Forgejo',
+    icon: 'simple-icons:forgejo',
+  },
+  {
+    name: 'Codeberg',
+    icon: 'simple-icons:codeberg',
+  },
+  {
+    name: 'Bitbucket',
+    icon: 'simple-icons:bitbucket',
+  },
 ];

@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-import { forges, URLs } from '~/constants';
+import { gitProviders, URLs } from '~/constants';
 
 import Hero from '~/components/Hero.astro';
 import { openSourceLibs } from '~/icons/icons';
@@ -10,39 +10,31 @@ import SectionRow from '~/layouts/SectionRow.astro';
 
 const features = [
   {
-    icon: 'mdi:bell-badge-outline',
     title: 'Your menu bar is the inbox',
     description:
       'A unified, real-time stream of mentions, review requests, assignments and CI results, always one click away. Badge counts keep you honest, and "mark all read" is your escape hatch.',
-    span: true,
   },
   {
-    icon: 'mdi:filter-outline',
     title: 'Cut through the noise',
     description:
       'Filter by reason, repository, organization, subject type or state, and zero in on what actually needs you.',
   },
   {
-    icon: 'mdi:account-multiple-outline',
     title: 'Every account, side by side',
     description:
       'Personal, work and enterprise accounts in a single tray, grouped and clearly labeled.',
   },
   {
-    icon: 'mdi:tune-variant',
     title: 'Native and unobtrusive',
     description:
       'OS-native notifications with an optional sound, grouped by product or account. Unsubscribe from noisy threads right from the tray.',
-    span: true,
   },
   {
-    icon: 'mdi:laptop',
     title: 'Truly cross-platform',
     description:
       'One app for macOS, Windows and Linux, with builds for every package format that matters.',
   },
   {
-    icon: 'mdi:palette-outline',
     title: 'Make it yours',
     description:
       'Light, dark or system themes, appearance tweaks and launch at login. Gitify adapts to your workflow, not the other way around.',
@@ -54,29 +46,38 @@ const features = [
   <main>
     <Hero />
 
-    <!-- Forge strip -->
+    <!-- Provider strip -->
     <section class="border-y border-gitify-line bg-gitify-surface/40">
       <div
-        class="container max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-10"
+        class="container max-w-6xl mx-auto px-6 py-10 flex flex-col items-center gap-6"
       >
         <p
-          class="font-mono text-xs uppercase tracking-widest text-gitify-muted shrink-0"
+          class="font-mono text-xs uppercase tracking-widest text-gitify-muted"
         >
-          One tray · every forge
+          Works where your code lives
         </p>
-        <ul class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <ul class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
           {
-            forges.map((forge) => (
-              <li class="font-display text-sm font-medium text-gitify-muted transition-colors hover:text-gitify-text">
-                {forge}
+            gitProviders.map((provider) => (
+              <li class="flex items-center gap-2.5 text-gitify-muted transition-colors hover:text-gitify-text">
+                <Icon name={provider.icon} size={22} />
+                <span class="font-display text-sm font-medium">
+                  {provider.name}
+                  {provider.note && (
+                    <span class="text-gitify-muted/70"> · {provider.note}</span>
+                  )}
+                </span>
               </li>
             ))
           }
         </ul>
+        <p class="text-sm text-gitify-muted">
+          Personal, work and enterprise accounts, side by side in one tray.
+        </p>
       </div>
     </section>
 
-    <!-- Bento features -->
+    <!-- Feature index -->
     <section class="container max-w-6xl mx-auto px-6 py-20 lg:py-28">
       <p class="font-mono text-sm text-gitify-accent-bright">Why Gitify</p>
       <h2
@@ -85,34 +86,29 @@ const features = [
         Built for developers who live in Git.
       </h2>
       <p class="mt-4 max-w-2xl text-lg text-gitify-muted">
-        Gitify is all about making your life easier. It sits quietly in your
-        menu bar and delivers real-time notifications across all your GitHub
-        Cloud, GitHub Enterprise and Gitea accounts, so you can stay on top of
-        your work, effortlessly.
+        All your notifications, from every account and provider, in one place,
+        so you can stay on top of your work, effortlessly.
       </p>
 
-      <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <ol class="mt-12 border-t border-gitify-line">
         {
-          features.map((feature) => (
-            <div
-              class:list={[
-                'group rounded-2xl border border-gitify-line bg-gitify-surface/60 p-6 transition-colors hover:border-gitify-accent/40 hover:bg-gitify-surface',
-                feature.span && 'lg:col-span-2',
-              ]}
-            >
-              <div class="flex size-10 items-center justify-center rounded-lg border border-gitify-line bg-gitify-raised text-gitify-accent-bright transition-colors group-hover:border-gitify-accent/40">
-                <Icon name={feature.icon} size={22} />
+          features.map((feature, index) => (
+            <li class="group border-b border-gitify-line py-8 transition-colors hover:bg-gitify-surface/40">
+              <div class="grid gap-3 px-2 sm:px-4 lg:grid-cols-[auto_1fr_1fr] lg:items-baseline lg:gap-12">
+                <span class="font-mono text-sm text-gitify-accent-bright/60 transition-colors group-hover:text-gitify-accent-bright">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 class="font-display text-2xl lg:text-3xl font-semibold tracking-tight transition-all group-hover:translate-x-1 group-hover:text-gitify-accent-bright">
+                  {feature.title}
+                </h3>
+                <p class="max-w-md leading-relaxed text-gitify-muted lg:justify-self-end">
+                  {feature.description}
+                </p>
               </div>
-              <h3 class="mt-5 font-display text-lg font-semibold">
-                {feature.title}
-              </h3>
-              <p class="mt-2 text-sm leading-relaxed text-gitify-muted">
-                {feature.description}
-              </p>
-            </div>
+            </li>
           ))
         }
-      </div>
+      </ol>
     </section>
 
     <SectionRow
@@ -215,8 +211,8 @@ const features = [
           <span class="text-gitify-accent-bright">inbox zero</span>?
         </h2>
         <p class="mt-5 text-lg text-gitify-muted">
-          Download Gitify for free and put your Git notifications where they
-          belong, on your menu bar.
+          Download Gitify and put your Git notifications where they belong, on
+          your menu bar.
         </p>
         <div class="mt-10 flex flex-wrap justify-center gap-3">
           <a
