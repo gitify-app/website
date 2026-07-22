@@ -1,0 +1,55 @@
+src/components/Footer.astro
+  h_ac004aadb63da9 28,30
+src/constants.ts
+  s_00ef801154a9d3::t_9697ea877a6c20 15
+src/faqs/getting-started/github-enterprise-server.md
+  s_00ef801154a9d3::t_1e74c5d255c349 16
+  s_00ef801154a9d3::t_67ebda51a39603 6,8,10-12,14
+  s_00ef801154a9d3::t_b0010d9b5dcbbd 15
+src/pages/index.astro
+  s_00ef801154a9d3::t_c6fe570c3f62e1 16
+src/faqs/getting-started/multiple-accounts.md
+  s_00ef801154a9d3::t_8d56fc3a4a03a6 2,6,10
+  s_00ef801154a9d3::t_1e74c5d255c349 16-17
+src/faqs/getting-started/authentication-methods.md
+  s_00ef801154a9d3::t_7f9a2f79d5c347 6-8,15-22
+src/faqs/troubleshooting/notifications-not-showing.md
+  s_00ef801154a9d3::t_67ebda51a39603 15-16
+  s_00ef801154a9d3::t_dc9a736cf02f71 6-9,13,17,30-41
+src/faqs/getting-started/supported-forges.md
+  s_00ef801154a9d3::t_67ebda51a39603 10
+  s_00ef801154a9d3::t_335f47f52581ab 1-9,11-15,17
+  s_00ef801154a9d3::t_1e74c5d255c349 16,18
+src/faqs/getting-started/github-sso-pat-authorization.md
+  s_00ef801154a9d3::t_a22e9d63221071 1-18
+src/faqs/using-gitify/unsubscribe-from-thread.md
+  s_00ef801154a9d3::t_7b1c72067d4dc8 2
+  s_00ef801154a9d3::t_1e74c5d255c349 8
+src/faqs/troubleshooting/chrome-sandbox-linux.md
+  s_00ef801154a9d3::t_7b1c72067d4dc8 2
+src/faqs/getting-started/oauth-app-setup.md
+  s_00ef801154a9d3::t_1e74c5d255c349 6-8
+src/faqs/getting-started/github-scopes.md
+  s_00ef801154a9d3::t_1e74c5d255c349 4,7-8,23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "77f898ebe84f32bed12b4fbf9abc0abfc7acf781",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_00ef801154a9d3": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "ade86bfe-7bd4-48c1-bebd-a06fe73e03eb",
+        "model": "claude-sonnet-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
