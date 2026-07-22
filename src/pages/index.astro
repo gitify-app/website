@@ -65,13 +65,13 @@ const features = [
           One tray · every forge
         </p>
         <ul class="flex flex-wrap items-center gap-x-6 gap-y-3">
-          {forges.map((forge) => (
-              <li
-                class="font-display text-sm font-medium text-gitify-muted transition-colors hover:text-gitify-text"
-              >
+          {
+            forges.map((forge) => (
+              <li class="font-display text-sm font-medium text-gitify-muted transition-colors hover:text-gitify-text">
                 {forge}
               </li>
-            ))}
+            ))
+          }
         </ul>
       </div>
     </section>
@@ -92,11 +92,12 @@ const features = [
       </p>
 
       <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature) => (
+        {
+          features.map((feature) => (
             <div
               class:list={[
-                "group rounded-2xl border border-gitify-line bg-gitify-surface/60 p-6 transition-colors hover:border-gitify-accent/40 hover:bg-gitify-surface",
-                feature.span && "lg:col-span-2",
+                'group rounded-2xl border border-gitify-line bg-gitify-surface/60 p-6 transition-colors hover:border-gitify-accent/40 hover:bg-gitify-surface',
+                feature.span && 'lg:col-span-2',
               ]}
             >
               <div class="flex size-10 items-center justify-center rounded-lg border border-gitify-line bg-gitify-raised text-gitify-accent-bright transition-colors group-hover:border-gitify-accent/40">
@@ -109,7 +110,8 @@ const features = [
                 {feature.description}
               </p>
             </div>
-          ))}
+          ))
+        }
       </div>
     </section>
 
@@ -118,8 +120,8 @@ const features = [
       title="Inbox overflowing? Focus on what matters."
       description="<p>Gitify helps you slice through the noise with powerful filters, so you can quickly zero in on the notifications that are important to you and quietly ignore the rest.</p>"
       screenshot={{
-        path: "filters",
-        alt: "Screenshot for notification filters",
+        path: 'filters',
+        alt: 'Screenshot for notification filters',
       }}
       isReversed
     />
@@ -129,8 +131,8 @@ const features = [
       title="Your notifications, your way."
       description="<p>Gitify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change its appearance.</p><p>It's designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>"
       screenshot={{
-        path: "settings",
-        alt: "Screenshot for user preferences, settings",
+        path: 'settings',
+        alt: 'Screenshot for user preferences, settings',
       }}
     />
 
@@ -175,7 +177,8 @@ const features = [
         <div
           class="grid grid-cols-3 gap-4 rounded-2xl border border-gitify-line bg-gitify-surface/60 p-8"
         >
-          {openSourceLibs.map((item) => (
+          {
+            openSourceLibs.map((item) => (
               <a
                 href={item.link}
                 target="_blank"
@@ -186,7 +189,8 @@ const features = [
               >
                 <Icon name={item.svg} size={36} />
               </a>
-            ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -195,10 +199,12 @@ const features = [
     <section class="relative overflow-hidden">
       <div
         class="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_60%_80%_at_50%_100%,black,transparent)]"
-      ></div>
+      >
+      </div>
       <div
         class="pointer-events-none absolute -bottom-48 left-1/2 h-96 w-[64rem] -translate-x-1/2 rounded-full bg-gitify-accent/10 blur-[140px]"
-      ></div>
+      >
+      </div>
       <div
         class="relative container max-w-3xl mx-auto px-6 py-24 lg:py-32 text-center"
       >

@@ -24,21 +24,23 @@ const { currentPathname } = Astro.props;
       </a>
 
       <ul class="flex flex-row items-center list-none gap-2 sm:gap-6">
-        {siteMetadata.menuLinks.map((item) => (
+        {
+          siteMetadata.menuLinks.map((item) => (
             <li>
               <a
                 href={item.path}
                 class:list={[
-                  "px-3 py-1.5 rounded-full text-sm transition-colors",
+                  'px-3 py-1.5 rounded-full text-sm transition-colors',
                   currentPathname === item.path
-                    ? "bg-gitify-raised text-gitify-text font-medium"
-                    : "text-gitify-muted hover:text-gitify-text",
+                    ? 'bg-gitify-raised text-gitify-text font-medium'
+                    : 'text-gitify-muted hover:text-gitify-text',
                 ]}
               >
                 {item.name}
               </a>
             </li>
-          ))}
+          ))
+        }
 
         <li><GitHubRepo /></li>
       </ul>

@@ -1,8 +1,9 @@
 ---
-title: "How can I contribute to Gitify?"
-category: "Contributing"
+title: 'How can I contribute to Gitify?'
+category: 'Contributing'
 order: 1
 ---
+
 You can contribute to Gitify by opening an issue or pull request on GitHub at [gitify-app/gitify](https://github.com/gitify-app/gitify).
 
 Before contributing, please review our [CONTRIBUTING.md](https://github.com/gitify-app/gitify/blob/main/CONTRIBUTING.md) guide for details on branch naming, the PR process, and code style.

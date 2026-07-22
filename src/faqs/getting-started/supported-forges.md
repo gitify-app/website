@@ -1,8 +1,9 @@
 ---
-title: "Which Git forges does Gitify support?"
-category: "Getting Started"
+title: 'Which Git forges does Gitify support?'
+category: 'Getting Started'
 order: 0
 ---
+
 Gitify supports notifications from the following Git forges:
 
 - **GitHub Cloud** — `github.com`

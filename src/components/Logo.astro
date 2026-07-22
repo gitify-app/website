@@ -27,23 +27,21 @@ const { isDark = false, className = '' } = Astro.props;
       y1="80.0676288%"
       x2="-1.30249747%"
       y2="32.7108237%"
-      id={isDark ? "linearGradient-dark" : "linearGradient-light"}
+      id={isDark ? 'linearGradient-dark' : 'linearGradient-light'}
     >
       <stop
         stop-color={isDark ? DARK_GRADIENT_START : LIGHT_GRADIENT_START}
-        offset="0%"
-      ></stop>
+        offset="0%"></stop>
       <stop
         stop-color={isDark ? DARK_GRADIENT_END : LIGHT_GRADIENT_END}
-        offset="100%"
-      ></stop>
+        offset="100%"></stop>
     </linearGradient>
   </defs>
   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g
       id="Logo"
       transform="translate(6.000000, 6.000000)"
-      fill={`url(${isDark ? "#linearGradient-dark" : "#linearGradient-light"}
+      fill={`url(${isDark ? '#linearGradient-dark' : '#linearGradient-light'}
       )`}
       fill-rule="nonzero"
     >

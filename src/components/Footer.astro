@@ -29,7 +29,8 @@ const links = [
       </div>
 
       <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-        {links.map((link) => (
+        {
+          links.map((link) => (
             <li>
               <a
                 href={link.path}
@@ -38,7 +39,8 @@ const links = [
                 {link.name}
               </a>
             </li>
-          ))}
+          ))
+        }
         <li>
           <a
             target="_blank"
@@ -57,7 +59,7 @@ const links = [
       class="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-t border-gitify-line pt-6 font-mono text-xs text-gitify-muted"
     >
       <span>
-        © {new Date().getFullYear()}{" "}
+        © {new Date().getFullYear()}{' '}
         <a
           href={siteMetadata.author.site}
           class="hover:text-gitify-text transition-colors"

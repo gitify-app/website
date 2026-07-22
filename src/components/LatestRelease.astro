@@ -103,13 +103,14 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
 ---
 
 <div class="mt-8">
-  {version ? (
+  {
+    version ? (
       <>
         <div class="flex flex-wrap gap-3">
           {downloadLinks.primary.map((item, index) => (
             <DownloadButton
               item={{ ...item, icon: osIcons[item.os] }}
-              variant={index === 0 ? "primary" : "ghost"}
+              variant={index === 0 ? 'primary' : 'ghost'}
             />
           ))}
         </div>
@@ -150,9 +151,10 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           variant="primary"
           item={{
             url: URLs.GITHUB.LATEST_RELEASE,
-            name: "View GitHub Releases",
+            name: 'View GitHub Releases',
           }}
         />
       </div>
-    )}
+    )
+  }
 </div>

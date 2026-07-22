@@ -1,6 +1,6 @@
 ---
-title: "What GitHub scopes does Gitify require?"
-category: "Getting Started"
+title: 'What GitHub scopes does Gitify require?'
+category: 'Getting Started'
 order: 6
 ---
 
@@ -15,6 +15,7 @@ Scopes are pre-configured by Gitify and requested automatically during sign-in. 
 **Personal Access Token (PAT)**:
 
 When generating a PAT, the following scopes are required:
+
 - `notifications` — to read GitHub notifications
 - `read:user` — to read your GitHub user details (name, profile, avatar)
 - `repo` — to enrich notification details for public and private repositories

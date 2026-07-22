@@ -56,23 +56,29 @@ const { forks, stars, latestReleaseName } = await loadRepoStats();
     class="text-gitify-muted transition-colors group-hover:text-gitify-text"
   />
   <div class="flex items-center gap-3 font-mono text-xs text-gitify-muted">
-    {stars && (
+    {
+      stars && (
         <span class="hidden sm:flex items-center gap-1">
           <Icon name="mdi:star-outline" />
           {stars}
         </span>
-      )}
-    {forks && (
+      )
+    }
+    {
+      forks && (
         <span class="hidden md:flex items-center gap-1">
           <Icon name="mdi:source-branch" />
           {forks}
         </span>
-      )}
-    {latestReleaseName && (
+      )
+    }
+    {
+      latestReleaseName && (
         <span class="hidden lg:flex items-center gap-1 text-gitify-accent-bright">
           <Icon name="mdi:tag-outline" />
           {latestReleaseName}
         </span>
-      )}
+      )
+    }
   </div>
 </a>
