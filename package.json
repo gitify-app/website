@@ -3,32 +3,19 @@
   "version": "latest",
   "private": true,
   "description": "The source code of gitify.io",
-  "type": "module",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "prepare": "husky",
-    "astro": "astro",
-    "lint:check": "biome check",
-    "lint": "biome check --fix"
-  },
-  "engines": {
-    "node": ">=24"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gitify-app/website"
-  },
   "keywords": [
-    "gitify",
+    "astro",
     "github",
-    "notifier",
+    "gitify",
     "notifications",
-    "website",
-    "astro"
+    "notifier",
+    "website"
   ],
+  "homepage": "https://gitify.io",
+  "bugs": {
+    "url": "https://github.com/gitify-app/website/issues"
+  },
+  "license": "MIT",
   "author": {
     "name": "Emmanouil Konstantinidis",
     "email": "hello@manos.im"
@@ -43,11 +30,21 @@
       "url": "https://github.com/setchy"
     }
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gitify-app/website/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitify-app/website"
   },
-  "homepage": "https://gitify.io",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "prepare": "husky",
+    "astro": "astro",
+    "lint:check": "oxlint && oxfmt --check && prettier --check \"src/**/*.astro\"",
+    "lint": "oxlint --fix && oxfmt && prettier --write \"src/**/*.astro\""
+  },
   "dependencies": {
     "@iconify-json/line-md": "1.2.16",
     "@iconify-json/mdi": "1.2.3",
@@ -65,11 +62,19 @@
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.5",
-    "husky": "9.1.7"
+    "@astrojs/compiler": "4.0.0",
+    "husky": "9.1.7",
+    "oxfmt": "0.60.0",
+    "oxlint": "1.75.0",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1"
   },
-  "packageManager": "pnpm@11.17.0",
   "lint-staged": {
-    "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
-  }
+    "*.{js,ts,cjs,mjs,json,css,md}": "oxfmt",
+    "*.astro": "prettier --write"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.17.0"
 }

@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "default-param-last": "error",
+    "no-else-return": "error",
+    "no-param-reassign": "error",
+    "typescript/no-inferrable-types": "error",
+    "typescript/prefer-as-const": "error",
+    "unicorn/prefer-number-properties": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.astro"],
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["src/env.d.ts"],
+      "rules": {
+        "typescript/triple-slash-reference": "off"
+      }
+    }
+  ]
+}
