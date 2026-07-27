@@ -155,7 +155,7 @@ const loadInitialData = async (): Promise<HeroData> => {
   }
 };
 
-const { downloadLinks, version, releaseDate } = await loadInitialData();
+const { downloadLinks, version } = await loadInitialData();
 ---
 
 <div class="mt-8">
@@ -171,35 +171,22 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           ))}
         </div>
 
-        <div class="mt-5 font-mono text-xs text-gitify-muted space-y-2">
-          <div class="flex flex-wrap items-center gap-x-2">
-            <span class="inline-block size-1.5 rounded-full bg-gitify-accent" />
-            <a
-              href={URLs.GITHUB.LATEST_RELEASE}
-              class="text-gitify-accent-bright hover:underline"
-            >
-              {version}
-            </a>
-            <span aria-hidden="true">·</span>
-            <span>released {releaseDate}</span>
+        {downloadLinks.alt.length > 0 && (
+          <div class="mt-5 flex flex-wrap items-center gap-x-2 font-mono text-xs text-gitify-muted">
+            <span>also on</span>
+            {downloadLinks.alt.map((platform, index) => (
+              <>
+                {index > 0 && <span aria-hidden="true">·</span>}
+                <a
+                  href={platform.url || URLs.GITHUB.LATEST_RELEASE}
+                  class="text-gitify-text hover:text-gitify-accent-bright hover:underline"
+                >
+                  {platform.name}
+                </a>
+              </>
+            ))}
           </div>
-          {downloadLinks.alt.length > 0 && (
-            <div class="flex flex-wrap items-center gap-x-2">
-              <span>also on</span>
-              {downloadLinks.alt.map((platform, index) => (
-                <>
-                  {index > 0 && <span aria-hidden="true">·</span>}
-                  <a
-                    href={platform.url || URLs.GITHUB.LATEST_RELEASE}
-                    class="text-gitify-text hover:text-gitify-accent-bright hover:underline"
-                  >
-                    {platform.name}
-                  </a>
-                </>
-              ))}
-            </div>
-          )}
-        </div>
+        )}
       </>
     ) : (
       <div class="flex">
