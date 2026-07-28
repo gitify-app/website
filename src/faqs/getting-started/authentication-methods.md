@@ -1,8 +1,9 @@
 ---
-title: "What authentication methods does Gitify support?"
-category: "Getting Started"
+title: 'What authentication methods does Gitify support?'
+category: 'Getting Started'
 order: 1
 ---
+
 Authentication methods vary by forge:
 
 ### GitHub Cloud & GitHub Enterprise Server

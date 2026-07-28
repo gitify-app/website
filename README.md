@@ -1,6 +1,6 @@
-# gitify.io 
+# gitify.io
 
-[![Netlify Status][netlify-badge]][netlify-deploys] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] 
+[![Netlify Status][netlify-badge]][netlify-deploys] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license]
 
 > The source code for our gitify.io website
 
@@ -44,6 +44,7 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro --help` | Get help using the Astro CLI                       |
 
 <!-- LINK LABELS -->
+
 [github]: https://github.com/gitify-app/website
 [contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website?logo=github
 [netlify-badge]: https://img.shields.io/netlify/a060080d-e0bd-46bf-a2b5-0290a18ead9d?logo=netlify&logoColor=white

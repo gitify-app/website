@@ -33,5 +33,31 @@ export const URLs = {
   GITHUB: {
     REPO: `https://github.com/${siteMetadata.repo.fullName}`,
     LATEST_RELEASE: `https://github.com/${siteMetadata.repo.fullName}/releases/latest`,
+    ISSUES: `https://github.com/${siteMetadata.repo.fullName}/issues`,
   },
+  HOMEBREW: 'https://formulae.brew.sh/cask/gitify',
 };
+
+export const gitProviders = [
+  {
+    name: 'GitHub',
+    note: 'Cloud & Enterprise',
+    icon: 'simple-icons:github',
+  },
+  {
+    name: 'Gitea',
+    icon: 'simple-icons:gitea',
+  },
+  {
+    name: 'Forgejo',
+    icon: 'simple-icons:forgejo',
+  },
+  {
+    name: 'Codeberg',
+    icon: 'simple-icons:codeberg',
+  },
+  {
+    name: 'Bitbucket',
+    icon: 'simple-icons:bitbucket',
+  },
+];

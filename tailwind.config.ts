@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import colors from 'tailwindcss/colors';
 import TailwindCSSMotion from 'tailwindcss-motion';
 
 const config: Config = {
@@ -8,27 +7,32 @@ const config: Config = {
     extend: {
       colors: {
         gitify: {
-          navbar: '#24292e',
-          footer: colors.gray[800],
-          section: {
-            light: colors.gray[50],
-            dark: colors.gray[800],
-          },
-          hero: colors.gray[100],
-          repo: {
-            hover: colors.gray[300],
-          },
-          link: colors.white,
-          download: {
-            link: colors.black,
-            rest: colors.green[700],
-            hover: colors.green[800],
-          },
-          button: {
-            rest: colors.blue[600],
-            hover: colors.blue[700],
-          },
+          ink: '#0A0E13',
+          surface: '#10151C',
+          raised: '#171E27',
+          line: 'rgba(148, 163, 184, 0.14)',
+          accent: '#3FB950',
+          'accent-bright': '#56D364',
+          'accent-soft': 'rgba(63, 185, 80, 0.12)',
+          text: '#E6EDF3',
+          muted: '#8B98A9',
         },
+      },
+      fontFamily: {
+        sans: ['"Instrument Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: [
+          '"Space Grotesk"',
+          '"Instrument Sans"',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
+        mono: [
+          '"JetBrains Mono"',
+          'ui-monospace',
+          'SFMono-Regular',
+          'monospace',
+        ],
       },
     },
   },

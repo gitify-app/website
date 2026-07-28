@@ -1,37 +1,65 @@
 ---
 import { Image } from 'astro:assets';
 
-import { siteMetadata } from '~/constants';
-
 import notifications from '~/assets/notifications.png';
 import LatestRelease from '~/components/LatestRelease.astro';
-import Logo from '~/components/Logo.astro';
 ---
 
-<div class="bg-gitify-hero">
+<header class="relative overflow-hidden">
   <div
-    class="container flex flex-col md:flex-row lg:items-center max-w-5xl mx-auto px-12 py-8 lg:py-16"
+    class="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]"
   >
-    <div class="flex flex-col justify-center grow">
-      <Logo className="w-16 lg:w-24 mb-4" isDark />
+  </div>
+  <div
+    class="pointer-events-none absolute -top-48 left-1/2 h-96 w-[64rem] -translate-x-1/2 rounded-full bg-gitify-accent/10 blur-[140px]"
+  >
+  </div>
 
-      <h1 class="text-2xl lg:text-4xl font-semibold">{siteMetadata.title}</h1>
+  <div
+    class="relative container max-w-6xl mx-auto px-6 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-2 gap-16 items-center"
+  >
+    <div>
+      <h1
+        class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight"
+      >
+        Git notifications, right on your{' '}
+        <span class="text-gitify-accent-bright">menu bar</span>.
+      </h1>
 
-      <h2 class="mt-2 text-xl lg:text-2xl font-light">
-        {siteMetadata.description}.
-      </h2>
+      <p class="mt-6 max-w-md text-lg leading-relaxed text-gitify-muted">
+        Gitify pulls every mention, review request and failing check out of your
+        inbox and into one quiet, always-visible tray. Inbox zero, without the
+        tab hoarding.
+      </p>
 
       <LatestRelease />
+
+      <div class="mt-6 flex items-center gap-3">
+        <code
+          class="rounded-lg border border-gitify-line bg-gitify-surface px-3 py-2 font-mono text-xs text-gitify-muted"
+        >
+          <span class="text-gitify-accent-bright">$</span>{' '}
+          brew install --cask gitify
+        </code>
+      </div>
     </div>
 
-    <div class="motion-preset-pop motion-rotate-in-[-30deg]">
-      <Image
-        class="block w-full max-w-sm mx-auto h-auto shadow-2xl rounded-xl transform rotate-6 mt-16 mb-8 md:ml-16 md:my-16"
-        src={notifications}
-        alt="Gitify - Notifications"
-        width="500"
-        height="400"
-      />
+    <div class="relative motion-preset-pop motion-duration-1000">
+      <div
+        class="pointer-events-none absolute inset-8 rounded-full bg-gitify-accent/20 blur-[80px]"
+      >
+      </div>
+      <div
+        class="relative overflow-hidden rounded-2xl border border-gitify-line bg-gitify-surface shadow-2xl shadow-black/60"
+      >
+        <Image
+          class="block w-full h-auto"
+          src={notifications}
+          alt="Gitify - Notifications"
+          width="500"
+          height="400"
+        />
+      </div>
     </div>
   </div>
-</div>
+</header>

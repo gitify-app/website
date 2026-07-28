@@ -1,11 +1,13 @@
 ---
-title: "How do I add multiple accounts?"
-category: "Getting Started"
+title: 'How do I add multiple accounts?'
+category: 'Getting Started'
 order: 4
 ---
+
 Gitify supports signing in to multiple accounts simultaneously — for example, a personal GitHub Cloud account alongside a Gitea or Bitbucket Cloud account.
 
 To add an account:
+
 - Open the **Accounts** screen from the Gitify sidebar
 - Click **Add new account** and choose your forge and preferred authentication method
 - Complete the sign-in flow for the additional account
