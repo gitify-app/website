@@ -74,6 +74,20 @@
     "*.{js,ts,cjs,mjs,json,css,md}": "oxfmt",
     "*.astro": "prettier --write"
   },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.astro",
+        "options": {
+          "parser": "astro"
+        }
+      }
+    ],
+    "plugins": [
+      "prettier-plugin-astro"
+    ],
+    "singleQuote": true
+  },
   "engines": {
     "node": ">=24"
   },
