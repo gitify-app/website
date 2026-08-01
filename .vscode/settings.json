@@ -15,5 +15,9 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "cSpell.words": ["Gitify"]
+  "cSpell.words": ["Gitify"],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "gitify-app",
+    "projectKey": "gitify-app_website"
+  }
 }
