@@ -20,12 +20,29 @@ a:not(.gitify-repo) {
   @apply mb-0;
 }
 
+.faq a {
+  @apply text-gitify-button-rest underline underline-offset-4;
+  cursor: pointer;
+}
+
 .faq ul {
   @apply list-disc ml-4 mb-3;
 }
 
 .faq ul > li {
   @apply ml-2;
+}
+
+.faq ol {
+  @apply list-decimal ml-4 mb-3;
+}
+
+.faq ol > li {
+  @apply ml-2;
+}
+
+.faq h3 {
+  @apply mt-4 mb-2 text-base font-semibold;
 }
 
 .faq code {
@@ -85,4 +102,8 @@ a:not(.gitify-repo) {
 
 .faq-copy-link--copied {
   @apply opacity-100 text-green-500;
+}
+
+.faq-copy-link--failed {
+  @apply opacity-100 text-red-500;
 }
