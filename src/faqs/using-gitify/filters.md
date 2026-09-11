@@ -1,5 +1,5 @@
 ---
-title: "How do Filters work?"
+title: "How do filters work?"
 category: "Using Gitify"
 order: 0
 ---

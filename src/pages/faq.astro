@@ -58,6 +58,10 @@ const grouped = CATEGORY_ORDER.map((category) => ({
     <div class="text-3xl text-center mt-12 mb-3">
       Frequently Asked Questions
     </div>
+    <p class="text-center text-gray-600 dark:text-gray-400 mb-8">
+      Answers are grouped by topic. Use the copy-link control on a question to
+      share it.
+    </p>
     {grouped.map(({ category, faqs }) => (
         <div class="mb-10">
           <h2 class="text-xl font-semibold mb-4">{category}</h2>
@@ -231,7 +235,7 @@ function openFromHash() {
 
 document.addEventListener('click', (event) => {
   const anchor = (event.target as Element | null)?.closest('a');
-  if (!anchor || !anchor.href) {
+  if (!anchor?.href) {
     return;
   }
 
