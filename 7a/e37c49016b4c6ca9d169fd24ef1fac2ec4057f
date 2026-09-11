@@ -1,0 +1,30 @@
+src/faqs/getting-started/authentication-methods.md
+  h_ac004aadb63da9 8,10-12,14,23-26
+src/faqs/getting-started/github-enterprise-server.md
+  h_ac004aadb63da9 2,6,10,12,14-16
+src/faqs/getting-started/github-scopes.md
+  h_ac004aadb63da9 7,11,15,17,24-26
+src/faqs/getting-started/github-sso-pat-authorization.md
+  h_ac004aadb63da9 2,6,8-9
+src/faqs/getting-started/multiple-accounts.md
+  h_ac004aadb63da9 6
+src/faqs/getting-started/oauth-app-setup.md
+  h_ac004aadb63da9 2,6,8-9,15
+src/faqs/getting-started/supported-forges.md
+  h_ac004aadb63da9 8,10,15-17
+src/faqs/troubleshooting/notifications-not-showing.md
+  h_ac004aadb63da9 7,9-11,13,17-20,28
+src/pages/index.astro
+  h_ac004aadb63da9 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7ae37c49016b4c6ca9d169fd24ef1fac2ec4057f",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
