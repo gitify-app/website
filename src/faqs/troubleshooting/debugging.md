@@ -1,20 +1,21 @@
 ---
-title: 'How do I debug Gitify?'
-category: 'Troubleshooting'
+title: "How do I debug Gitify?"
+category: "Troubleshooting"
 order: 2
 ---
+You can inspect Gitify with developer tools or by reading its log files.
 
-Using **Chrome Developer Tools** (console logs, network requests, etc):
+### Chrome Developer Tools
 
-Right-click the tray icon and select _Developer → Toggle Developer Tools_, or use the keyboard shortcut for your platform:
+Console logs, network requests, and similar:
 
-- macOS: `command + opt + i`
-- Windows / Linux: `ctrl + shift + i`
+1. Right-click the tray icon and select **Developer → Toggle Developer Tools**, or use the shortcut for your platform:
+   - macOS: `command + opt + i`
+   - Windows / Linux: `ctrl + shift + i`
 
-Using **Application Log Files**:
+### Application log files
 
-Right-click the tray icon and select _Developer → View Application Logs_, or navigate directly to the log directory for your platform:
-
-- macOS: `~/Library/Logs/gitify`
-- Windows: `%USERPROFILE%\AppData\Roaming\gitify\logs`
-- Linux: `~/.config/gitify/logs`
+1. Right-click the tray icon and select **Developer → View Application Logs**, or open the log folder for your platform:
+   - macOS: `~/Library/Logs/gitify`
+   - Windows: `%USERPROFILE%\AppData\Roaming\gitify\logs`
+   - Linux: `~/.config/gitify/logs`

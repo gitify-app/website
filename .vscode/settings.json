@@ -9,5 +9,9 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
-  "cSpell.words": ["Gitify"]
+  "cSpell.words": ["Gitify"],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "gitify-app",
+    "projectKey": "gitify-app_website"
+  }
 }

@@ -126,3 +126,57 @@ body {
 .faq-copy-link--copied {
   @apply opacity-100 text-gitify-accent;
 }
+
+.faq-copy-link--failed {
+  @apply opacity-100 text-red-500;
+}
+
+.faq ol {
+  @apply list-decimal ml-4 mb-3;
+}
+
+.faq ol > li {
+  @apply ml-2 my-1;
+  overflow-wrap: break-word;
+}
+
+.faq h3 {
+  @apply mt-6 mb-2 pb-1 text-sm font-semibold tracking-wide text-gitify-text border-b border-gitify-line;
+  scroll-margin-top: 1rem;
+}
+
+.faq h4 {
+  @apply mt-4 mb-1.5 text-sm font-semibold text-gitify-text;
+  scroll-margin-top: 1rem;
+}
+
+.faq-meta-label {
+  @apply text-xs font-semibold uppercase tracking-wide text-gitify-muted mr-1;
+}
+
+.faq-jump,
+.faq-related {
+  @apply flex flex-wrap items-center gap-2 my-4 px-3 py-2.5 rounded-lg bg-gitify-raised/60 border border-gitify-line;
+}
+
+.faq-jump {
+  @apply mb-5;
+}
+
+.faq-jump + h3 {
+  @apply mt-2;
+}
+
+.faq-related {
+  @apply mt-6;
+}
+
+.faq-jump a,
+.faq-related a {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-sm font-semibold no-underline bg-gitify-surface border border-gitify-line text-gitify-accent-bright;
+}
+
+.faq-jump a:hover,
+.faq-related a:hover {
+  @apply border-gitify-accent/50 bg-gitify-accent-soft;
+}

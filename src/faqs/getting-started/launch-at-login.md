@@ -1,15 +1,12 @@
 ---
-title: 'How do I launch Gitify at login?'
-category: 'Getting Started'
-order: 5
+title: "How do I launch Gitify at login?"
+category: "Getting Started"
+order: 7
 ---
+Gitify can start automatically when you log in to your computer.
 
-Gitify can be configured to start automatically when you log in to your computer.
+1. Open **Settings** in Gitify.
+2. Go to the **System** section.
+3. Turn on **Open at startup**.
 
-To enable this:
-
-- Open **Settings** in Gitify
-- Navigate to the **System** section
-- Toggle **Open at startup**
-
-> **Note:** This setting is available on **macOS and Windows** only. On Linux, startup behaviour is managed by your desktop environment or init system.
+> **Note:** This setting is available on **macOS and Windows** only. On Linux, use your desktop environment or init system to start Gitify at login.

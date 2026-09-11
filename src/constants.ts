@@ -12,7 +12,7 @@ export const siteMetadata = {
     site: 'https://github.com/orgs/gitify-app/people',
   },
   keywords:
-    'gitify,desktop,application,github,gitea,codeberg,forgejo,bitbucket,notifications,unread,menu bar,electron,open source,mac,windows,linux',
+    'gitify,desktop,application,github,gitea,codeberg,forgejo,gitlab,bitbucket,notifications,unread,menu bar,electron,open source,mac,windows,linux',
   google: {
     gtags: ['G-QXML81DEDV', 'G-H4MTPZP3HW'],
     siteVerification: 'jJNnPZ2wu7F1tlSab57og1N3RNrMqhzTCzRrbztY8WU',
@@ -55,6 +55,10 @@ export const gitProviders = [
   {
     name: 'Codeberg',
     icon: 'simple-icons:codeberg',
+  },
+  {
+    name: 'GitLab',
+    icon: 'simple-icons:gitlab',
   },
   {
     name: 'Bitbucket',
