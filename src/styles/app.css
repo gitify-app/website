@@ -44,7 +44,7 @@ a:not(.gitify-repo) {
 }
 
 .faq h3 {
-  @apply mt-6 mb-2 pb-1.5 text-base font-semibold border-b border-gray-200 dark:border-gray-700;
+  @apply mt-6 mb-2 pb-1 text-sm font-semibold tracking-wide text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700;
   scroll-margin-top: 1rem;
 }
 
@@ -116,14 +116,12 @@ a:not(.gitify-repo) {
   @apply border-b-0;
 }
 
-.accordion__title {
-  h3 {
-    @apply text-base font-medium;
-  }
+.faq-item .accordion__title h3 {
+  @apply text-lg font-semibold;
 }
 
-.accordion__content {
-  @apply text-base;
+.faq-item .accordion__content {
+  @apply ml-1 pl-5 border-l-2 border-gray-200 dark:border-gray-700 text-base;
 }
 
 .faq-item summary {
