@@ -55,7 +55,7 @@ const grouped = CATEGORY_ORDER.map((category) => ({
 
 <Layout title="Frequently Asked Questions">
   <div class="container max-w-4xl mx-auto px-12 flex-1">
-    <div class="text-3xl text-center mt-12 mb-8">
+    <div class="text-3xl text-center mt-12 mb-3">
       Frequently Asked Questions
     </div>
     {grouped.map(({ category, faqs }) => (
@@ -150,25 +150,109 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
   summary.appendChild(btn);
 });
 
-// Open + scroll to item matching the URL hash
-function openFromHash() {
-  const hash = window.location.hash.slice(1);
-  if (!hash) {
+function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+// Add heading ids, jump lists on long answers, and a Related footer
+document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+  const slug = item.id;
+  const content = item.querySelector<HTMLElement>('.faq');
+  if (!content || !slug) {
     return;
   }
 
-  const wrapper = document.getElementById(hash);
-  if (!wrapper) {
-    return;
+  content.querySelectorAll<HTMLElement>('h3, h4').forEach((heading) => {
+    heading.id = `${slug}-${slugifyHeading(heading.textContent ?? '')}`;
+  });
+
+  const headings = content.querySelectorAll<HTMLElement>('h3');
+  if (headings.length > 1) {
+    const nav = document.createElement('nav');
+    nav.className = 'faq-jump';
+    nav.setAttribute('aria-label', 'On this answer');
+    nav.append('Jump to: ');
+
+    headings.forEach((heading, index) => {
+      if (index > 0) {
+        nav.append(' · ');
+      }
+
+      const link = document.createElement('a');
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent ?? '';
+      nav.appendChild(link);
+    });
+
+    content.insertBefore(nav, headings[0]);
   }
 
-  const details = wrapper.querySelector<HTMLDetailsElement>('details');
-  if (details) {
+  const paragraphs = content.querySelectorAll('p');
+  const last = paragraphs[paragraphs.length - 1];
+  if (last?.textContent?.trim().startsWith('Related:')) {
+    last.classList.add('faq-related');
+  }
+});
+
+function faqTargetFromHash(hash: string): HTMLElement | null {
+  const id = hash.replace(/^#/, '');
+  if (!id) {
+    return null;
+  }
+
+  return document.getElementById(id);
+}
+
+function openAndScrollTo(target: HTMLElement) {
+  const wrapper = target.classList.contains('faq-item')
+    ? target
+    : target.closest<HTMLElement>('.faq-item');
+  const details = wrapper?.querySelector<HTMLDetailsElement>('details');
+  if (details && !details.open) {
     details.open = true;
-    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+function openFromHash() {
+  const target = faqTargetFromHash(window.location.hash);
+  if (target) {
+    openAndScrollTo(target);
   }
 }
 
+document.addEventListener('click', (event) => {
+  const anchor = (event.target as Element | null)?.closest('a');
+  if (!anchor || !anchor.href) {
+    return;
+  }
+
+  const url = new URL(anchor.href, window.location.href);
+  if (url.pathname !== window.location.pathname) {
+    return;
+  }
+
+  const target = faqTargetFromHash(url.hash);
+  if (!target) {
+    return;
+  }
+
+  event.preventDefault();
+  if (window.location.hash !== url.hash) {
+    history.pushState(null, '', url.hash);
+  }
+  openAndScrollTo(target);
+});
+
 openFromHash();
 window.addEventListener('hashchange', openFromHash);
+window.addEventListener('popstate', openFromHash);
 </script>

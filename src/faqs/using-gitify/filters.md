@@ -1,12 +1,11 @@
 ---
 title: "How do Filters work?"
 category: "Using Gitify"
-order: 1
+order: 0
 ---
+Filters let you hide notifications you do not need so you can focus on the ones that matter.
 
-Filters in Gitify help you manage which notifications are shown in the app, allowing you to concentrate on the most crucial ones for your workflow.
+Open **Filters** from the left-hand sidebar. By default, Gitify shows all notifications. You can filter by reason (for example _Mentioned_, _Review Requested_, or _Assigned_), repository, or account.
 
-Filters can be accessed from the left-hand sidebar. By default, all notifications are shown. You can filter by properties such as notification reason (e.g. _Mentioned_, _Review Requested_, _Assigned_), repository, or account.
-
-If you apply multiple filters, your inbox will display notifications based on a `LOGICAL AND` condition — for example, selecting _Mentioned_ and a specific repository will only show notifications where both conditions are true.
+If you turn on more than one filter, Gitify shows only notifications that match **every** selected filter. For example, _Mentioned_ plus a specific repository shows mentions in that repository only.
 

@@ -1,10 +1,10 @@
 ---
 title: "How do I update Gitify?"
 category: "Using Gitify"
-order: 3
+order: 5
 ---
-Gitify checks for updates automatically on launch and every 24 hours.
+Gitify checks for updates when it starts and every 24 hours.
 
-When an update is available, it downloads in the background. Once downloaded, a dialog will prompt you to **Restart** to apply the update or choose **Later** to apply it the next time Gitify restarts.
+When an update is ready, it downloads in the background. Gitify then asks you to **Restart** now or choose **Later** to apply it the next time Gitify restarts.
 
-You can also trigger a manual check by right-clicking the tray icon and selecting **Check for Updates**.
+To check manually, right-click the tray icon and select **Check for Updates**.

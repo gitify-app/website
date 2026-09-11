@@ -30,7 +30,8 @@ a:not(.gitify-repo) {
 }
 
 .faq ul > li {
-  @apply ml-2;
+  @apply ml-2 my-1;
+  overflow-wrap: break-word;
 }
 
 .faq ol {
@@ -38,11 +39,30 @@ a:not(.gitify-repo) {
 }
 
 .faq ol > li {
-  @apply ml-2;
+  @apply ml-2 my-1;
+  overflow-wrap: break-word;
 }
 
 .faq h3 {
-  @apply mt-4 mb-2 text-base font-semibold;
+  @apply mt-5 mb-2 text-base font-semibold;
+  scroll-margin-top: 1rem;
+}
+
+.faq h4 {
+  @apply mt-3 mb-1.5 text-sm font-semibold;
+  scroll-margin-top: 1rem;
+}
+
+.faq-jump {
+  @apply text-sm text-gray-600 dark:text-gray-400 mb-2;
+}
+
+.faq-jump + h3 {
+  @apply mt-2;
+}
+
+.faq-related {
+  @apply mt-4 pt-3 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400;
 }
 
 .faq code {
