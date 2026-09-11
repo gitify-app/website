@@ -3,16 +3,17 @@ title: "Which Git forges does Gitify support?"
 category: "Getting Started"
 order: 0
 ---
-Gitify supports notifications from the following Git forges:
+Gitify can show notifications from several Git hosts, not only GitHub.com.
 
-- **GitHub Cloud** — `github.com`
-- **GitHub Enterprise Server (GHES)** — self-hosted GitHub instances
-- **GitHub Enterprise Cloud (Data Residency)** — `[tenant].ghe.com`
+- **GitHub.com** — the public `github.com` service, including GitHub Enterprise Cloud organizations hosted there
+- **GitHub Enterprise Server (GHES)** — a self-hosted GitHub instance
+- **GitHub Enterprise Cloud with data residency (GHDR)** — GitHub Enterprise Cloud on `[tenant].ghe.com`
 - **Gitea** — including self-hosted instances
-- **Forgejo** — compatible with the Gitea authentication flow
-- **Codeberg** — powered by Forgejo, fully supported
+- **Forgejo** — uses the same sign-in flow as Gitea
+- **Codeberg** — powered by Forgejo
 - **Bitbucket Cloud** — `bitbucket.org`
+- **GitLab Cloud and Self-Managed** — GitLab.com and self-hosted GitLab
 
-Multiple accounts across different forges can be signed in simultaneously. See [How do I add multiple accounts?](/faq/#multiple-accounts) for details.
+You can stay signed in to more than one account at the same time, including accounts on different forges.
 
-For authentication setup, see [What authentication methods does Gitify support?](/faq/#authentication-methods).
+**Related:** [What authentication methods does Gitify support?](/faq/#authentication-methods) · [How do I add multiple accounts?](/faq/#multiple-accounts)

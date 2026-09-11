@@ -1,10 +1,9 @@
 ---
 title: "How do keyboard shortcuts work?"
 category: "Using Gitify"
-order: 5
+order: 3
 ---
-
-Gitify includes keyboard shortcuts for common actions:
+Gitify includes keyboard shortcuts for common actions.
 
 - `h` — go home
 - `n` — open My Notifications
