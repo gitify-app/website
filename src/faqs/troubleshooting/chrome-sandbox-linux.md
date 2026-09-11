@@ -3,16 +3,19 @@ title: "How do I fix Chrome Sandbox permissions on Linux?"
 category: "Troubleshooting"
 order: 3
 ---
-If you experience issues opening Gitify on Linux due to `Chrome Sandbox` permissions, the Electron sandbox requires root ownership and the SUID bit to be set on the sandbox binary. Run the following commands to fix this:
+If Gitify will not open on Linux because of `Chrome Sandbox` permissions, the Electron sandbox binary must be owned by root and have the set-user-ID (SUID) bit set.
+
+1. Run:
 
 ```
 sudo chown root:root /opt/Gitify/chrome-sandbox
 sudo chmod 4755 /opt/Gitify/chrome-sandbox
 ```
 
-> **Note:** The path `/opt/Gitify/chrome-sandbox` assumes a standard installation. If you installed Gitify via AppImage or to a custom directory, adjust the path accordingly.
+2. If Gitify still fails to start, check logs with:
 
-To check for startup errors:
 ```
 journalctl -xe | grep gitify
 ```
+
+> **Note:** `/opt/Gitify/chrome-sandbox` is the path for a standard install. If you installed Gitify as an AppImage or in a custom directory, change the path to match.

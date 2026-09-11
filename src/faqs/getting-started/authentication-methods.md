@@ -3,20 +3,30 @@ title: "What authentication methods does Gitify support?"
 category: "Getting Started"
 order: 1
 ---
-Authentication methods vary by forge:
+How you sign in depends on the forge. On GitHub.com, start with **Login with GitHub**. On other GitHub hostnames, use a personal access token (PAT) or a GitHub OAuth app. On Gitea, Forgejo, Codeberg, and GitLab, use a PAT. On Bitbucket Cloud, use an app password.
 
-### GitHub Cloud & GitHub Enterprise Server
+### GitHub
 
-- **Login with GitHub** — The easiest option. Uses the OAuth Device Flow: Gitify generates a code, opens `github.com/login/device` in your browser, and completes authentication automatically. Supports GitHub Cloud only.
-- **Personal Access Token (PAT)** — Authenticate with a token generated in your GitHub account settings. Supports both GitHub Cloud and GitHub Enterprise Server.
-- **OAuth App** — Authenticate using a Client ID and Client Secret from a GitHub OAuth App you create. Supports both GitHub Cloud and GitHub Enterprise Server.
+GitHub.com, GitHub Enterprise Cloud, and GitHub Enterprise Server:
 
-If you are unsure which method to use, **Login with GitHub** is recommended for most users on GitHub Cloud. For GitHub Enterprise Server, use a PAT or OAuth App.
+- **Login with GitHub** — The simplest option on GitHub.com. Gitify shows a code, opens `github.com/login/device` in your browser, and finishes sign-in for you. This method is for GitHub.com only.
+- **Personal access token (classic)** — A classic token from your GitHub account settings. Works on GitHub.com, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+- **GitHub OAuth app** — A Client ID and Client Secret from an OAuth app you create. Works on GitHub.com, GitHub Enterprise Cloud, and GitHub Enterprise Server.
 
-### Gitea, Forgejo & Codeberg
+If you are unsure, use **Login with GitHub** on GitHub.com. On GitHub Enterprise Cloud or GitHub Enterprise Server, use a classic personal access token or a GitHub OAuth app.
 
-- **Personal Access Token (PAT)** — Generate a token in your Gitea/Forgejo/Codeberg account under _Settings → Applications_, then enter it in Gitify along with your instance hostname (e.g. `codeberg.org` or your self-hosted URL).
+### Gitea, Forgejo, Codeberg
+
+- **Personal access token (PAT)** — Create a token under _Settings → Applications_, then enter it in Gitify with your instance hostname (for example `codeberg.org` or your self-hosted URL).
 
 ### Bitbucket Cloud
 
-- **Personal Access Token (PAT)** — Generate an app password in your Bitbucket account under _Personal settings → App passwords_ and use it as your token in Gitify.
+- **App password** — Create an app password under _Personal settings → App passwords_ and enter it as your token in Gitify.
+
+### GitLab
+
+GitLab Cloud and Self-Managed:
+
+- **Personal access token (PAT)** — Create a token under _User settings → Access tokens_, then enter it in Gitify with your instance hostname.
+
+**Related:** [Which Git forges does Gitify support?](/faq/#supported-forges) · [How do I configure GitHub OAuth app authentication?](/faq/#oauth-app-setup) · [What GitHub scopes does Gitify require?](/faq/#github-scopes)
