@@ -1,0 +1,90 @@
+src/faqs/using-gitify/appearance.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 1-14
+src/faqs/getting-started/multiple-accounts.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-4,6,8-10,12,14,16
+src/icons/icons.ts
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 25-27,33-47
+src/faqs/getting-started/github-sso-pat-authorization.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-4,6,8-12,14,16,18,20
+src/faqs/getting-started/launch-at-login.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-4,6,8-10,12
+src/icons/viteplus.svg
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 1
+src/icons/zustand.svg
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 1-264
+src/faqs/using-gitify/filters.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-4,6,8,10
+src/faqs/troubleshooting/debugging.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 6,8,10,12-14,16,18-21
+  s_0e45b4dd12dba7::t_cf1d621310be7d 2-3
+package.json
+  s_0e45b4dd12dba7::t_22c305fdfe8e77 52,54-56,58,60,93
+src/faqs/getting-started/github-enterprise-server.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-3,6,8,10-12,14,16,18
+src/faqs/getting-started/authentication-methods.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 6,8,10,12-14,16,18,20,24-32
+  s_0e45b4dd12dba7::t_cf1d621310be7d 2-3
+src/faqs/using-gitify/keyboard-shortcuts.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 1-19
+src/faqs/using-gitify/sounds-and-notifications.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 1-10
+src/pages/faq.astro
+  s_0e45b4dd12dba7::t_70085c9f3fa320 12,17,27-46,80,92-122,144-160,166-177,181-225,227-236,238-243,245-257,261-283,286
+.nvmrc
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 1
+src/icons/tanstack.svg
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 1-13
+src/styles/app.css
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 129-131
+  s_0e45b4dd12dba7::t_fba5577ac65d82 132-182
+.github/workflows/lint.yml
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 25
+src/faqs/using-gitify/unsubscribe-from-thread.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-4,6,8
+src/constants.ts
+  s_0e45b4dd12dba7::t_04d4bf71219708 60-62
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 15
+  s_0e45b4dd12dba7::t_9567e5ee840614 59
+src/faqs/troubleshooting/notifications-not-showing.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 6,8,10,12,14-15,17,19,21,23-25,27-31,33,35-39,43-54
+  s_0e45b4dd12dba7::t_cf1d621310be7d 3
+src/faqs/using-gitify/updating.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-4,6,8,10
+.vscode/settings.json
+  s_0e45b4dd12dba7::t_22c305fdfe8e77 12-16
+src/faqs/contributing/how-to-contribute.md
+  s_0e45b4dd12dba7::t_cf1d621310be7d 2-3
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 6,8-9,11
+src/faqs/getting-started/github-scopes.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-4,6,8,10,12,14,16,22-26,28
+src/faqs/getting-started/supported-forges.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 6,8-10,12-13,15,17,19
+  s_0e45b4dd12dba7::t_cf1d621310be7d 2-3
+src/faqs/troubleshooting/chrome-sandbox-linux.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 6,8,15,20-21
+  s_0e45b4dd12dba7::t_cf1d621310be7d 2-3
+src/faqs/getting-started/oauth-app-setup.md
+  s_0e45b4dd12dba7::t_2769d0e479c2a1 2-3,6,8-14,16,18
+.github/workflows/zizmor.yml
+  s_0e45b4dd12dba7::t_22c305fdfe8e77 28
+pnpm-lock.yaml
+  s_0e45b4dd12dba7::t_5d385f298291a7 1-101,122-123,128-129,131-132,134-135,140-141,146-147,176-177,179-180,185-186,191-192,198-199,205-206,212-213,219-220,224-225,230-231,236-237,240-241,250-251,253-254,281-282,286-287,291-292,297-298,303-304,309-310,315-316,320-321,325-326,342-344,351-352,522-523,528-529,535-536,541-542,547-548,552-553,557-558,562-563,568-569,574-575,580-581,586-587,592-593,598-599,604-605,610-611,617-618,624-625,631-632,638-639,645-646,652-653,659-660,666-667,670-671,675-676,681-682,687-688,706-708,718-724,780-782,1331-1335,1352-1354,1356-1357,1361,1431-1433,1446-1449,1477-1478,1538-1544,1594-1595,1704-1706,1710-1711,1739-1741,1907-1908,1914-1917,1923-1924,1961-1964,2022-2024,2029-2030,2183-2184,2191,2196,2199,2202,2205,2208,2211,2214,2216-2219,2222,2225,2228,2230-2241,2243,2245-2248,2254,2265,2267,2270,2296,2299,2302,2305,2308,2311,2314,2318,2321,2324,2343-2346,2358,2458,2460,2462-2464,2466,2470,2472,2474,2478,2480,2483,2485,2488,2490,2493,2496,2499,2502,2505,2508,2511,2514,2517,2520,2523,2525,2528,2530,2533,2535,2538,2540,2543,2545,2548,2550,2553,2555,2558,2560,2563,2565,2568,2570,2573,2576,2579,2596-2597,2610-2623,2718-2719,3085-3087,3102,3104,3106,3108,3110-3112,3125,3129,3138,3156,3162,3164,3174-3175,3178,3188,3247,3249-3253,3255,3257,3267-3268,3289,3367-3370,3430,3503-3506,3513,3548,3740,3747-3755,3759-3760,3763,3769-3793,3824,3826,3828,3834,3837,3839,3842,3883,3895,3899,3972
+src/pages/index.astro
+  s_0e45b4dd12dba7::t_c5aa6333440396 151-153
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5b2636472948e9e17d19e428b7dc0e56b7d862fd",
+  "prompts": {},
+  "sessions": {
+    "s_0e45b4dd12dba7": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "75cd4d2a-e2b7-4fae-b6ba-dba4fc39ba96",
+        "model": "copilot/grok-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
