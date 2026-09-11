@@ -1,0 +1,20 @@
+src/styles/app.css
+  s_0e45b4dd12dba7::t_f3ad28ff907fa0 47
+  s_0e45b4dd12dba7::t_ad9aa3f9dd92ae 119-120,123-124
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5446006e4473b284d03300d6ce28c2024676a91f",
+  "prompts": {},
+  "sessions": {
+    "s_0e45b4dd12dba7": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "75cd4d2a-e2b7-4fae-b6ba-dba4fc39ba96",
+        "model": "copilot/grok-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
