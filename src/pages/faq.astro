@@ -178,13 +178,13 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
     const nav = document.createElement('nav');
     nav.className = 'faq-jump';
     nav.setAttribute('aria-label', 'On this answer');
-    nav.append('Jump to: ');
 
-    headings.forEach((heading, index) => {
-      if (index > 0) {
-        nav.append(' · ');
-      }
+    const label = document.createElement('span');
+    label.className = 'faq-meta-label';
+    label.textContent = 'Jump to';
+    nav.appendChild(label);
 
+    headings.forEach((heading) => {
       const link = document.createElement('a');
       link.href = `#${heading.id}`;
       link.textContent = heading.textContent ?? '';
@@ -197,7 +197,23 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
   const paragraphs = content.querySelectorAll('p');
   const last = paragraphs[paragraphs.length - 1];
   if (last?.textContent?.trim().startsWith('Related:')) {
-    last.classList.add('faq-related');
+    const links = last.querySelectorAll('a');
+    if (links.length > 0) {
+      const nav = document.createElement('nav');
+      nav.className = 'faq-related';
+      nav.setAttribute('aria-label', 'Related questions');
+
+      const label = document.createElement('span');
+      label.className = 'faq-meta-label';
+      label.textContent = 'Related';
+      nav.appendChild(label);
+
+      links.forEach((link) => {
+        nav.appendChild(link.cloneNode(true));
+      });
+
+      last.replaceWith(nav);
+    }
   }
 });
 
