@@ -1,0 +1,81 @@
+src/faqs/getting-started/github-sso-pat-authorization.md
+  s_0e45b4dd12dba7::t_c1b20627447f53 4,8-12,14,16-20
+  s_0e45b4dd12dba7::t_c889889b4cf296 6
+src/faqs/getting-started/authentication-methods.md
+  s_0e45b4dd12dba7::t_fd89052144fd49 26
+  s_0e45b4dd12dba7::t_f959761aee3c3c 6,8,12-14,16,20,24,30,32
+  s_0e45b4dd12dba7::t_94db0c538c6bf0 28
+  s_0e45b4dd12dba7::t_14df83f9097ef0 18
+  s_0e45b4dd12dba7::t_07f437e67177a6 10
+  s_0e45b4dd12dba7::t_e506e7109e8bf7 19
+  s_0e45b4dd12dba7::t_7db11459d696c0 25
+  s_0e45b4dd12dba7::t_288c0ea4e0c9a8 27
+src/faqs/troubleshooting/chrome-sandbox-linux.md
+  s_0e45b4dd12dba7::t_64f6be24cf1528 6-8,15,19-21
+src/faqs/using-gitify/unsubscribe-from-thread.md
+  s_0e45b4dd12dba7::t_a1609a7ba1d8c6 4,6,8
+src/faqs/getting-started/launch-at-login.md
+  s_0e45b4dd12dba7::t_07e0423c4d7b97 4,6,8-10,12
+src/pages/faq.astro
+  s_0e45b4dd12dba7::t_94e78bde58e6bd 58
+  s_0e45b4dd12dba7::t_5135fde89d2746 174,176
+  s_0e45b4dd12dba7::t_0f0a69f3c0ccec 153-164,168,170-173,175,177-190,193-199,208,210-212,242
+  s_0e45b4dd12dba7::t_57c6e54955df4a 169
+  s_0e45b4dd12dba7::t_50d18aaef6233e 200-207,209,213-214,217-222,225-240,243-254,257
+  s_0e45b4dd12dba7::t_4ca316cf47af90 241
+src/styles/app.css
+  s_0e45b4dd12dba7::t_e8659c1b789fe2 57-61
+  s_0e45b4dd12dba7::t_fa1ee9489ad209 33-34,42-43,47-56,62-65
+src/faqs/troubleshooting/notifications-not-showing.md
+  s_0e45b4dd12dba7::t_60a6b4afae246f 6,8,14-15,17,21-25,31,33,37-39,43-45,47,50-54
+  s_0e45b4dd12dba7::t_4dc419d499a2b3 46
+  s_0e45b4dd12dba7::t_67ce0ddd6fabd6 48-49
+  s_0e45b4dd12dba7::t_042a112e6e2230 12,19
+  s_0e45b4dd12dba7::t_69f7a110de00bf 35
+  s_0e45b4dd12dba7::t_984769d62e3e91 10
+  s_0e45b4dd12dba7::t_e228c8ceeb5be0 18
+  s_0e45b4dd12dba7::t_515ff1fc83d0ea 20
+src/faqs/using-gitify/appearance.md
+  s_0e45b4dd12dba7::t_b5318926e46ec8 4,6,9-11,13-14
+src/faqs/using-gitify/keyboard-shortcuts.md
+  s_0e45b4dd12dba7::t_ffbf24382ad56d 4,6
+src/faqs/using-gitify/updating.md
+  s_0e45b4dd12dba7::t_f1dd44e5fdba90 4,6,8,10
+src/faqs/using-gitify/filters.md
+  s_0e45b4dd12dba7::t_74ed9cdf6c0e12 4,6,8,10
+src/faqs/using-gitify/sounds-and-notifications.md
+  s_0e45b4dd12dba7::t_85876ac5a0485f 4,6,8,10
+src/faqs/getting-started/oauth-app-setup.md
+  s_0e45b4dd12dba7::t_d693eaec842e0a 6,8-18
+src/faqs/getting-started/supported-forges.md
+  s_0e45b4dd12dba7::t_a1d5825faf0c17 6,8-10,12-13,15,17,19
+src/faqs/getting-started/multiple-accounts.md
+  s_0e45b4dd12dba7::t_74eefd40f18194 4,6,8-10,12,14,16
+src/faqs/troubleshooting/debugging.md
+  s_0e45b4dd12dba7::t_92a47dd89ece8d 6,12-14,17-21
+  s_0e45b4dd12dba7::t_5cfae52dbc2486 8,10,16
+  s_0e45b4dd12dba7::t_398098624603f2 15
+src/faqs/getting-started/github-scopes.md
+  s_0e45b4dd12dba7::t_ea60aa4b25eb13 10,14
+  s_0e45b4dd12dba7::t_3aa47eba0526f9 4,6,8,12,16,22,26-28
+src/faqs/contributing/how-to-contribute.md
+  s_0e45b4dd12dba7::t_18d4a7975900fe 6,8-9,11
+src/faqs/getting-started/github-enterprise-server.md
+  s_0e45b4dd12dba7::t_51eead8c7586f7 6,8,10-12,14,16,18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bdf4df03f60a519803db17c0cf7065b2c67bff2a",
+  "prompts": {},
+  "sessions": {
+    "s_0e45b4dd12dba7": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "75cd4d2a-e2b7-4fae-b6ba-dba4fc39ba96",
+        "model": "copilot/grok-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
