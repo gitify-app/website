@@ -1,0 +1,21 @@
+src/pages/faq.astro
+  s_0e45b4dd12dba7::t_f63be896fbc714 182-185,187,200-216
+src/styles/app.css
+  s_0e45b4dd12dba7::t_8c20439ced2e9c 47,52,56-64,66,74-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "aaca7fcc20545cfc4d8e3ffc43b2e57914da6ec8",
+  "prompts": {},
+  "sessions": {
+    "s_0e45b4dd12dba7": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "75cd4d2a-e2b7-4fae-b6ba-dba4fc39ba96",
+        "model": "copilot/grok-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
