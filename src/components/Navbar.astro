@@ -5,42 +5,45 @@ import GitHubRepo from '~/components/GitHubRepo.astro';
 import Logo from '~/components/Logo.astro';
 
 const { currentPathname } = Astro.props;
-const isHomepage = currentPathname === '/';
 ---
 
-<nav class:list={["py-10 px-8", isHomepage && "bg-gitify-hero"]}>
-  <div class="container max-w-5xl lg:mx-auto">
-    <div
-      class="bg-gitify-navbar text-gitify-link rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
-    >
-      <div class="flex items-center shrink-0 text-white mr-6">
-        <a href="/" aria-label={siteMetadata.title}>
-          <Logo className="w-8" />
-        </a>
-      </div>
+<nav
+  class="sticky top-0 z-50 border-b border-gitify-line bg-gitify-ink/80 backdrop-blur-md"
+>
+  <div class="container max-w-6xl mx-auto px-6">
+    <div class="flex items-center justify-between py-4">
+      <a
+        href="/"
+        aria-label={siteMetadata.title}
+        class="flex items-center gap-3 group"
+      >
+        <Logo className="w-8 transition-transform group-hover:scale-105" />
+        <span class="font-display text-lg font-semibold tracking-tight">
+          {siteMetadata.title}
+        </span>
+      </a>
 
-      <div class="flex justify-end">
-        <ul class="flex flex-row items-center list-none space-x-4">
-          {siteMetadata.menuLinks.map((item) => (
-              <li>
-                <a
-                  href={item.path}
-                  class:list={[
-                    "py-1.5 lg:py-2 px-2 lg:px-3",
-                    "gitify-navbar font-light",
-                    currentPathname === item.path
-                      ? "border-white border rounded-lg"
-                      : "",
-                  ]}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
+      <ul class="flex flex-row items-center list-none gap-2 sm:gap-6">
+        {
+          siteMetadata.menuLinks.map((item) => (
+            <li>
+              <a
+                href={item.path}
+                class:list={[
+                  'px-3 py-1.5 rounded-full text-sm transition-colors',
+                  currentPathname === item.path
+                    ? 'bg-gitify-raised text-gitify-text font-medium'
+                    : 'text-gitify-muted hover:text-gitify-text',
+                ]}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
 
-          <li><GitHubRepo /></li>
-        </ul>
-      </div>
+        <li><GitHubRepo /></li>
+      </ul>
     </div>
   </div>
 </nav>

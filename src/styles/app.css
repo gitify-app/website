@@ -1,17 +1,63 @@
 /** Tailwind CSS */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /** Tailwind CSS Configuration */
 @config "../../tailwind.config.ts";
 
-a:not(.gitify-navbar) {
-  @apply font-semibold;
+:root {
+  color-scheme: dark;
 }
 
-a:not(.gitify-repo) {
-  @apply hover:underline;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  @apply bg-gitify-ink text-gitify-text font-sans antialiased;
+}
+
+::selection {
+  @apply bg-gitify-accent/30 text-gitify-text;
+}
+
+/** Subtle engineering grid backdrop */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/** Accordion (accessible-astro-components) overrides */
+.accordion .item .wrapper {
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+.accordion .item .title {
+  @apply rounded-lg px-2 transition-colors;
+}
+
+.accordion .item .title:hover,
+.accordion .item .title:focus-visible {
+  @apply text-gitify-accent-bright;
+  text-decoration: none;
+}
+
+.accordion .item .content {
+  @apply text-gitify-muted;
+}
+
+.accordion__title {
+  h3 {
+    @apply text-base font-medium;
+  }
+}
+
+.accordion__content {
+  @apply text-base;
+}
+
+/** FAQ markdown content */
 .faq p {
   @apply mb-3;
 }
@@ -21,8 +67,7 @@ a:not(.gitify-repo) {
 }
 
 .faq a {
-  @apply text-gitify-button-rest underline underline-offset-4;
-  cursor: pointer;
+  @apply text-gitify-accent-bright hover:underline;
 }
 
 .faq ul {
@@ -30,8 +75,60 @@ a:not(.gitify-repo) {
 }
 
 .faq ul > li {
-  @apply ml-2 my-1;
-  overflow-wrap: break-word;
+  @apply ml-2;
+}
+
+.faq code {
+  @apply bg-gitify-raised text-gitify-text rounded px-1.5 py-0.5 text-sm font-mono;
+}
+
+.faq pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.faq blockquote {
+  @apply border-l-2 border-gitify-accent bg-gitify-accent-soft pl-4 pr-3 py-2 my-3 rounded-r-md not-italic text-gitify-muted;
+}
+
+.faq pre {
+  @apply my-3;
+}
+
+.faq table {
+  @apply w-full text-sm border-collapse my-3;
+}
+
+.faq th {
+  @apply text-left font-semibold border-b border-gitify-line pb-2;
+}
+
+.faq td {
+  @apply py-1.5 border-b border-gitify-line/50 align-top;
+}
+
+.faq tr:last-child td {
+  @apply border-b-0;
+}
+
+.faq-item summary {
+  @apply relative;
+}
+
+.faq-copy-link {
+  @apply absolute right-8 top-1/2 -translate-y-1/2 p-1 rounded opacity-0 text-gitify-muted hover:text-gitify-accent-bright hover:bg-gitify-raised transition-all;
+}
+
+.faq-item summary:hover .faq-copy-link,
+.faq-copy-link:focus-visible {
+  @apply opacity-100;
+}
+
+.faq-copy-link--copied {
+  @apply opacity-100 text-gitify-accent;
+}
+
+.faq-copy-link--failed {
+  @apply opacity-100 text-red-500;
 }
 
 .faq ol {
@@ -44,22 +141,22 @@ a:not(.gitify-repo) {
 }
 
 .faq h3 {
-  @apply mt-6 mb-2 pb-1 text-sm font-semibold tracking-wide text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700;
+  @apply mt-6 mb-2 pb-1 text-sm font-semibold tracking-wide text-gitify-text border-b border-gitify-line;
   scroll-margin-top: 1rem;
 }
 
 .faq h4 {
-  @apply mt-4 mb-1.5 text-sm font-semibold text-gray-800 dark:text-gray-200;
+  @apply mt-4 mb-1.5 text-sm font-semibold text-gitify-text;
   scroll-margin-top: 1rem;
 }
 
 .faq-meta-label {
-  @apply text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mr-1;
+  @apply text-xs font-semibold uppercase tracking-wide text-gitify-muted mr-1;
 }
 
 .faq-jump,
 .faq-related {
-  @apply flex flex-wrap items-center gap-2 my-4 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/70;
+  @apply flex flex-wrap items-center gap-2 my-4 px-3 py-2.5 rounded-lg bg-gitify-raised/60 border border-gitify-line;
 }
 
 .faq-jump {
@@ -76,71 +173,10 @@ a:not(.gitify-repo) {
 
 .faq-jump a,
 .faq-related a {
-  @apply inline-flex items-center rounded-full px-2.5 py-1 text-sm font-semibold no-underline bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 text-gitify-button-rest;
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-sm font-semibold no-underline bg-gitify-surface border border-gitify-line text-gitify-accent-bright;
 }
 
 .faq-jump a:hover,
 .faq-related a:hover {
-  @apply bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800;
-}
-
-.faq code {
-  @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded px-1.5 py-0.5 text-sm font-mono;
-}
-
-.faq pre code {
-  @apply bg-transparent p-0 text-inherit;
-}
-
-.faq blockquote {
-  @apply border-l-4 border-blue-400 bg-blue-50 dark:bg-blue-950 dark:border-blue-500 pl-4 pr-3 py-2 my-3 rounded-r-sm not-italic text-gray-700 dark:text-gray-300;
-}
-
-.faq pre {
-  @apply my-3;
-}
-
-.faq table {
-  @apply w-full text-sm border-collapse my-3;
-}
-
-.faq th {
-  @apply text-left font-semibold border-b border-gray-200 dark:border-gray-700 pb-2;
-}
-
-.faq td {
-  @apply py-1.5 border-b border-gray-100 dark:border-gray-800 align-top;
-}
-
-.faq tr:last-child td {
-  @apply border-b-0;
-}
-
-.faq-item .accordion__title h3 {
-  @apply text-lg font-semibold;
-}
-
-.faq-item .accordion__content {
-  @apply ml-1 pl-5 border-l-2 border-gray-200 dark:border-gray-700 text-base;
-}
-
-.faq-item summary {
-  @apply relative;
-}
-
-.faq-copy-link {
-  @apply absolute right-8 top-1/2 -translate-y-1/2 p-1 rounded opacity-0 text-gray-400 hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all;
-}
-
-.faq-item summary:hover .faq-copy-link,
-.faq-copy-link:focus-visible {
-  @apply opacity-100;
-}
-
-.faq-copy-link--copied {
-  @apply opacity-100 text-green-500;
-}
-
-.faq-copy-link--failed {
-  @apply opacity-100 text-red-500;
+  @apply border-gitify-accent/50 bg-gitify-accent-soft;
 }

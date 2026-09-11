@@ -49,22 +49,30 @@ const grouped = CATEGORY_ORDER.map((category) => ({
   category,
   faqs: allFaqs
     .filter((f) => f.frontmatter.category === category)
-    .sort((a, b) => a.frontmatter.order - b.frontmatter.order),
+    .toSorted((a, b) => a.frontmatter.order - b.frontmatter.order),
 }));
 ---
 
 <Layout title="Frequently Asked Questions">
-  <div class="container max-w-4xl mx-auto px-12 flex-1">
-    <div class="text-3xl text-center mt-12 mb-3">
-      Frequently Asked Questions
+  <div class="container max-w-4xl mx-auto px-6 flex-1">
+    <div class="mt-16 mb-12 text-center">
+      <p class="font-mono text-sm text-gitify-accent-bright">Support</p>
+      <h1
+        class="mt-3 font-display text-3xl lg:text-5xl font-bold tracking-tight"
+      >
+        Frequently Asked Questions
+      </h1>
+      <p class="mt-4 text-lg text-gitify-muted">
+        Everything you need to know about installing, using and contributing to
+        Gitify.
+      </p>
     </div>
-    <p class="text-center text-gray-600 dark:text-gray-400 mb-8">
-      Answers are grouped by topic. Use the copy-link control on a question to
-      share it.
-    </p>
-    {grouped.map(({ category, faqs }) => (
-        <div class="mb-10">
-          <h2 class="text-xl font-semibold mb-4">{category}</h2>
+    {
+      grouped.map(({ category, faqs }) => (
+        <div class="mb-12">
+          <h2 class="font-mono text-sm uppercase tracking-widest text-gitify-muted mb-4">
+            {category}
+          </h2>
           <Accordion>
             {faqs.map((faq) => (
               <div id={faq.slug} class="faq-item">
@@ -75,204 +83,205 @@ const grouped = CATEGORY_ORDER.map((category) => ({
             ))}
           </Accordion>
         </div>
-      ))}
+      ))
+    }
   </div>
 </Layout>
 
 <script>
-// Copy text to the clipboard with a fallback for denied/unsupported cases.
-function copyToClipboard(text: string): Promise<void> {
-  if (navigator.clipboard?.writeText) {
-    return navigator.clipboard.writeText(text);
-  }
-
-  return new Promise((resolve, reject) => {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.setAttribute('readonly', '');
-    textarea.style.position = 'absolute';
-    textarea.style.left = '-9999px';
-    document.body.appendChild(textarea);
-    textarea.select();
-
-    let copied = false;
-    try {
-      copied = document.execCommand('copy');
-    } catch {
-      copied = false;
+  // Copy text to the clipboard with a fallback for denied/unsupported cases.
+  function copyToClipboard(text: string): Promise<void> {
+    if (navigator.clipboard?.writeText) {
+      return navigator.clipboard.writeText(text);
     }
-    textarea.remove();
 
-    if (copied) {
-      resolve();
-    } else {
-      reject(new Error('Clipboard write failed'));
+    return new Promise((resolve, reject) => {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'absolute';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      let copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch {
+        copied = false;
+      }
+      textarea.remove();
+
+      if (copied) {
+        resolve();
+      } else {
+        reject(new Error('Clipboard write failed'));
+      }
+    });
+  }
+
+  // Inject a copy-link button into each accordion <summary>
+  document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+    const slug = item.id;
+    const summary = item.querySelector<HTMLElement>('summary');
+    if (!summary || !slug) {
+      return;
     }
-  });
-}
 
-// Inject a copy-link button into each accordion <summary>
-document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
-  const slug = item.id;
-  const summary = item.querySelector<HTMLElement>('summary');
-  if (!summary || !slug) {
-    return;
-  }
+    summary.style.position = 'relative';
 
-  summary.style.position = 'relative';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.title = 'Copy link';
+    btn.setAttribute('aria-label', 'Copy link to this question');
+    btn.className = 'faq-copy-link';
+    btn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
 
-  const btn = document.createElement('button');
-  btn.type = 'button';
-  btn.title = 'Copy link';
-  btn.setAttribute('aria-label', 'Copy link to this question');
-  btn.className = 'faq-copy-link';
-  btn.innerHTML =
-    '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
-
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const url = `${window.location.origin}${window.location.pathname}#${slug}`;
-    copyToClipboard(url)
-      .then(() => {
-        btn.classList.add('faq-copy-link--copied');
-        btn.title = 'Copied!';
-        setTimeout(() => {
-          btn.classList.remove('faq-copy-link--copied');
-          btn.title = 'Copy link';
-        }, 2000);
-      })
-      .catch(() => {
-        btn.classList.add('faq-copy-link--failed');
-        btn.title = 'Could not copy link';
-        setTimeout(() => {
-          btn.classList.remove('faq-copy-link--failed');
-          btn.title = 'Copy link';
-        }, 2000);
-      });
-  });
-
-  summary.appendChild(btn);
-});
-
-function slugifyHeading(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
-
-// Add heading ids, jump lists on long answers, and a Related footer
-document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
-  const slug = item.id;
-  const content = item.querySelector<HTMLElement>('.faq');
-  if (!content || !slug) {
-    return;
-  }
-
-  content.querySelectorAll<HTMLElement>('h3, h4').forEach((heading) => {
-    heading.id = `${slug}-${slugifyHeading(heading.textContent ?? '')}`;
-  });
-
-  const headings = content.querySelectorAll<HTMLElement>('h3');
-  if (headings.length > 1) {
-    const nav = document.createElement('nav');
-    nav.className = 'faq-jump';
-    nav.setAttribute('aria-label', 'On this answer');
-
-    const label = document.createElement('span');
-    label.className = 'faq-meta-label';
-    label.textContent = 'Jump to';
-    nav.appendChild(label);
-
-    headings.forEach((heading) => {
-      const link = document.createElement('a');
-      link.href = `#${heading.id}`;
-      link.textContent = heading.textContent ?? '';
-      nav.appendChild(link);
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const url = `${window.location.origin}${window.location.pathname}#${slug}`;
+      copyToClipboard(url)
+        .then(() => {
+          btn.classList.add('faq-copy-link--copied');
+          btn.title = 'Copied!';
+          setTimeout(() => {
+            btn.classList.remove('faq-copy-link--copied');
+            btn.title = 'Copy link';
+          }, 2000);
+        })
+        .catch(() => {
+          btn.classList.add('faq-copy-link--failed');
+          btn.title = 'Could not copy link';
+          setTimeout(() => {
+            btn.classList.remove('faq-copy-link--failed');
+            btn.title = 'Copy link';
+          }, 2000);
+        });
     });
 
-    content.insertBefore(nav, headings[0]);
+    summary.appendChild(btn);
+  });
+
+  function slugifyHeading(text: string): string {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
   }
 
-  const paragraphs = content.querySelectorAll('p');
-  const last = paragraphs[paragraphs.length - 1];
-  if (last?.textContent?.trim().startsWith('Related:')) {
-    const links = last.querySelectorAll('a');
-    if (links.length > 0) {
+  // Add heading ids, jump lists on long answers, and a Related footer
+  document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+    const slug = item.id;
+    const content = item.querySelector<HTMLElement>('.faq');
+    if (!content || !slug) {
+      return;
+    }
+
+    content.querySelectorAll<HTMLElement>('h3, h4').forEach((heading) => {
+      heading.id = `${slug}-${slugifyHeading(heading.textContent ?? '')}`;
+    });
+
+    const headings = content.querySelectorAll<HTMLElement>('h3');
+    if (headings.length > 1) {
       const nav = document.createElement('nav');
-      nav.className = 'faq-related';
-      nav.setAttribute('aria-label', 'Related questions');
+      nav.className = 'faq-jump';
+      nav.setAttribute('aria-label', 'On this answer');
 
       const label = document.createElement('span');
       label.className = 'faq-meta-label';
-      label.textContent = 'Related';
+      label.textContent = 'Jump to';
       nav.appendChild(label);
 
-      links.forEach((link) => {
-        nav.appendChild(link.cloneNode(true));
+      headings.forEach((heading) => {
+        const link = document.createElement('a');
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent ?? '';
+        nav.appendChild(link);
       });
 
-      last.replaceWith(nav);
+      content.insertBefore(nav, headings[0]);
+    }
+
+    const paragraphs = content.querySelectorAll('p');
+    const last = paragraphs[paragraphs.length - 1];
+    if (last?.textContent?.trim().startsWith('Related:')) {
+      const links = last.querySelectorAll('a');
+      if (links.length > 0) {
+        const nav = document.createElement('nav');
+        nav.className = 'faq-related';
+        nav.setAttribute('aria-label', 'Related questions');
+
+        const label = document.createElement('span');
+        label.className = 'faq-meta-label';
+        label.textContent = 'Related';
+        nav.appendChild(label);
+
+        links.forEach((link) => {
+          nav.appendChild(link.cloneNode(true));
+        });
+
+        last.replaceWith(nav);
+      }
+    }
+  });
+
+  function faqTargetFromHash(hash: string): HTMLElement | null {
+    const id = hash.replace(/^#/, '');
+    if (!id) {
+      return null;
+    }
+
+    return document.getElementById(id);
+  }
+
+  function openAndScrollTo(target: HTMLElement) {
+    const wrapper = target.classList.contains('faq-item')
+      ? target
+      : target.closest<HTMLElement>('.faq-item');
+    const details = wrapper?.querySelector<HTMLDetailsElement>('details');
+    if (details && !details.open) {
+      details.open = true;
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  function openFromHash() {
+    const target = faqTargetFromHash(window.location.hash);
+    if (target) {
+      openAndScrollTo(target);
     }
   }
-});
 
-function faqTargetFromHash(hash: string): HTMLElement | null {
-  const id = hash.replace(/^#/, '');
-  if (!id) {
-    return null;
-  }
+  document.addEventListener('click', (event) => {
+    const anchor = (event.target as Element | null)?.closest('a');
+    if (!anchor?.href) {
+      return;
+    }
 
-  return document.getElementById(id);
-}
+    const url = new URL(anchor.href, window.location.href);
+    if (url.pathname !== window.location.pathname) {
+      return;
+    }
 
-function openAndScrollTo(target: HTMLElement) {
-  const wrapper = target.classList.contains('faq-item')
-    ? target
-    : target.closest<HTMLElement>('.faq-item');
-  const details = wrapper?.querySelector<HTMLDetailsElement>('details');
-  if (details && !details.open) {
-    details.open = true;
-  }
+    const target = faqTargetFromHash(url.hash);
+    if (!target) {
+      return;
+    }
 
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-}
-
-function openFromHash() {
-  const target = faqTargetFromHash(window.location.hash);
-  if (target) {
+    event.preventDefault();
+    if (window.location.hash !== url.hash) {
+      history.pushState(null, '', url.hash);
+    }
     openAndScrollTo(target);
-  }
-}
+  });
 
-document.addEventListener('click', (event) => {
-  const anchor = (event.target as Element | null)?.closest('a');
-  if (!anchor?.href) {
-    return;
-  }
-
-  const url = new URL(anchor.href, window.location.href);
-  if (url.pathname !== window.location.pathname) {
-    return;
-  }
-
-  const target = faqTargetFromHash(url.hash);
-  if (!target) {
-    return;
-  }
-
-  event.preventDefault();
-  if (window.location.hash !== url.hash) {
-    history.pushState(null, '', url.hash);
-  }
-  openAndScrollTo(target);
-});
-
-openFromHash();
-window.addEventListener('hashchange', openFromHash);
-window.addEventListener('popstate', openFromHash);
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+  window.addEventListener('popstate', openFromHash);
 </script>

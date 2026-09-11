@@ -30,7 +30,6 @@ export const openSourceLibs: IconDetails[] = [
     name: 'GitHub - Primer Style',
     link: 'https://primer.style/',
     svg: 'github',
-    color: 'text-blue-400',
   },
   {
     name: 'TanStack Query',

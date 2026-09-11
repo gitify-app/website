@@ -1,22 +1,18 @@
 ---
-import { Icon } from 'astro-icon/components';
-
 import { format } from 'date-fns';
-import { Octokit } from 'octokit';
 
 import { siteMetadata, URLs } from '~/constants';
 
 import DownloadButton from '~/components/DownloadButton.astro';
-import type {
-  DownloadLink,
-  DownloadLinks,
-  HeroData,
-  ReleaseAsset,
-} from '~/types';
+import { octokit } from '~/octokit';
+import type { DownloadLink, DownloadLinks, HeroData } from '~/types';
 
-const octokit = new Octokit();
+interface AssetInfo {
+  name: string;
+  browser_download_url: string;
+}
 
-const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
+const getDownloadLinks = (assets: AssetInfo[]): DownloadLinks => {
   const getAssetLink = (filenameRegex: RegExp): string => {
     const asset = assets.find((item) => item.name.match(filenameRegex));
     return asset ? asset.browser_download_url : URLs.GITHUB.LATEST_RELEASE;
@@ -25,7 +21,7 @@ const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
   const supportedOSs: DownloadLink[] = [
     {
       os: 'macOS',
-      name: 'macOS (Universal)',
+      name: 'macOS',
       url: getAssetLink(/Gitify-\d+.\d+.\d+-universal.dmg/g),
       isPrimary: true,
     },
@@ -69,6 +65,71 @@ const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
   };
 };
 
+const osIcons: Record<string, string> = {
+  macOS: 'mdi:apple',
+  Windows: 'mdi:microsoft-windows',
+  Linux: 'mdi:linux',
+};
+
+/**
+ * electron-builder publishes `latest-*.yml` manifests alongside every
+ * release. They are static assets served from `releases/latest/download/`,
+ * so unlike the GitHub API they are not rate-limited, and they contain the
+ * exact versioned asset names we need for direct download links.
+ */
+const LATEST_DOWNLOAD_BASE = `${URLs.GITHUB.REPO}/releases/latest/download`;
+
+const parseElectronBuilderManifest = (manifest: string) => {
+  const version = manifest.match(/^version:\s*(\S+)/m)?.[1] ?? '';
+  const releaseDate =
+    manifest.match(/^releaseDate:\s*'?([^'\n]+)'?/m)?.[1] ?? '';
+  const files = [...manifest.matchAll(/^\s+-\s+url:\s*(\S+)$/gm)].map(
+    (match) => match[1],
+  );
+  return { version, releaseDate, files };
+};
+
+const loadFromElectronBuilderManifests = async (): Promise<HeroData> => {
+  try {
+    const manifests = await Promise.all(
+      ['latest-mac.yml', 'latest.yml', 'latest-linux.yml'].map(async (file) => {
+        const response = await fetch(`${LATEST_DOWNLOAD_BASE}/${file}`, {
+          signal: AbortSignal.timeout(8000),
+        });
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${file}: ${response.status}`);
+        }
+        return parseElectronBuilderManifest(await response.text());
+      }),
+    );
+
+    const assets: AssetInfo[] = manifests
+      .flatMap((manifest) => manifest.files)
+      .map((name) => ({
+        name,
+        browser_download_url: `${LATEST_DOWNLOAD_BASE}/${name}`,
+      }));
+
+    const { version, releaseDate } = manifests[0];
+
+    return {
+      downloadLinks: getDownloadLinks(assets),
+      version: version ? `v${version}` : '',
+      releaseDate: releaseDate ? format(releaseDate, 'dd/MM/yyyy') : '',
+    };
+  } catch (error) {
+    console.error('Failed to load release manifests', error);
+    return {
+      downloadLinks: {
+        alt: [],
+        primary: [],
+      },
+      version: '',
+      releaseDate: '',
+    };
+  }
+};
+
 const loadInitialData = async (): Promise<HeroData> => {
   try {
     const latestRelease = await octokit.rest.repos.getLatestRelease({
@@ -86,63 +147,57 @@ const loadInitialData = async (): Promise<HeroData> => {
         : '',
     };
   } catch (error) {
-    return {
-      downloadLinks: {
-        alt: [],
-        primary: [],
-      },
-      version: '',
-      releaseDate: '',
-    };
+    console.warn(
+      'GitHub API unavailable, falling back to release manifests',
+      error,
+    );
+    return loadFromElectronBuilderManifests();
   }
 };
 
-const { downloadLinks, version, releaseDate } = await loadInitialData();
+const { downloadLinks, version } = await loadInitialData();
 ---
 
-<div class="text-sm mt-4">
-  {version ? (
+<div class="mt-8">
+  {
+    version ? (
       <>
-        <div class="sm:flex md:grid md:grid-cols-2">
-          {downloadLinks.primary.map((item) => (
-            <DownloadButton item={item} />
+        <div class="flex flex-wrap gap-3">
+          {downloadLinks.primary.map((item, index) => (
+            <DownloadButton
+              item={{ ...item, icon: osIcons[item.os] }}
+              variant={index === 0 ? 'primary' : 'ghost'}
+            />
           ))}
         </div>
-        <div class="w-80 flex flex-col gap-2">
-          <div>
-            Latest version:{" "}
-            <a class="gitify-download-link" href={URLs.GITHUB.LATEST_RELEASE}>
-              {version}
-            </a>
+
+        {downloadLinks.alt.length > 0 && (
+          <div class="mt-5 flex flex-wrap items-center gap-x-2 font-mono text-xs text-gitify-muted">
+            <span>also on</span>
+            {downloadLinks.alt.map((platform, index) => (
+              <>
+                {index > 0 && <span aria-hidden="true">·</span>}
+                <a
+                  href={platform.url || URLs.GITHUB.LATEST_RELEASE}
+                  class="text-gitify-text hover:text-gitify-accent-bright hover:underline"
+                >
+                  {platform.name}
+                </a>
+              </>
+            ))}
           </div>
-          <div>Released on: {releaseDate}</div>
-          {downloadLinks.alt.length > 0 && (
-            <div>
-              Also available on:
-              <ul class="list-disc list-inside mt-2 ml-4">
-                {downloadLinks.alt.map((platform) => (
-                  <li class="mb-2.5">
-                    <a
-                      class="gitify-download-link"
-                      href={platform.url || URLs.GITHUB.LATEST_RELEASE}
-                    >
-                      {platform.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+        )}
       </>
     ) : (
       <div class="flex">
         <DownloadButton
+          variant="primary"
           item={{
             url: URLs.GITHUB.LATEST_RELEASE,
-            name: "View GitHub Releases",
+            name: 'View GitHub Releases',
           }}
         />
       </div>
-    )}
+    )
+  }
 </div>
