@@ -1,0 +1,33 @@
+src/icons/icons.ts
+  s_0e45b4dd12dba7::t_3436a178cfe403 36-45,49
+  s_0e45b4dd12dba7::t_e8a49cdeb62a93 35
+  s_0e45b4dd12dba7::t_e71e338fc60500 46-48
+  s_0e45b4dd12dba7::t_8b72cad80c2cac 25-27
+src/icons/viteplus.svg
+  s_0e45b4dd12dba7::t_6403e170637a81 1
+src/icons/zustand.svg
+  s_0e45b4dd12dba7::t_e81ed3dd640155 2-264
+  s_0e45b4dd12dba7::t_fd08f8bc84ce46 1
+src/pages/index.astro
+  s_0e45b4dd12dba7::t_b2215d9833969d 49-51
+  s_0e45b4dd12dba7::t_e669fca309c92f 47
+src/icons/tanstack.svg
+  s_0e45b4dd12dba7::t_8a552757989c67 1-12
+  s_0e45b4dd12dba7::t_2b84de514cec0c 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1a4549cfe4d7ae514f2859273842f52c93434038",
+  "prompts": {},
+  "sessions": {
+    "s_0e45b4dd12dba7": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "75cd4d2a-e2b7-4fae-b6ba-dba4fc39ba96",
+        "model": "copilot/grok-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
