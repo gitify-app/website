@@ -1,0 +1,18 @@
+src/icons/tanstack.svg
+  h_ac004aadb63da9 1-38
+src/icons/viteplus.svg
+  h_ac004aadb63da9 1-414
+src/icons/zustand.svg
+  h_ac004aadb63da9 1-1416
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e69ee019667f8c48fb109fb64036faa8e0d68021",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
