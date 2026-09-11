@@ -3,7 +3,7 @@ title: "How do I add multiple accounts?"
 category: "Getting Started"
 order: 4
 ---
-Gitify supports signing in to multiple accounts simultaneously — for example, a personal GitHub Cloud account alongside a Gitea or Bitbucket Cloud account.
+Gitify supports signing in to multiple accounts simultaneously. You can add multiple GitHub Cloud accounts, or combine accounts from different platforms — for example, a GitHub Cloud account alongside a GitHub Enterprise Server, Gitea, or Bitbucket Cloud account.
 
 To add an account:
 - Open the **Accounts** screen from the Gitify sidebar
