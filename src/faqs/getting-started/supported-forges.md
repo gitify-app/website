@@ -14,8 +14,6 @@ Gitify supports notifications from the following Git forges:
 - **Bitbucket Cloud** — `bitbucket.org`
 - **GitLab Cloud and Self-Managed** — cloud and self-hosted GitLab instances
 
-> **Note:** Enterprise Managed Users (EMU) is an account model for GitHub Enterprise Cloud, not a separate forge. GitHub Enterprise Cloud with data residency (GHDR) uses managed user accounts on a dedicated `[tenant].ghe.com` subdomain.
-
 Multiple accounts across different forges can be signed in simultaneously. See [How do I add multiple accounts?](/faq/#multiple-accounts) for details.
 
 For authentication setup, see [What authentication methods does Gitify support?](/faq/#authentication-methods).
