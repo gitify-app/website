@@ -1,6 +1,6 @@
 # gitify.io 
 
-[![Netlify Status][netlify-badge]][netlify-deploys] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Quality Gate Status][quality-badge]][quality] 
+[![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license]
 
 > The source code for our gitify.io website
 
