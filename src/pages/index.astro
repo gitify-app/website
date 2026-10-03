@@ -15,8 +15,8 @@ import SectionRow from '~/layouts/SectionRow.astro';
       title="All your Git notifications, right on your desktop."
       description="<p>Gitify is all about making your life easier.</p><br /><p>Always visible on your menu bar, Gitify delivers real-time notifications across GitHub Cloud, GitHub Enterprise Cloud, GitHub Enterprise Server, Gitea (including Forgejo and Codeberg), GitLab (Cloud and Self-Managed), and Bitbucket Cloud.</p><br /><p>Stay on top of your work, effortlessly.</p>"
       screenshot={{
-        path: "all-read",
-        alt: "Screenshot of Gitify when all notifications are read",
+        path: 'all-read',
+        alt: 'Screenshot of Gitify when all notifications are read',
       }}
       isReversed
       isDark
@@ -26,8 +26,8 @@ import SectionRow from '~/layouts/SectionRow.astro';
       title="Cut through the noise, focus on what matters."
       description="<p>Inbox overflowing?</p><br /><p>Gitify helps you filter notifications so you can quickly zero in on what’s important.</p>"
       screenshot={{
-        path: "filters",
-        alt: "Screenshot for notification filters",
+        path: 'filters',
+        alt: 'Screenshot for notification filters',
       }}
     />
 
@@ -35,8 +35,8 @@ import SectionRow from '~/layouts/SectionRow.astro';
       title="Your notifications, your way."
       description="<p>Gitify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change its appearance.</p><br /><p>It's designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>"
       screenshot={{
-        path: "settings",
-        alt: "Screenshot for user preferences, settings",
+        path: 'settings',
+        alt: 'Screenshot for user preferences, settings',
       }}
       isReversed
       isDark
@@ -50,22 +50,22 @@ import SectionRow from '~/layouts/SectionRow.astro';
         class="grid grid-cols-3 gap-2 justify-items-center md:max-w-lg mt-12 lg:mt-0"
       >
         {openSourceLibs.map((item) => (
-            <div class="p-2 m-2 rounded-lg hover:motion-preset-pulse hover:motion-duration-1000">
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class:list={["icon", item.color ?? "text-black"]}
-              >
-                <Icon
-                  name={item.svg}
-                  title={item.name}
-                  size={32}
-                  class="w-8 sm:w-12"
-                />
-              </a>
-            </div>
-          ))}
+          <div class="p-2 m-2 rounded-lg hover:motion-preset-pulse hover:motion-duration-1000">
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={['icon', item.color ?? 'text-black']}
+            >
+              <Icon
+                name={item.svg}
+                title={item.name}
+                size={32}
+                class="w-8 sm:w-12"
+              />
+            </a>
+          </div>
+        ))}
       </div>
     </SectionRow>
   </main>
