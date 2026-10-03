@@ -1,6 +1,6 @@
 # gitify.io 
 
-[![Netlify Status][netlify-badge]][netlify-deploys] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] 
+[![Netlify Status][netlify-badge]][netlify-deploys] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Quality Gate Status][quality-badge]][quality] 
 
 > The source code for our gitify.io website
 
@@ -52,3 +52,5 @@ All commands are run from the root of the project, from a terminal:
 [license-badge]: https://img.shields.io/github/license/gitify-app/gitify?logo=github
 [renovate]: https://github.com/gitify-app/website/issues/15
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
+[quality]: https://sonarcloud.io/summary/new_code?id=gitify-app_website
+[quality-badge]: https://img.shields.io/sonar/quality_gate/gitify-app_website?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
