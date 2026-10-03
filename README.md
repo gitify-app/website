@@ -18,7 +18,9 @@ Requires [pnpm](https://pnpm.io) and Node.js >= 24.
 
 ## 📝 Content
 
-FAQs are plain Markdown files in `src/faqs/<category>/<slug>.md`, rendered on the [FAQ page](https://gitify.io/faq). Each file needs the following frontmatter:
+FAQs are plain Markdown files in `src/faqs/<category>/<slug>.md`, rendered on the [FAQ page](https://gitify.io/faq). 
+
+Each file needs the following frontmatter:
 
 ```yaml
 ---
