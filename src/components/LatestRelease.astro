@@ -102,55 +102,55 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
 
 <div class="text-sm mt-4">
   {version ? (
-      <>
-        <div class="sm:flex md:grid md:grid-cols-2">
-          {downloadLinks.primary.map((item) => (
-            <DownloadButton item={item} />
-          ))}
-        </div>
-        <div class="w-80 flex flex-col gap-2">
-          <div>
-            Latest version:{" "}
-            <a class="gitify-download-link" href={URLs.GITHUB.LATEST_RELEASE}>
-              {version}
-            </a>
-          </div>
-          <div>Released on: {releaseDate}</div>
-          {downloadLinks.alt.length > 0 && (
-            <div>
-              Also available on:
-              <ul class="list-disc list-inside mt-2 ml-4">
-                {downloadLinks.alt.map((platform) => (
-                  <li class="mb-2.5">
-                    <a
-                      class="gitify-download-link"
-                      href={platform.url || URLs.GITHUB.LATEST_RELEASE}
-                    >
-                      {platform.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </>
-    ) : (
-      <div class="flex">
-        <DownloadButton
-          item={{
-            url: URLs.GITHUB.LATEST_RELEASE,
-            name: "View GitHub Releases",
-          }}
-        />
+    <>
+      <div class="sm:flex md:grid md:grid-cols-2">
+        {downloadLinks.primary.map((item) => (
+          <DownloadButton item={item} />
+        ))}
       </div>
-    )}
+      <div class="w-80 flex flex-col gap-2">
+        <div>
+          Latest version:{' '}
+          <a class="gitify-download-link" href={URLs.GITHUB.LATEST_RELEASE}>
+            {version}
+          </a>
+        </div>
+        <div>Released on: {releaseDate}</div>
+        {downloadLinks.alt.length > 0 && (
+          <div>
+            Also available on:
+            <ul class="list-disc list-inside mt-2 ml-4">
+              {downloadLinks.alt.map((platform) => (
+                <li class="mb-2.5">
+                  <a
+                    class="gitify-download-link"
+                    href={platform.url || URLs.GITHUB.LATEST_RELEASE}
+                  >
+                    {platform.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </>
+  ) : (
+    <div class="flex">
+      <DownloadButton
+        item={{
+          url: URLs.GITHUB.LATEST_RELEASE,
+          name: 'View GitHub Releases',
+        }}
+      />
+    </div>
+  )}
   <p class="mt-4 max-w-sm">
-    Using KDE Plasma 6 on Wayland? Install the optional{" "}
+    Using KDE Plasma 6 on Wayland? Install the optional{' '}
     <a class="gitify-download-link" href="https://store.kde.org/p/2371508/">
       Gitify KWin script
-    </a>{" "}
-    to keep Gitify beside your panel.{" "}
+    </a>{' '}
+    to keep Gitify beside your panel.{' '}
     <a class="gitify-download-link" href="/faq#kde-wayland-positioning">
       Setup instructions
     </a>
