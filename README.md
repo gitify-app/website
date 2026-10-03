@@ -1,47 +1,44 @@
-# gitify.io 
+# gitify.io
 
-[![Netlify Status][netlify-badge]][netlify-deploys] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Quality Gate Status][quality-badge]][quality] 
+[![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license]
 
-> The source code for our gitify.io website
+> The source code for [gitify.io](https://gitify.io), built with [Astro](https://astro.build).
 
-> Made with Astro.
+## 🚀 Getting started
 
-## 🚀 Project Structure
+Requires [pnpm](https://pnpm.io) and Node.js >= 24.
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command         | Action                                          |
+| --------------- | ----------------------------------------------- |
+| `pnpm install`  | Install dependencies                            |
+| `pnpm dev`      | Start the dev server at `http://localhost:4321` |
+| `pnpm build`    | Build the production site to `./dist/`          |
+| `pnpm preview`  | Preview the production build                    |
+| `pnpm lint`     | Run Biome lint and apply fixes                  |
 
+## 📝 Content
+
+FAQs are plain Markdown files in `src/faqs/<category>/<slug>.md`, rendered on the [FAQ page](https://gitify.io/faq). 
+
+Each file needs the following frontmatter:
+
+```yaml
+---
+title: "Question"
+category: "Getting Started" # one of the four categories below
+order: 0                   # sorts within the category
+---
 ```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Logo.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Categories: `Getting Started` · `Using Gitify` · `Troubleshooting` · `Contributing`
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🤝 Contributing
 
-Any static assets, like images, can be placed in the `public/` directory.
+See [How to contribute](https://gitify.io/faq/#how-to-contribute) or read the [Code of Conduct](.github/CODE-OF-CONDUCT.md).
 
-## 🧞 Commands
+## 📄 License
 
-All commands are run from the root of the project, from a terminal:
-
-| Command             | Action                                             |
-| :------------------ | :------------------------------------------------- |
-| `pnpm install`      | Installs dependencies                              |
-| `pnpm run dev`      | Starts local dev server at `http://localhost:4321` |
-| `pnpm run build`    | Build your production site to `./dist/`            |
-| `pnpm run preview`  | Preview your build locally, before deploying       |
-| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check`   |
-| `pnpm astro --help` | Get help using the Astro CLI                       |
+Distributed under the [MIT License](LICENSE).
 
 <!-- LINK LABELS -->
 [github]: https://github.com/gitify-app/website
@@ -49,7 +46,7 @@ All commands are run from the root of the project, from a terminal:
 [netlify-badge]: https://img.shields.io/netlify/a060080d-e0bd-46bf-a2b5-0290a18ead9d?logo=netlify&logoColor=white
 [netlify-deploys]: https://app.netlify.com/projects/gitify/deploys
 [license]: LICENSE
-[license-badge]: https://img.shields.io/github/license/gitify-app/gitify?logo=github
+[license-badge]: https://img.shields.io/github/license/gitify-app/website?logo=github
 [renovate]: https://github.com/gitify-app/website/issues/15
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
 [quality]: https://sonarcloud.io/summary/new_code?id=gitify-app_website
