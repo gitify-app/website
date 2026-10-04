@@ -1,25 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:best-practices",
+    "github>gitify-app/.github",
     ":automergeMinor",
     ":automergePatch",
     ":automergeDigest",
-    ":enableVulnerabilityAlerts",
     "customManagers:biomeVersions",
     "schedule:monthly"
   ],
-  "labels": ["dependency"],
-  "rangeStrategy": "pin",
   "packageRules": [
     {
       "matchDepTypes": ["engines"],
       "rangeStrategy": "auto"
-    },
-    {
-      "description": "Remove word `dependency` from commit messages and PR titles",
-      "matchDatasources": ["npm"],
-      "commitMessageTopic": "{{depName}}"
     },
     {
       "description": "Group all non-major npm updates",
