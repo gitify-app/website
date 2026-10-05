@@ -2,7 +2,7 @@ import type { IconDetails } from '~/types';
 
 export const openSourceLibs: IconDetails[] = [
   {
-    name: 'Typescript',
+    name: 'TypeScript',
     link: 'https://typescriptlang.org/',
     svg: 'typescript',
   },
@@ -27,10 +27,10 @@ export const openSourceLibs: IconDetails[] = [
     svg: 'viteplus',
   },
   {
-    name: 'GitHub - Primer Style',
+    name: 'Primer',
     link: 'https://primer.style/',
-    svg: 'github',
-    color: 'text-blue-400',
+    svg: 'primer',
+    color: 'text-[#8534f3]',
   },
   {
     name: 'TanStack Query',
@@ -43,8 +43,9 @@ export const openSourceLibs: IconDetails[] = [
     svg: 'zustand',
   },
   {
-    name: 'GitHub - Octokit',
+    name: 'Octokit',
     link: 'https://github.com/octokit/',
-    svg: 'github',
+    // Official organization avatar: https://avatars.githubusercontent.com/u/3430433?s=200&v=4
+    image: '/images/octokit.png',
   },
 ];
