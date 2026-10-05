@@ -145,14 +145,25 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
       />
     </div>
   )}
-  <p class="mt-4 max-w-sm">
-    Using KDE Plasma 6 on Wayland? Install the optional{' '}
-    <a class="gitify-download-link" href="https://store.kde.org/p/2371508/">
-      Gitify KWin script
-    </a>{' '}
-    to keep Gitify beside your panel.{' '}
-    <a class="gitify-download-link" href="/faq#kde-wayland-positioning">
-      Setup instructions
-    </a>
-  </p>
+  <aside
+    class="mt-4 max-w-sm text-xs text-gray-600"
+    aria-label="Optional Linux Wayland setup"
+  >
+    <p>
+      Linux on Wayland?{' '}
+      <a
+        class="hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gitify-button-rest"
+        href="/faq#gnome-wayland-positioning"
+      >
+        GNOME setup
+      </a>{' '}
+      <span aria-hidden="true">·</span>{' '}
+      <a
+        class="hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gitify-button-rest"
+        href="/faq#kde-wayland-positioning"
+      >
+        KDE Plasma setup
+      </a>
+    </p>
+  </aside>
 </div>
