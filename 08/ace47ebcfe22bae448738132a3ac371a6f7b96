@@ -1,0 +1,18 @@
+src/components/LatestRelease.astro
+  h_ac004aadb63da9 148-168
+src/faqs/troubleshooting/gnome-wayland-positioning.md
+  h_ac004aadb63da9 1-49
+src/faqs/troubleshooting/kde-wayland-positioning.md
+  h_ac004aadb63da9 8-15,23-24,27-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "08ace47ebcfe22bae448738132a3ac371a6f7b96",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
