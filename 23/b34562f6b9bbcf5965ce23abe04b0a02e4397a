@@ -1,0 +1,14 @@
+src/icons/tailwindcss.svg
+  h_ac004aadb63da9 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "23b34562f6b9bbcf5965ce23abe04b0a02e4397a",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
