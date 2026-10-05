@@ -1,0 +1,26 @@
+.github/workflows/test.yml
+  h_ac004aadb63da9 1-31
+README.md
+  h_ac004aadb63da9 18-33
+package.json
+  h_ac004aadb63da9 11
+src/components/GitHubRepo.astro
+  h_ac004aadb63da9 6,18,21-25,28-32
+src/components/LatestRelease.astro
+  h_ac004aadb63da9 9,72,77-85,89-91
+src/lib/github.test.ts
+  h_ac004aadb63da9 1-95
+src/lib/github.ts
+  h_ac004aadb63da9 1-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7a7e512eb3bc5826c0c8791642279dd32b702064",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
