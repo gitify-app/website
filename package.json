@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "test": "node --test \"src/**/*.test.ts\"",
     "preview": "astro preview",
     "prepare": "husky",
     "astro": "astro",
