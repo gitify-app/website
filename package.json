@@ -9,6 +9,7 @@
     "start": "astro dev",
     "build": "astro build",
     "test": "node --test \"src/**/*.test.ts\"",
+    "test:coverage": "c8 node --test \"src/**/*.test.ts\"",
     "preview": "astro preview",
     "prepare": "husky",
     "astro": "astro",
@@ -66,6 +67,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
+    "c8": "12.0.0",
     "husky": "9.1.7"
   },
   "packageManager": "pnpm@12.8.2",

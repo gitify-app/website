@@ -8,14 +8,15 @@
 
 Requires [pnpm](https://pnpm.io) and Node.js >= 24.
 
-| Command         | Action                                          |
-| --------------- | ----------------------------------------------- |
-| `pnpm install`  | Install dependencies                            |
-| `pnpm dev`      | Start the dev server at `http://localhost:4321` |
-| `pnpm build`    | Build the production site to `./dist/`          |
-| `pnpm preview`  | Preview the production build                    |
-| `pnpm lint`     | Run Biome lint and apply fixes                  |
-| `pnpm test`     | Run unit tests with Node.js                    |
+| Command              | Action                                        |
+| -------------------- | --------------------------------------------- |
+| `pnpm install`       | Install dependencies                          |
+| `pnpm dev`           | Start the dev server at `http://localhost:4321` |
+| `pnpm build`         | Build the production site to `./dist/`         |
+| `pnpm preview`       | Preview the production build                  |
+| `pnpm lint`          | Run Biome lint and apply fixes                 |
+| `pnpm test`          | Run unit tests with Node.js                    |
+| `pnpm test:coverage` | Run tests and write `coverage/lcov.info`       |
 
 ### GitHub API access
 
@@ -31,6 +32,10 @@ cached data when available, otherwise links to GitHub Releases without stats.
 
 Run the API caching and fallback tests with `pnpm test`. Tests also run in CI
 on pull requests and pushes to `main`.
+
+Coverage uses c8 with settings in `.c8rc.json`. The SonarQube workflow runs
+`pnpm test:coverage` before scanning and imports the LCOV report. Test files
+are classified as tests, not production sources.
 
 ## 📝 Content
 
