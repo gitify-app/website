@@ -8,13 +8,34 @@
 
 Requires [pnpm](https://pnpm.io) and Node.js >= 24.
 
-| Command         | Action                                          |
-| --------------- | ----------------------------------------------- |
-| `pnpm install`  | Install dependencies                            |
-| `pnpm dev`      | Start the dev server at `http://localhost:4321` |
-| `pnpm build`    | Build the production site to `./dist/`          |
-| `pnpm preview`  | Preview the production build                    |
-| `pnpm lint`     | Run Biome lint and apply fixes                  |
+| Command              | Action                                        |
+| -------------------- | --------------------------------------------- |
+| `pnpm install`       | Install dependencies                          |
+| `pnpm dev`           | Start the dev server at `http://localhost:4321` |
+| `pnpm build`         | Build the production site to `./dist/`         |
+| `pnpm preview`       | Preview the production build                  |
+| `pnpm lint`          | Run Biome lint and apply fixes                 |
+| `pnpm test`          | Run unit tests with Node.js                    |
+| `pnpm test:coverage` | Run tests and write `coverage/lcov.info`       |
+
+### GitHub API access
+
+Repository stats and download links use GitHub's API. To increase the request
+quota, optionally set `GITHUB_TOKEN` in a local `.env` file or your build
+environment. A token with access to public repository metadata is sufficient;
+do not expose it through a `PUBLIC_` environment variable or commit it.
+
+Requests are shared and cached for five minutes per server/build process,
+including failures. API requests time out after five seconds and are not
+automatically retried. If GitHub is unavailable or rate-limited, the site uses
+cached data when available, otherwise links to GitHub Releases without stats.
+
+Run the API caching and fallback tests with `pnpm test`. Tests also run in CI
+on pull requests and pushes to `main`.
+
+Coverage uses c8 with settings in `.c8rc.json`. The SonarQube workflow runs
+`pnpm test:coverage` before scanning and imports the LCOV report. Test files
+are classified as tests, not production sources.
 
 ## 📝 Content
 
