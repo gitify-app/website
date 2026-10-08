@@ -1,0 +1,100 @@
+.github/prompts/opsx-apply.prompt.md
+  h_ac004aadb63da9 2,7,9,18,20,38,40,44,69,114
+.github/prompts/opsx-archive.prompt.md
+  h_ac004aadb63da9 2,7,9,13,15,17,20,29,31,38-40,47,51,54,56,59-62,71,78,92,97,105,110,118,123,136,140,151,156
+.github/prompts/opsx-bulk-archive.prompt.md
+  h_ac004aadb63da9 1-241
+.github/prompts/opsx-continue.prompt.md
+  h_ac004aadb63da9 2,5,7,9,13,15,17,19,23,25,27,33-34,37-51,53,55-79,84-103,106-114
+.github/prompts/opsx-explore.prompt.md
+  h_ac004aadb63da9 2,7,11,13,57-70,93,120-127,153,164,168
+.github/prompts/opsx-ff.prompt.md
+  h_ac004aadb63da9 1-97
+.github/prompts/opsx-new.prompt.md
+  h_ac004aadb63da9 1-68
+.github/prompts/opsx-onboard.prompt.md
+  h_ac004aadb63da9 1-547
+.github/prompts/opsx-propose.prompt.md
+  h_ac004aadb63da9 2,7,12,16,18,22,24,31,37,43,46,48,64-65,69,71-72,75,78,87-89,93,102-104
+.github/prompts/opsx-sync.prompt.md
+  h_ac004aadb63da9 2,9,11,15,17,19,21,32,44,48,59,71-72,75,112-114,119
+.github/prompts/opsx-verify.prompt.md
+  h_ac004aadb63da9 1-164
+.github/skills/openspec-apply-change/SKILL.md
+  h_ac004aadb63da9 3,10,15,17,26,28,48,52,77,122
+.github/skills/openspec-archive-change/SKILL.md
+  h_ac004aadb63da9 3,10,15,21,23,25,28,37,39,41,46-48,52,55,59,62,64,67-70,79,86,100,105-106,108,112,117
+.github/skills/openspec-bulk-archive-change/SKILL.md
+  h_ac004aadb63da9 1-249
+.github/skills/openspec-continue-change/SKILL.md
+  h_ac004aadb63da9 2-3,10,13,15,21,23,25,27,31,33,35,41-42,45-59,61,63-87,92-111,114-122
+.github/skills/openspec-explore/SKILL.md
+  h_ac004aadb63da9 3,10,15,19,58-71,94,119-126,157,160-167,179-199,206,231-233,236-238,241-243,256,273,283,287
+.github/skills/openspec-ff-change/SKILL.md
+  h_ac004aadb63da9 1-105
+.github/skills/openspec-new-change/SKILL.md
+  h_ac004aadb63da9 1-77
+.github/skills/openspec-onboard/SKILL.md
+  h_ac004aadb63da9 1-555
+.github/skills/openspec-propose/SKILL.md
+  h_ac004aadb63da9 3,10,15,20,24,30,32,39,45,51,54,56,72-73,77,79-80,83,86,95-97,101,110-112
+.github/skills/openspec-sync-specs/SKILL.md
+  h_ac004aadb63da9 3,10,17,23,25,27,29,40,52,56,67,79-80,83,120-122,127
+.github/skills/openspec-verify-change/SKILL.md
+  h_ac004aadb63da9 1-172
+.opencode/commands/opsx-apply.md
+  h_ac004aadb63da9 2,7,18,38,40,44,69
+.opencode/commands/opsx-archive.md
+  h_ac004aadb63da9 2,7,13,15,17,20,29,31,38-40,47,51,54,56,59-62,71,78,92,97,105,110,118,123,136,140,151,156
+.opencode/commands/opsx-bulk-archive.md
+  h_ac004aadb63da9 1-241
+.opencode/commands/opsx-continue.md
+  h_ac004aadb63da9 2,5,7,9,13,15,17,19,23,25,27,33-34,37-51,53,55-79,84-103,106-114
+.opencode/commands/opsx-explore.md
+  h_ac004aadb63da9 2,7,11,57-70,93,120-127,153,164,168
+.opencode/commands/opsx-ff.md
+  h_ac004aadb63da9 1-97
+.opencode/commands/opsx-new.md
+  h_ac004aadb63da9 1-68
+.opencode/commands/opsx-onboard.md
+  h_ac004aadb63da9 1-547
+.opencode/commands/opsx-propose.md
+  h_ac004aadb63da9 2,7,12,16,22,24,31,37,43,46,48,64-65,69,71-72,75,78,87-89,93,102-104
+.opencode/commands/opsx-sync.md
+  h_ac004aadb63da9 2,9,15,17,19,21,32,44,48,59,71-72,75,112-114,119
+.opencode/commands/opsx-verify.md
+  h_ac004aadb63da9 1-164
+.opencode/skills/openspec-apply-change/SKILL.md
+  h_ac004aadb63da9 3,10,15,17,26,48,52,77,122
+.opencode/skills/openspec-archive-change/SKILL.md
+  h_ac004aadb63da9 3,10,15,21,23,25,28,37,39,41,46-48,52,55,59,62,64,67-70,79,86,100,105-106,108,112,117
+.opencode/skills/openspec-bulk-archive-change/SKILL.md
+  h_ac004aadb63da9 1-249
+.opencode/skills/openspec-continue-change/SKILL.md
+  h_ac004aadb63da9 2-3,10,13,15,21,23,25,27,31,33,35,41-42,45-59,61,63-87,92-111,114-122
+.opencode/skills/openspec-explore/SKILL.md
+  h_ac004aadb63da9 3,10,15,19,58-71,94,119-126,157,160-167,179-199,231-233,236-238,241-243,256,273,283,287
+.opencode/skills/openspec-ff-change/SKILL.md
+  h_ac004aadb63da9 1-105
+.opencode/skills/openspec-new-change/SKILL.md
+  h_ac004aadb63da9 1-77
+.opencode/skills/openspec-onboard/SKILL.md
+  h_ac004aadb63da9 1-555
+.opencode/skills/openspec-propose/SKILL.md
+  h_ac004aadb63da9 3,10,15,20,24,30,32,39,45,51,54,56,72-73,77,79-80,83,86,95-97,101,110-112
+.opencode/skills/openspec-sync-specs/SKILL.md
+  h_ac004aadb63da9 3,10,17,23,25,27,29,40,52,56,67,79-80,83,120-122,127
+.opencode/skills/openspec-verify-change/SKILL.md
+  h_ac004aadb63da9 1-172
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a021e2721bfbeabba6cd2bd29d4e0ebd7c1e562d",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
