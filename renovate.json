@@ -4,9 +4,7 @@
     "github>gitify-app/.github",
     ":automergeMinor",
     ":automergePatch",
-    ":automergeDigest",
-    "customManagers:biomeVersions",
-    "schedule:monthly"
+    ":automergeDigest"
   ],
   "packageRules": [
     {
