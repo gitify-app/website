@@ -1,0 +1,19 @@
+name: Renovate Config Validation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - renovate.json
+  pull_request:
+    paths:
+      - renovate.json
+
+permissions: {}
+
+jobs:
+  validate:
+    permissions:
+      contents: read
+    uses: gitify-app/.github/.github/workflows/renovate-config-validator.yml@e7f7dd5534d3c7d063dd47c141ee1a94a83c3c00 # main
