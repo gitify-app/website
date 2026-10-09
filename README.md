@@ -13,10 +13,17 @@ Requires [pnpm](https://pnpm.io) and Node.js >= 24.
 | `pnpm install`       | Install dependencies                          |
 | `pnpm dev`           | Start the dev server at `http://localhost:4321` |
 | `pnpm build`         | Build the production site to `./dist/`         |
+| `pnpm check`         | Check Astro and TypeScript types               |
 | `pnpm preview`       | Preview the production build                  |
 | `pnpm lint`          | Run Biome lint and apply fixes                 |
 | `pnpm test`          | Run unit tests with Node.js                    |
 | `pnpm test:coverage` | Run tests and write `coverage/lcov.info`       |
+
+Run `pnpm check` to validate Astro templates and TypeScript files, including
+tests. Type checking runs in its own CI job on pull requests and pushes to
+`main`; type errors fail the job, while warnings and hints remain nonblocking.
+It is separate from Biome linting, unit tests, and `pnpm build`, which compiles
+the production site without type checking.
 
 ### GitHub API access
 

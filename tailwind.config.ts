@@ -32,7 +32,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [TailwindCSSMotion],
+  // tailwindcss-motion's v3-era declarations use unknown for theme values.
+  plugins: [TailwindCSSMotion as NonNullable<Config['plugins']>[number]],
 };
 
 export default config;
