@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>gitify-app/.github",
+    "github>gitify-app/renovate-config",
     ":automergeMinor",
     ":automergePatch",
     ":automergeDigest"
