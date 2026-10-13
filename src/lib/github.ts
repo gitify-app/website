@@ -38,7 +38,7 @@ function cachedRequest<T>(load: (owner: string, repo: string) => Promise<T>) {
   }): Promise<T | null> => {
     const key = `${owner}/${repo}`;
     let entry = cache.get(key);
-    if (entry?.pending) {
+    if (entry?.pending !== undefined) {
       return entry.pending;
     }
     if (entry && entry.expiresAt > Date.now()) {
