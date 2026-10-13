@@ -15,6 +15,11 @@ const config: Config = {
             dark: colors.gray[800],
           },
           hero: colors.gray[100],
+          ink: {
+            DEFAULT: colors.gray[900],
+            muted: colors.gray[600],
+            faint: colors.gray[400],
+          },
           repo: {
             hover: colors.gray[300],
           },
