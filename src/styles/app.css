@@ -44,26 +44,35 @@ a:not(.gitify-repo) {
 }
 
 .faq h3 {
-  @apply mt-6 mb-2 pb-1 text-sm font-semibold tracking-wide text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700;
+  @apply mt-6 mb-2 pb-1 text-sm font-semibold tracking-wide text-gray-700 border-b border-gray-200;
   scroll-margin-top: 1rem;
 }
 
 .faq h4 {
-  @apply mt-4 mb-1.5 text-sm font-semibold text-gray-800 dark:text-gray-200;
+  @apply mt-4 mb-1.5 text-sm font-semibold text-gray-800;
   scroll-margin-top: 1rem;
 }
 
 .faq-meta-label {
-  @apply text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mr-1;
+  @apply shrink-0 text-xs font-semibold uppercase tracking-wide text-gitify-button-hover;
 }
 
+/* Related / jump: navigation strips, visually distinct from the note callout. */
 .faq-jump,
 .faq-related {
-  @apply flex flex-wrap items-center gap-2 my-4 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/70;
+  @apply flex flex-col gap-2 my-4 sm:flex-row sm:items-baseline sm:gap-3;
+}
+
+.faq-jump-links {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.faq-related-links {
+  @apply flex flex-col items-start gap-1.5;
 }
 
 .faq-jump {
-  @apply mb-5;
+  @apply mb-5 pb-3 border-b border-gray-200;
 }
 
 .faq-jump + h3 {
@@ -71,29 +80,60 @@ a:not(.gitify-repo) {
 }
 
 .faq-related {
-  @apply mt-6;
+  @apply mt-6 pt-3 border-t border-gray-200;
 }
 
-.faq-jump a,
+.faq-jump a {
+  @apply inline-flex max-w-full items-center gap-1 rounded-full px-3 py-1 text-sm font-semibold no-underline transition-colors bg-white border border-gray-200 text-gitify-button-hover;
+}
+
+.faq-jump a:hover {
+  @apply no-underline bg-gitify-section-light border-gray-300;
+}
+
 .faq-related a {
-  @apply inline-flex items-center rounded-full px-2.5 py-1 text-sm font-semibold no-underline bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 text-gitify-button-rest;
+  @apply max-w-full text-sm font-semibold no-underline transition-colors text-gitify-button-hover;
 }
 
-.faq-jump a:hover,
 .faq-related a:hover {
-  @apply bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800;
+  @apply no-underline underline;
+}
+
+.faq-link-arrow {
+  @apply ml-1 inline-flex align-middle transition-transform;
+}
+
+.faq-link-arrow svg {
+  @apply h-3.5 w-3.5;
+}
+
+.faq-related a:hover .faq-link-arrow {
+  @apply translate-x-0.5;
 }
 
 .faq code {
-  @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded px-1.5 py-0.5 text-sm font-mono;
+  @apply bg-gray-100 text-gray-800 rounded px-1.5 py-0.5 text-sm font-mono;
 }
 
 .faq pre code {
   @apply bg-transparent p-0 text-inherit;
 }
 
+/* Note callout: informational card, distinct from the related/jump navigation. */
 .faq blockquote {
-  @apply border-l-4 border-blue-400 bg-blue-50 dark:bg-blue-950 dark:border-blue-500 pl-4 pr-3 py-2 my-3 rounded-r-sm not-italic text-gray-700 dark:text-gray-300;
+  @apply relative my-4 rounded-lg border border-gray-200 border-l-4 border-l-gitify-button-rest bg-gitify-section-light pl-11 pr-4 py-3 not-italic text-gitify-ink;
+}
+
+.faq-note-icon {
+  @apply absolute top-3.5 left-4 text-gitify-button-rest;
+}
+
+.faq-note-icon svg {
+  @apply block h-4 w-4;
+}
+
+.faq-note-label {
+  @apply mr-1 text-xs font-semibold uppercase tracking-wide text-gitify-button-hover;
 }
 
 .faq pre {
@@ -105,11 +145,11 @@ a:not(.gitify-repo) {
 }
 
 .faq th {
-  @apply text-left font-semibold border-b border-gray-200 dark:border-gray-700 pb-2;
+  @apply text-left font-semibold border-b border-gray-200 pb-2;
 }
 
 .faq td {
-  @apply py-1.5 border-b border-gray-100 dark:border-gray-800 align-top;
+  @apply py-1.5 border-b border-gray-100 align-top;
 }
 
 .faq tr:last-child td {
@@ -121,7 +161,7 @@ a:not(.gitify-repo) {
 }
 
 .faq-item .accordion__content {
-  @apply ml-1 pl-5 border-l-2 border-gray-200 dark:border-gray-700 text-base;
+  @apply ml-1 pl-5 border-l-2 border-gray-200 text-base;
 }
 
 .faq-item summary {
@@ -129,7 +169,7 @@ a:not(.gitify-repo) {
 }
 
 .faq-copy-link {
-  @apply absolute right-8 top-1/2 -translate-y-1/2 p-1 rounded opacity-0 text-gray-400 hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all;
+  @apply absolute right-8 top-1/2 -translate-y-1/2 p-1 rounded opacity-0 text-gray-500 hover:text-gitify-button-hover hover:bg-gray-100 transition-all;
 }
 
 .faq-item summary:hover .faq-copy-link,
@@ -138,9 +178,9 @@ a:not(.gitify-repo) {
 }
 
 .faq-copy-link--copied {
-  @apply opacity-100 text-green-500;
+  @apply opacity-100 text-green-600;
 }
 
 .faq-copy-link--failed {
-  @apply opacity-100 text-red-500;
+  @apply opacity-100 text-red-600;
 }

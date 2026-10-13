@@ -41,9 +41,7 @@ const grouped = CATEGORY_ORDER.map((category) => ({
     <div class="text-3xl text-center mt-12 mb-3">
       Frequently Asked Questions
     </div>
-    <p
-      class="text-center text-gitify-ink-muted dark:text-gitify-ink-faint mb-8"
-    >
+    <p class="text-center text-gitify-ink-muted mb-8">
       Answers are grouped by topic. Use the copy-link control on a question to
       share it.
     </p>
@@ -173,6 +171,23 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
     heading.id = `${slug}-${slugifyHeading(heading.textContent ?? '')}`;
   });
 
+  // Decorate note callouts (markdown blockquotes) with an icon and a label.
+  content.querySelectorAll<HTMLElement>('blockquote').forEach((quote) => {
+    const label = quote.querySelector<HTMLElement>(
+      'p:first-child > strong:first-child',
+    );
+    if (label) {
+      label.classList.add('faq-note-label');
+    }
+
+    const icon = document.createElement('span');
+    icon.className = 'faq-note-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>';
+    quote.prepend(icon);
+  });
+
   const headings = content.querySelectorAll<HTMLElement>('h3');
   if (headings.length > 1) {
     const nav = document.createElement('nav');
@@ -184,11 +199,15 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
     label.textContent = 'Jump to';
     nav.appendChild(label);
 
+    const list = document.createElement('div');
+    list.className = 'faq-jump-links';
+    nav.appendChild(list);
+
     headings.forEach((heading) => {
       const link = document.createElement('a');
       link.href = `#${heading.id}`;
       link.textContent = heading.textContent ?? '';
-      nav.appendChild(link);
+      list.appendChild(link);
     });
 
     content.insertBefore(nav, headings[0]);
@@ -208,8 +227,19 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
       label.textContent = 'Related';
       nav.appendChild(label);
 
+      const list = document.createElement('div');
+      list.className = 'faq-related-links';
+      nav.appendChild(list);
+
       links.forEach((link) => {
-        nav.appendChild(link.cloneNode(true));
+        const clone = link.cloneNode(true) as HTMLAnchorElement;
+        const arrow = document.createElement('span');
+        arrow.className = 'faq-link-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.innerHTML =
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
+        clone.appendChild(arrow);
+        list.appendChild(clone);
       });
 
       last.replaceWith(nav);
