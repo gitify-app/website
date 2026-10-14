@@ -21,5 +21,6 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# OpenSpec
-openspec/
+# OpenSpec (specs/changes live in the gitify-specs store; track only the pointer)
+openspec/*
+!openspec/config.yaml
