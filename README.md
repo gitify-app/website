@@ -44,6 +44,22 @@ Coverage uses c8 with settings in `.c8rc.json`. The SonarQube workflow runs
 `pnpm test:coverage` before scanning and imports the LCOV report. Test files
 are classified as tests, not production sources.
 
+## 🗂 OpenSpec
+
+Planning artifacts (specs and changes) live in the shared [gitify-specs][gitify-specs]
+store, not in this repo. `openspec/config.yaml` declares `store: gitify-specs`,
+so `openspec` commands run here act on the store.
+
+Clone and register the store once per machine:
+
+```bash
+git clone https://github.com/gitify-app/gitify-specs.git ~/openspec/gitify-specs
+openspec store register ~/openspec/gitify-specs --id gitify-specs
+```
+
+Commit and push planning changes in the store repo like any other Git repo. Run
+`openspec doctor` to check that the store resolves.
+
 ## 📝 Content
 
 FAQs are plain Markdown files in `src/faqs/<category>/<slug>.md`, rendered on the [FAQ page](https://gitify.io/faq). 
@@ -70,6 +86,7 @@ Distributed under the [MIT License](LICENSE).
 
 <!-- LINK LABELS -->
 [github]: https://github.com/gitify-app/website
+[gitify-specs]: https://github.com/gitify-app/gitify-specs
 [contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website?logo=github
 [netlify-badge]: https://img.shields.io/netlify/a060080d-e0bd-46bf-a2b5-0290a18ead9d?logo=netlify&logoColor=white
 [netlify-deploys]: https://app.netlify.com/projects/gitify/deploys
