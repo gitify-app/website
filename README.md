@@ -8,77 +8,20 @@
 
 Requires [pnpm](https://pnpm.io) and Node.js >= 24.
 
-| Command              | Action                                        |
-| -------------------- | --------------------------------------------- |
-| `pnpm install`       | Install dependencies                          |
-| `pnpm dev`           | Start the dev server at `http://localhost:4321` |
-| `pnpm build`         | Build the production site to `./dist/`         |
-| `pnpm check`         | Check Astro and TypeScript types               |
-| `pnpm preview`       | Preview the production build                  |
-| `pnpm lint`          | Run Biome lint and apply fixes                 |
-| `pnpm test`          | Run unit tests with Node.js                    |
-| `pnpm test:coverage` | Run tests and write `coverage/lcov.info`       |
-
-Run `pnpm check` to validate Astro templates and TypeScript files, including
-tests. Type checking runs in its own CI job on pull requests and pushes to
-`main`; type errors fail the job, while warnings and hints remain nonblocking.
-It is separate from Biome linting, unit tests, and `pnpm build`, which compiles
-the production site without type checking.
-
-### GitHub API access
-
-Repository stats and download links use GitHub's API. To increase the request
-quota, optionally set `GITHUB_TOKEN` in a local `.env` file or your build
-environment. A token with access to public repository metadata is sufficient;
-do not expose it through a `PUBLIC_` environment variable or commit it.
-
-Requests are shared and cached for five minutes per server/build process,
-including failures. API requests time out after five seconds and are not
-automatically retried. If GitHub is unavailable or rate-limited, the site uses
-cached data when available, otherwise links to GitHub Releases without stats.
-
-Run the API caching and fallback tests with `pnpm test`. Tests also run in CI
-on pull requests and pushes to `main`.
-
-Coverage uses c8 with settings in `.c8rc.json`. The SonarQube workflow runs
-`pnpm test:coverage` before scanning and imports the LCOV report. Test files
-are classified as tests, not production sources.
-
-## 🗂 OpenSpec
-
-Planning artifacts (specs and changes) live in the shared [gitify-specs][gitify-specs]
-store, not in this repo. `openspec/config.yaml` declares `store: gitify-specs`,
-so `openspec` commands run here act on the store.
-
-Clone and register the store once per machine:
-
-```bash
-git clone https://github.com/gitify-app/gitify-specs.git ~/openspec/gitify-specs
-openspec store register ~/openspec/gitify-specs --id gitify-specs
+```shell
+pnpm install
+pnpm dev
 ```
 
-Commit and push planning changes in the store repo like any other Git repo. Run
-`openspec doctor` to check that the store resolves.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full command reference, testing, code style, and OpenSpec setup.
 
 ## 📝 Content
 
-FAQs are plain Markdown files in `src/faqs/<category>/<slug>.md`, rendered on the [FAQ page](https://gitify.io/faq). 
-
-Each file needs the following frontmatter:
-
-```yaml
----
-title: "Question"
-category: "Getting Started" # one of the four categories below
-order: 0                   # sorts within the category
----
-```
-
-Categories: `Getting Started` · `Using Gitify` · `Troubleshooting` · `Contributing`
+FAQs are plain Markdown files in `src/faqs/<category>/<slug>.md`, rendered on the [FAQ page](https://gitify.io/faq). See the [contributing guide](CONTRIBUTING.md#content) for the frontmatter format and categories.
 
 ## 🤝 Contributing
 
-See [How to contribute](https://gitify.io/faq/#how-to-contribute) or read the [Code of Conduct](.github/CODE-OF-CONDUCT.md).
+See [How to contribute](https://gitify.io/faq/#how-to-contribute) or read the [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](.github/CODE-OF-CONDUCT.md).
 
 ## 📄 License
 
