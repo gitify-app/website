@@ -21,7 +21,7 @@ FAQs are plain Markdown files in `src/faqs/<category>/<slug>.md`, rendered on th
 
 ## 🤝 Contributing
 
-See [How to contribute](https://gitify.io/faq/#how-to-contribute) or read the [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](.github/CODE-OF-CONDUCT.md).
+See [How to contribute](https://gitify.io/faq/#how-to-contribute) or read the [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct][code-of-conduct].
 
 ## 📄 License
 
@@ -29,6 +29,7 @@ Distributed under the [MIT License](LICENSE).
 
 <!-- LINK LABELS -->
 [github]: https://github.com/gitify-app/website
+[code-of-conduct]: https://github.com/gitify-app/.github/blob/main/CODE_OF_CONDUCT.md
 [gitify-specs]: https://github.com/gitify-app/gitify-specs
 [contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website?logo=github
 [netlify-badge]: https://img.shields.io/netlify/a060080d-e0bd-46bf-a2b5-0290a18ead9d?logo=netlify&logoColor=white
