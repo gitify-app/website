@@ -1,4 +1,4 @@
-# 🌐 gitify.io
+# gitify.io
 
 [![Netlify Status][netlify-badge]][netlify-deploys] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license]
 
