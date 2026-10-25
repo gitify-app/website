@@ -7,7 +7,7 @@ Gitify needs specific GitHub permissions so it can read your notifications and p
 
 This article covers **GitHub.com, GitHub Enterprise Cloud, and GitHub Enterprise Server** only.
 
-#### Login with GitHub and GitHub OAuth app
+#### Login with GitHub and custom GitHub OAuth app
 
 Gitify requests the scopes for you during sign-in. You do not choose them yourself.
 
