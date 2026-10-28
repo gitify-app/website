@@ -60,7 +60,15 @@
     }
   },
   "files": {
-    "includes": ["**", "!pnpm-lock.yaml"]
+    "includes": [
+      "**",
+      "!pnpm-lock.yaml",
+      "!pnpm-workspace.yaml",
+      "!.github/prompts",
+      "!.github/skills",
+      "!.opencode",
+      "!openspec"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -76,17 +84,6 @@
             "noUnusedImports": "off",
             "noUnusedVariables": "off"
           }
-        }
-      }
-    },
-    {
-      "includes": [".github/prompts/**", ".github/skills/**", ".opencode/**"],
-      "markdown": {
-        "formatter": {
-          "enabled": false
-        },
-        "linter": {
-          "enabled": false
         }
       }
     }
