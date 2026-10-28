@@ -18,6 +18,13 @@
     "lint:ci": "biome ci --reporter=github",
     "lint": "biome check --fix"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.22.1",
+      "onFail": "warn"
+    }
+  },
   "engines": {
     "node": ">=24"
   },
