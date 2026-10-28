@@ -3,6 +3,7 @@ title: "How do I keep Gitify beside the panel on KDE Plasma?"
 category: "Troubleshooting"
 order: 4
 ---
+
 On Wayland, the desktop controls window placement, so Gitify may open in the center of the screen. The optional [Gitify KWin script on KDE Store](https://store.kde.org/p/2371508/) places its popup beside your panel when you open it from the tray.
 
 ### Requirements

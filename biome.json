@@ -59,6 +59,9 @@
       }
     }
   },
+  "files": {
+    "includes": ["**", "!pnpm-lock.yaml"]
+  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
@@ -73,6 +76,17 @@
             "noUnusedImports": "off",
             "noUnusedVariables": "off"
           }
+        }
+      }
+    },
+    {
+      "includes": [".github/prompts/**", ".github/skills/**", ".opencode/**"],
+      "markdown": {
+        "formatter": {
+          "enabled": false
+        },
+        "linter": {
+          "enabled": false
         }
       }
     }
@@ -99,6 +113,25 @@
   "json": {
     "parser": {
       "allowComments": true
+    }
+  },
+  "markdown": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    },
+    "parser": {
+      "frontmatter": true
+    }
+  },
+  "yaml": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
     }
   },
   "vcs": {
