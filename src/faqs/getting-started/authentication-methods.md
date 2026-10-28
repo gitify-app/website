@@ -3,6 +3,7 @@ title: "What authentication methods does Gitify support?"
 category: "Getting Started"
 order: 1
 ---
+
 How you sign in depends on the forge. On GitHub.com, start with **Login with GitHub**. On other GitHub hostnames, use a personal access token (PAT) or a GitHub OAuth app. On Gitea, Forgejo, Codeberg, and GitLab, use a PAT. On Bitbucket Cloud, use an app password.
 
 ### GitHub

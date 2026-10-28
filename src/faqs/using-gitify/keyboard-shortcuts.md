@@ -3,6 +3,7 @@ title: "How do keyboard shortcuts work?"
 category: "Using Gitify"
 order: 3
 ---
+
 Gitify includes keyboard shortcuts for common actions.
 
 - `h` — go home

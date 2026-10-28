@@ -50,7 +50,7 @@ Each file needs the following frontmatter:
 ---
 title: "Question"
 category: "Getting Started" # one of the four categories below
-order: 0                   # sorts within the category
+order: 0 # sorts within the category
 ---
 ```
 

@@ -3,6 +3,7 @@ title: "How do I add multiple accounts?"
 category: "Getting Started"
 order: 6
 ---
+
 Gitify can stay signed in to more than one account at once. You can add several GitHub.com accounts, or mix accounts from different forges — for example GitHub.com with GitHub Enterprise Server, Gitea, or Bitbucket Cloud.
 
 1. Open the **Accounts** screen from the Gitify sidebar.

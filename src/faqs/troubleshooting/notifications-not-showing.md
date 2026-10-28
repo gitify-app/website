@@ -3,6 +3,7 @@ title: "Why aren't my notifications showing?"
 category: "Troubleshooting"
 order: 1
 ---
+
 Gitify is signed in but your inbox is empty? Check the steps for your forge below.
 
 ### GitHub
@@ -24,10 +25,10 @@ Gitify signs in with its GitHub OAuth app. Some organizations must approve that 
 2. Click the **Gitify** application.
 3. Under **Organization access**, check the state for each organization:
 
-| State | Meaning |
-|---|---|
-| ✅ Green check | Access granted — notifications from this org will appear |
-| **Request** button | Access not yet granted — click to ask your org admins to approve |
+| State                     | Meaning                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| ✅ Green check            | Access granted — notifications from this org will appear                     |
+| **Request** button        | Access not yet granted — click to ask your org admins to approve             |
 | _Disallowed by org owner_ | The organization has blocked third-party OAuth apps — contact your org admin |
 
 > **Note:** If an organization shows **Request** or **Disallowed by org owner**, you will not get notifications from that organization until access is approved.

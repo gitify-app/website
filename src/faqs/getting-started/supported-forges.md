@@ -3,6 +3,7 @@ title: "Which Git forges does Gitify support?"
 category: "Getting Started"
 order: 0
 ---
+
 Gitify can show notifications from several Git hosts, not only GitHub.com.
 
 - **GitHub.com** — the public `github.com` service, including GitHub Enterprise Cloud organizations hosted there
