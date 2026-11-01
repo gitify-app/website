@@ -1,7 +1,7 @@
 ---
 title: "How do I update Gitify?"
 category: "Using Gitify"
-order: 6
+order: 5
 ---
 
 Gitify checks for updates when it starts and every 24 hours.

@@ -1,7 +1,7 @@
 ---
 title: "How do I make notification dismissal instant?"
-category: "Using Gitify"
-order: 3
+category: "Accessibility"
+order: 0
 ---
 
 Turning on your operating system's Reduce Motion setting makes Gitify dismiss a notification immediately instead of sliding and fading the row out.
