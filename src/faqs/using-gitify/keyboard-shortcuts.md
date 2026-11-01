@@ -1,7 +1,7 @@
 ---
 title: "How do keyboard shortcuts work?"
 category: "Using Gitify"
-order: 3
+order: 4
 ---
 
 Gitify includes keyboard shortcuts for common actions.

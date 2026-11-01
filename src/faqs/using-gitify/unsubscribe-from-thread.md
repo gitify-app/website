@@ -1,7 +1,7 @@
 ---
 title: "What does the Unsubscribe from Thread option do?"
 category: "Using Gitify"
-order: 4
+order: 5
 ---
 
 **Unsubscribe from Thread** stops future notifications for that thread until you comment on it or get an **@mention**.
