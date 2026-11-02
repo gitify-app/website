@@ -3,6 +3,7 @@ title: "How do I configure GitHub OAuth app authentication?"
 category: "Getting Started"
 order: 2
 ---
+
 You can sign in with a GitHub OAuth app on GitHub.com, GitHub Enterprise Cloud, and GitHub Enterprise Server by registering an app and pasting its client ID and secret into Gitify.
 
 1. On GitHub.com, open [GitHub → Settings → Developer settings → OAuth Apps](https://github.com/settings/developers). On GitHub Enterprise Cloud or GitHub Enterprise Server, open the same page on your GitHub hostname.

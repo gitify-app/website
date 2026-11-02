@@ -3,6 +3,7 @@ title: "How do I change the appearance of Gitify?"
 category: "Using Gitify"
 order: 2
 ---
+
 You can change how Gitify looks from **Settings → Appearance**.
 
 - **Design** — choose **Classic** or **Glass**

@@ -3,6 +3,7 @@ title: "How do I debug Gitify?"
 category: "Troubleshooting"
 order: 2
 ---
+
 You can inspect Gitify with developer tools or by reading its log files.
 
 ### Chrome Developer Tools

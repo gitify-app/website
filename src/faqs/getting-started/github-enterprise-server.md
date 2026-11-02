@@ -3,6 +3,7 @@ title: "Does Gitify support GitHub Enterprise Cloud and GitHub Enterprise Server
 category: "Getting Started"
 order: 3
 ---
+
 Yes. Gitify works with **GitHub.com**, **GitHub Enterprise Cloud** (including **GitHub Enterprise Cloud with data residency (GHDR)**), and **GitHub Enterprise Server (GHES)**.
 
 When you sign in with a **personal access token (classic)** or a **GitHub OAuth app**, Gitify shows a **Hostname** field. It defaults to `github.com`. Change it to match your instance:
