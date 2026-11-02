@@ -22,15 +22,22 @@ Start the dev server (hot reload at `http://localhost:4321`):
 pnpm dev
 ```
 
-| Command              | Action                                          |
-| -------------------- | ----------------------------------------------- |
-| `pnpm dev`           | Start the dev server at `http://localhost:4321` |
-| `pnpm build`         | Build the production site to `./dist/`          |
-| `pnpm preview`       | Preview the production build                    |
-| `pnpm check`         | Check Astro and TypeScript types                |
-| `pnpm lint`          | Run Biome lint and apply fixes                  |
-| `pnpm test`          | Run unit tests with Node.js                     |
-| `pnpm test:coverage` | Run tests and write `coverage/lcov.info`        |
+| Command                     | Action                                          |
+| --------------------------- | ----------------------------------------------- |
+| `pnpm dev`                  | Start the dev server at `http://localhost:4321` |
+| `pnpm build`                | Build the production site to `./dist/`          |
+| `pnpm preview`              | Preview the production build                    |
+| `pnpm check`                | Check Astro and TypeScript types                |
+| `pnpm lint`                 | Run Biome lint and apply fixes                  |
+| `pnpm test`                 | Run unit tests with Node.js                     |
+| `pnpm test:coverage`        | Run tests and write `coverage/lcov.info`        |
+| `pnpm links:check`          | Check internal links in the built site          |
+| `pnpm links:check:external` | Also check external links                       |
+
+`pnpm links:check` requires `pnpm build` and [lychee](https://lychee.cli.rs)
+(`brew install lychee`); settings live in [`lychee.toml`](lychee.toml). The
+link-check workflow runs the offline check on pull requests and pushes, and the
+external check weekly and on manual dispatch.
 
 #### 🔑 GitHub API access
 
