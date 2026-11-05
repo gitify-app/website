@@ -3,6 +3,7 @@ title: "What GitHub scopes does Gitify require?"
 category: "Getting Started"
 order: 4
 ---
+
 Gitify needs specific GitHub permissions so it can read your notifications and profile. The required GitHub scopes depend on how you sign in.
 
 This article covers **GitHub.com, GitHub Enterprise Cloud, and GitHub Enterprise Server** only.

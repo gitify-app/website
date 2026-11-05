@@ -3,6 +3,7 @@ title: "How do I change the appearance of Gitify?"
 category: "Using Gitify"
 order: 2
 ---
+
 You can change how Gitify looks from **Settings → Appearance**.
 
 - **Design** — choose **Classic** or **Glass**
@@ -12,3 +13,5 @@ You can change how Gitify looks from **Settings → Appearance**.
 - **Zoom** — zoom in, zoom out, or reset zoom for the whole app
 - **Show account header** — show the account header in the sidebar
 - **Show full notification title** — show full notification titles instead of truncating them
+
+Related: [How do I improve contrast and color readability?](#contrast-and-color) · [How do I reduce transparency?](#transparency)

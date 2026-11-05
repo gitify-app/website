@@ -3,6 +3,7 @@ title: "How do I launch Gitify at login?"
 category: "Getting Started"
 order: 7
 ---
+
 Gitify can start automatically when you log in to your computer.
 
 1. Open **Settings** in Gitify.

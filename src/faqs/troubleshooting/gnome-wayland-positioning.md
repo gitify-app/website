@@ -3,6 +3,7 @@ title: "How do I keep Gitify beside the tray icon on GNOME?"
 category: "Troubleshooting"
 order: 5
 ---
+
 On Wayland, the desktop controls window placement, so Gitify may open in the center of the screen. The optional [Gitify GNOME extension](https://extensions.gnome.org/extension/10968/gitify/) places its popup below its tray icon.
 
 ### Requirements
