@@ -13,6 +13,8 @@ On Wayland, the desktop controls window placement, so Gitify may open in the cen
 
 The script is not needed on an X11 session or when Gitify's **Use X11 backend** setting is enabled.
 
+The AUR `gitify-bin` and `gitify` packages start Gitify under X11 even when **Use X11 backend** is off. To run Gitify on Wayland, add `GITIFY_OZONE_PLATFORM=auto` to `~/.config/environment.d/gitify.conf`, then log out and back in.
+
 ### Installation
 
 1. Download `gitify.kwinscript` from the KDE Store listing.
