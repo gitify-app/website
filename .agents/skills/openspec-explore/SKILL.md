@@ -132,7 +132,7 @@ This tells you:
 - Their names and task status
 - What the user might be working on
 
-That is the _change_ list - work in flight. It does not include the project's durable capabilities, so list those too:
+That is the *change* list - work in flight. It does not include the project's durable capabilities, so list those too:
 ```bash
 openspec list --specs
 ```
@@ -181,14 +181,14 @@ If the user mentions a change or you detect one is relevant:
 
    The files below are the default spec-driven schema's. With another schema, capture each insight in whichever artifact from `artifactPaths` fits it, and name that artifact in your offer; never create an artifact the schema does not define.
 
-   | Insight Type               | Where to Capture                  |
-   | -------------------------- | --------------------------------- |
-   | New requirement discovered | `specs/<capability-path>/spec.md` |
-   | Requirement changed        | `specs/<capability-path>/spec.md` |
-   | Design decision made       | `design.md`                       |
-   | Scope changed              | `proposal.md`                     |
-   | New work identified        | `tasks.md`                        |
-   | Assumption invalidated     | Relevant artifact                 |
+    | Insight Type               | Where to Capture                    |
+    |----------------------------|-------------------------------------|
+    | New requirement discovered | `specs/<capability-path>/spec.md` |
+    | Requirement changed        | `specs/<capability-path>/spec.md` |
+    | Design decision made       | `design.md`                       |
+    | Scope changed              | `proposal.md`                     |
+    | New work identified        | `tasks.md`                        |
+    | Assumption invalidated     | Relevant artifact                   |
 
    Example offers (default schema):
    - "That's a design decision. Capture it in design.md?"
