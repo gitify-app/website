@@ -25,7 +25,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup pnpm
-        uses: pnpm/setup@v3.1.2
+        uses: pnpm/setup@v3.2.0
         with:
           node-version-file: ".nvmrc"
           cache: true
@@ -35,7 +35,7 @@ jobs:
         run: pnpm test:coverage
 
       - name: SonarQube Cloud Scan
-        uses: SonarSource/sonarqube-scan-action@v8.4.1
+        uses: SonarSource/sonarqube-scan-action@v8.5.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
